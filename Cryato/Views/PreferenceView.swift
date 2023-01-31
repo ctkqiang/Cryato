@@ -17,7 +17,7 @@ struct PreferenceView: View {
     private var binanceUrl: String = "https://s.binance.com/8ER0kn3r"
     private var preferenceItems: [String] = ["Who created this app?", "Support this app", "Version"]
     
-    func displayAlert() -> Alert {
+    private func displayAlert() -> Alert {
         if (self.selectedItem == self.preferenceItems[1]) {
             self.openUrl(url: self.binanceUrl)
         }
@@ -42,7 +42,7 @@ struct PreferenceView: View {
         }
     }
     
-    func openUrl(url :String) -> Void {
+    private func openUrl(url :String) -> Void {
         if (self.selectedItem == self.preferenceItems[1]) {
             openURL(URL(string: url)!)
         }

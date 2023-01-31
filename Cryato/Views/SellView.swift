@@ -10,11 +10,27 @@ import SwiftUI
 struct SellView: View {
     @Environment(\.colorScheme) private var colorScheme
     
-    @State private var originalPricePlaceholder: String = ""
-    @State private var sellingPricePlaceholder: String = ""
+    @State private var originalPricePlaceholder :String = ""
+    @State private var sellingPricePlaceholder :String = ""
     
-    private var sectionOneOriginalPrice = "Original Price"
-    private var sectionTwoSellingPrice = "Selling Price"
+    private var sectionOneOriginalPrice :String = "Original Price"
+    private var sectionTwoSellingPrice :String = "Selling Price"
+    private var calculator :Calculator = Calculator()
+    
+    private func validate(_ value :String, _ mode :Int) -> Void {
+        if value.isEmpty {
+            print("This field is required")
+        }
+        
+        if (mode == 0x0) {
+            self.originalPricePlaceholder = value
+        }
+        else {
+            self.sellingPricePlaceholder = value
+        }
+        
+        return
+    }
     
     var body: some View {
         VStack {
@@ -29,6 +45,9 @@ struct SellView: View {
                         .frame(height: 60)
                         .keyboardType(.decimalPad)
                         .controlSize(.large)
+                        .onChange(of: self.originalPricePlaceholder) { input in
+                            self.validate(input, 0x0)
+                        }
                     }
                     
                     HStack {
@@ -40,10 +59,22 @@ struct SellView: View {
                         .frame(height: 60)
                         .keyboardType(.decimalPad)
                         .controlSize(.large)
+                        .onChange(of: self.sellingPricePlaceholder) { input in
+                            self.validate(input, 0x1)
+                        }
                     }
                     
                     Button {
-                        print("s")
+                        
+                        /////////
+                        print("Original price => \(self.originalPricePlaceholder)")
+                        print("Selling price => \(self.sellingPricePlaceholder)")
+                        
+                        var profit :Float = roundf((Float(self.sellingPricePlaceholder) ?? 0) - (Float(self.originalPricePlaceholder) ?? 0))
+                        
+                        print("Profits => \(profit)")
+                        ///////////
+                        
                     } label: {
                         Text("Calculate")
                             .frame(minWidth: 0, maxWidth: .infinity)

@@ -38,10 +38,10 @@ struct ContentView: View {
      */
     @Environment(\.colorScheme) private var colorScheme
     
-    @State private var selectedId = 0x0
-    @State private var options = ["Sell", "Buy"]
+    @State private var selectedId :Int = 0x0
+    @State private var options :[String] = ["Sell", "Buy"]
     
-    private var navigationTitle = "Cryato"
+    private var navigationTitle :String = "Cryato"
     
     var body: some View {
         NavigationView {
