@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48599298923630024F1AB /* CryatoApp.swift */; };
+		1AD4859C298923630024F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4859B298923630024F1AB /* ContentView.swift */; };
+		1AD4859E298923660024F1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4859D298923660024F1AB /* Assets.xcassets */; };
+		1AD485A1298923660024F1AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AD485A0298923660024F1AB /* Preview Assets.xcassets */; };
+		1AD485AB298923660024F1AB /* CryatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD485AA298923660024F1AB /* CryatoTests.swift */; };
+		1AD485B5298923660024F1AB /* CryatoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD485B4298923660024F1AB /* CryatoUITests.swift */; };
+		1AD485B7298923660024F1AB /* CryatoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD485B6298923660024F1AB /* CryatoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AD485A7298923660024F1AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AD4858E298923630024F1AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AD48595298923630024F1AB;
+			remoteInfo = Cryato;
+		};
+		1AD485B1298923660024F1AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AD4858E298923630024F1AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AD48595298923630024F1AB;
+			remoteInfo = Cryato;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1AD48596298923630024F1AB /* Cryato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryato.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD48599298923630024F1AB /* CryatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoApp.swift; sourceTree = "<group>"; };
+		1AD4859B298923630024F1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1AD4859D298923660024F1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AD485A0298923660024F1AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1AD485A6298923660024F1AB /* CryatoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryatoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD485AA298923660024F1AB /* CryatoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoTests.swift; sourceTree = "<group>"; };
+		1AD485B0298923660024F1AB /* CryatoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryatoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD485B4298923660024F1AB /* CryatoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoUITests.swift; sourceTree = "<group>"; };
+		1AD485B6298923660024F1AB /* CryatoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AD48593298923630024F1AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD485A3298923660024F1AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD485AD298923660024F1AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AD4858D298923630024F1AB = {
+			isa = PBXGroup;
+			children = (
+				1AD48598298923630024F1AB /* Cryato */,
+				1AD485A9298923660024F1AB /* CryatoTests */,
+				1AD485B3298923660024F1AB /* CryatoUITests */,
+				1AD48597298923630024F1AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AD48597298923630024F1AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AD48596298923630024F1AB /* Cryato.app */,
+				1AD485A6298923660024F1AB /* CryatoTests.xctest */,
+				1AD485B0298923660024F1AB /* CryatoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AD48598298923630024F1AB /* Cryato */ = {
+			isa = PBXGroup;
+			children = (
+				1AD48599298923630024F1AB /* CryatoApp.swift */,
+				1AD4859B298923630024F1AB /* ContentView.swift */,
+				1AD4859D298923660024F1AB /* Assets.xcassets */,
+				1AD4859F298923660024F1AB /* Preview Content */,
+			);
+			path = Cryato;
+			sourceTree = "<group>";
+		};
+		1AD4859F298923660024F1AB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1AD485A0298923660024F1AB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1AD485A9298923660024F1AB /* CryatoTests */ = {
+			isa = PBXGroup;
+			children = (
+				1AD485AA298923660024F1AB /* CryatoTests.swift */,
+			);
+			path = CryatoTests;
+			sourceTree = "<group>";
+		};
+		1AD485B3298923660024F1AB /* CryatoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1AD485B4298923660024F1AB /* CryatoUITests.swift */,
+				1AD485B6298923660024F1AB /* CryatoUITestsLaunchTests.swift */,
+			);
+			path = CryatoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AD48595298923630024F1AB /* Cryato */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AD485BA298923660024F1AB /* Build configuration list for PBXNativeTarget "Cryato" */;
+			buildPhases = (
+				1AD48592298923630024F1AB /* Sources */,
+				1AD48593298923630024F1AB /* Frameworks */,
+				1AD48594298923630024F1AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cryato;
+			productName = Cryato;
+			productReference = 1AD48596298923630024F1AB /* Cryato.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1AD485A5298923660024F1AB /* CryatoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AD485BD298923660024F1AB /* Build configuration list for PBXNativeTarget "CryatoTests" */;
+			buildPhases = (
+				1AD485A2298923660024F1AB /* Sources */,
+				1AD485A3298923660024F1AB /* Frameworks */,
+				1AD485A4298923660024F1AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AD485A8298923660024F1AB /* PBXTargetDependency */,
+			);
+			name = CryatoTests;
+			productName = CryatoTests;
+			productReference = 1AD485A6298923660024F1AB /* CryatoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1AD485AF298923660024F1AB /* CryatoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AD485C0298923660024F1AB /* Build configuration list for PBXNativeTarget "CryatoUITests" */;
+			buildPhases = (
+				1AD485AC298923660024F1AB /* Sources */,
+				1AD485AD298923660024F1AB /* Frameworks */,
+				1AD485AE298923660024F1AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AD485B2298923660024F1AB /* PBXTargetDependency */,
+			);
+			name = CryatoUITests;
+			productName = CryatoUITests;
+			productReference = 1AD485B0298923660024F1AB /* CryatoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AD4858E298923630024F1AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					1AD48595298923630024F1AB = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					1AD485A5298923660024F1AB = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1AD48595298923630024F1AB;
+					};
+					1AD485AF298923660024F1AB = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1AD48595298923630024F1AB;
+					};
+				};
+			};
+			buildConfigurationList = 1AD48591298923630024F1AB /* Build configuration list for PBXProject "Cryato" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1AD4858D298923630024F1AB;
+			productRefGroup = 1AD48597298923630024F1AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AD48595298923630024F1AB /* Cryato */,
+				1AD485A5298923660024F1AB /* CryatoTests */,
+				1AD485AF298923660024F1AB /* CryatoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AD48594298923630024F1AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD485A1298923660024F1AB /* Preview Assets.xcassets in Resources */,
+				1AD4859E298923660024F1AB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD485A4298923660024F1AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD485AE298923660024F1AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AD48592298923630024F1AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD4859C298923630024F1AB /* ContentView.swift in Sources */,
+				1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD485A2298923660024F1AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD485AB298923660024F1AB /* CryatoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD485AC298923660024F1AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD485B7298923660024F1AB /* CryatoUITestsLaunchTests.swift in Sources */,
+				1AD485B5298923660024F1AB /* CryatoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1AD485A8298923660024F1AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AD48595298923630024F1AB /* Cryato */;
+			targetProxy = 1AD485A7298923660024F1AB /* PBXContainerItemProxy */;
+		};
+		1AD485B2298923660024F1AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AD48595298923630024F1AB /* Cryato */;
+			targetProxy = 1AD485B1298923660024F1AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1AD485B8298923660024F1AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1AD485B9298923660024F1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1AD485BB298923660024F1AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cryato/Preview Content\"";
+				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = blockchain.johnmelodyme.Cryato;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AD485BC298923660024F1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cryato/Preview Content\"";
+				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = blockchain.johnmelodyme.Cryato;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1AD485BE298923660024F1AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = blockchain.johnmelodyme.CryatoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cryato.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cryato";
+			};
+			name = Debug;
+		};
+		1AD485BF298923660024F1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = blockchain.johnmelodyme.CryatoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cryato.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cryato";
+			};
+			name = Release;
+		};
+		1AD485C1298923660024F1AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = blockchain.johnmelodyme.CryatoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cryato;
+			};
+			name = Debug;
+		};
+		1AD485C2298923660024F1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = blockchain.johnmelodyme.CryatoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cryato;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AD48591298923630024F1AB /* Build configuration list for PBXProject "Cryato" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD485B8298923660024F1AB /* Debug */,
+				1AD485B9298923660024F1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AD485BA298923660024F1AB /* Build configuration list for PBXNativeTarget "Cryato" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD485BB298923660024F1AB /* Debug */,
+				1AD485BC298923660024F1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AD485BD298923660024F1AB /* Build configuration list for PBXNativeTarget "CryatoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD485BE298923660024F1AB /* Debug */,
+				1AD485BF298923660024F1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AD485C0298923660024F1AB /* Build configuration list for PBXNativeTarget "CryatoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD485C1298923660024F1AB /* Debug */,
+				1AD485C2298923660024F1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AD4858E298923630024F1AB /* Project object */;
+}
