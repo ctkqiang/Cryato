@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) private var colorScheme
     
     @State private var selectedId = 0x0
     @State private var options = ["Sell", "Buy"]
@@ -19,7 +20,9 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 Form {
-                    Section(header: Text(pickerTitle).foregroundColor(Color.black).bold().fixedSize()) {
+                    Section(header: Text(pickerTitle).foregroundColor(
+                        self.colorScheme == .dark ? Color.white : Color.black).bold().fixedSize()
+                    ) {
                         Picker(selection: $selectedId, label: Text("")) {
                             Text(options[0]).tag(0x0)
                             Text(options[1]).tag(0x1)
@@ -41,7 +44,7 @@ struct ContentView: View {
                         /** Navigate to app preference page */
                         PreferenceView()
                     } label: {
-                        Image(systemName: "gearshape").foregroundColor(Color.black)
+                        Image(systemName: "gearshape").foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
                     }
                 }
             }

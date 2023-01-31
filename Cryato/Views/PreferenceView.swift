@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct PreferenceView: View {
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.openURL) private var openURL
+    
     @State private var isPresentingAlert: Bool = false
     @State private var selectedItem: String = ""
+    
     private var binanceUrl: String = "https://s.binance.com/8ER0kn3r"
     private var preferenceItems: [String] = ["Who created this app?", "Support this app", "Version"]
     
@@ -52,7 +55,7 @@ struct PreferenceView: View {
                     self.isPresentingAlert = true
                     self.selectedItem = items
                 } label: {
-                    Text(items).foregroundColor(Color.black)
+                    Text(items).foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
                 }.alert(isPresented: self.$isPresentingAlert, content: {
                     self.displayAlert()
                 }).fixedSize()
