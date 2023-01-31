@@ -17,6 +17,7 @@
 		1AD485C429894C330024F1AB /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD485C329894C330024F1AB /* BuyView.swift */; };
 		1AD485C729894D160024F1AB /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD485C629894D160024F1AB /* SellView.swift */; };
 		1AD485CB2989537D0024F1AB /* PreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD485CA2989537D0024F1AB /* PreferenceView.swift */; };
+		1AD485CE298980F60024F1AB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1AD485CD298980F60024F1AB /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1AD485C629894D160024F1AB /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
 		1AD485CA2989537D0024F1AB /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
 		1AD485CC2989562C0024F1AB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		1AD485CD298980F60024F1AB /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		1AD4858D298923630024F1AB = {
 			isa = PBXGroup;
 			children = (
+				1AD485CD298980F60024F1AB /* LICENSE */,
 				1AD485CC2989562C0024F1AB /* README.md */,
 				1AD48598298923630024F1AB /* Cryato */,
 				1AD485A9298923660024F1AB /* CryatoTests */,
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD485CE298980F60024F1AB /* LICENSE in Resources */,
 				1AD485A1298923660024F1AB /* Preview Assets.xcassets in Resources */,
 				1AD4859E298923660024F1AB /* Assets.xcassets in Resources */,
 			);
