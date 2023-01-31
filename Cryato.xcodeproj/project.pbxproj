@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D2298989BF00C2C773 /* Calculator.swift */; };
+		1A1B55D629899CD800C2C773 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D529899CD800C2C773 /* Double.swift */; };
 		1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48599298923630024F1AB /* CryatoApp.swift */; };
 		1AD4859C298923630024F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4859B298923630024F1AB /* ContentView.swift */; };
 		1AD4859E298923660024F1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4859D298923660024F1AB /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		1A1B55D2298989BF00C2C773 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		1A1B55D529899CD800C2C773 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1AD48596298923630024F1AB /* Cryato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD48599298923630024F1AB /* CryatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoApp.swift; sourceTree = "<group>"; };
 		1AD4859B298923630024F1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		1A1B55D429899CC700C2C773 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A1B55D529899CD800C2C773 /* Double.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1AD4858D298923630024F1AB = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		1AD48598298923630024F1AB /* Cryato */ = {
 			isa = PBXGroup;
 			children = (
+				1A1B55D429899CC700C2C773 /* Extensions */,
 				1A1B55D1298989A600C2C773 /* Controllers */,
 				1AD48599298923630024F1AB /* CryatoApp.swift */,
 				1AD485C529894C7C0024F1AB /* Views */,
@@ -297,6 +308,7 @@
 				1AD485C429894C330024F1AB /* BuyView.swift in Sources */,
 				1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */,
 				1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */,
+				1A1B55D629899CD800C2C773 /* Double.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

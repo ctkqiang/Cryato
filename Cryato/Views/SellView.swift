@@ -65,16 +65,15 @@ struct SellView: View {
                     }
                     
                     Button {
-                        
-                        /////////
                         print("Original price => \(self.originalPricePlaceholder)")
                         print("Selling price => \(self.sellingPricePlaceholder)")
                         
-                        var profit :Float = roundf((Float(self.sellingPricePlaceholder) ?? 0) - (Float(self.originalPricePlaceholder) ?? 0))
+                        let profit :String = String(
+                            format: "%.2f",
+                            (Double(self.sellingPricePlaceholder) ?? 0)! - (Double(self.originalPricePlaceholder) ?? 0)!.roundThreeDigits
+                        )
                         
                         print("Profits => \(profit)")
-                        ///////////
-                        
                     } label: {
                         Text("Calculate")
                             .frame(minWidth: 0, maxWidth: .infinity)
