@@ -50,6 +50,7 @@
 		1AD485C329894C330024F1AB /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		1AD485C629894D160024F1AB /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
 		1AD485CA2989537D0024F1AB /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
+		1AD485CC2989562C0024F1AB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 		1AD4858D298923630024F1AB = {
 			isa = PBXGroup;
 			children = (
+				1AD485CC2989562C0024F1AB /* README.md */,
 				1AD48598298923630024F1AB /* Cryato */,
 				1AD485A9298923660024F1AB /* CryatoTests */,
 				1AD485B3298923660024F1AB /* CryatoUITests */,
