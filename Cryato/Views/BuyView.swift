@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct BuyView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
+    @State private var originalPricePlaceholder: String = ""
+    
+    private var sectionOneOriginalPrice = "Original Price"
+    private var textFieldPhoriginalPrice = "Input the original price"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Form {
+                Section(header: Text(self.sectionOneOriginalPrice)) {
+                    TextField(self.textFieldPhoriginalPrice, text: self.$originalPricePlaceholder)
+                }
+            }
+        }
     }
 }
 

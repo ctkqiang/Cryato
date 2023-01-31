@@ -34,7 +34,7 @@ struct PreferenceView: View {
         case self.preferenceItems[2]:
             return Alert(
                 title: Text(self.selectedItem),
-                message: Text("You are running on Verions 1.0.0"),
+                message: Text("You are running on Version 1.0.0"),
                 dismissButton: .default(Text("Okay"))
             )
         default:

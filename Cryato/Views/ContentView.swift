@@ -14,28 +14,25 @@ struct ContentView: View {
     @State private var options = ["Sell", "Buy"]
     
     private var navigationTitle = "Cryato"
-    private var pickerTitle = "I want to"
     
     var body: some View {
         NavigationView {
             VStack {
-                Form {
-                    Section(header: Text(pickerTitle).foregroundColor(
-                        self.colorScheme == .dark ? Color.white : Color.black).bold().fixedSize()
-                    ) {
-                        Picker(selection: $selectedId, label: Text("")) {
-                            Text(options[0]).tag(0x0)
-                            Text(options[1]).tag(0x1)
-                        }.pickerStyle(SegmentedPickerStyle()).listRowSeparator(
-                            .hidden,
-                            edges: [.bottom]
-                        )
-                        
-                        if (self.selectedId == 0x0) {
-                            SellView()
-                        } else {
-                            BuyView()
-                        }
+                Section(header: Text("").foregroundColor(
+                    self.colorScheme == .dark ? Color.white : Color.black).bold().fixedSize()
+                ) {
+                    Picker(selection: $selectedId, label: Text("")) {
+                        Text(options[0]).tag(0x0)
+                        Text(options[1]).tag(0x1)
+                    }.pickerStyle(SegmentedPickerStyle()).listRowSeparator(
+                        .hidden,
+                        edges: [.bottom]
+                    ).padding()
+                    
+                    if (self.selectedId == 0x0) {
+                        SellView()
+                    } else {
+                        BuyView()
                     }
                 }
             }.navigationTitle(navigationTitle).toolbar {
