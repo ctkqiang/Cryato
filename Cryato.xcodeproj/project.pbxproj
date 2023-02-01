@@ -12,6 +12,14 @@
 		1A1B55D8298A371200C2C773 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D7298A371200C2C773 /* View.swift */; };
 		1A1B55DB298A467E00C2C773 /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55DA298A467E00C2C773 /* FormValidator.swift */; };
 		1A1B55DF298A703800C2C773 /* PrivacyPolicies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A1B55DE298A703800C2C773 /* PrivacyPolicies.txt */; };
+		1A30FA1E298A7A5B007301C1 /* IMG_2136.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA16298A7A5A007301C1 /* IMG_2136.png */; };
+		1A30FA1F298A7A5B007301C1 /* IMG_2141.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA17298A7A5A007301C1 /* IMG_2141.png */; };
+		1A30FA20298A7A5B007301C1 /* IMG_2140.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA18298A7A5B007301C1 /* IMG_2140.png */; };
+		1A30FA21298A7A5B007301C1 /* IMG_2137.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA19298A7A5B007301C1 /* IMG_2137.png */; };
+		1A30FA22298A7A5B007301C1 /* IMG_2142.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA1A298A7A5B007301C1 /* IMG_2142.png */; };
+		1A30FA23298A7A5B007301C1 /* IMG_2143.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA1B298A7A5B007301C1 /* IMG_2143.png */; };
+		1A30FA24298A7A5B007301C1 /* IMG_2138.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA1C298A7A5B007301C1 /* IMG_2138.png */; };
+		1A30FA25298A7A5B007301C1 /* IMG_2139.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA1D298A7A5B007301C1 /* IMG_2139.png */; };
 		1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48599298923630024F1AB /* CryatoApp.swift */; };
 		1AD4859C298923630024F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4859B298923630024F1AB /* ContentView.swift */; };
 		1AD4859E298923660024F1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4859D298923660024F1AB /* Assets.xcassets */; };
@@ -48,6 +56,14 @@
 		1A1B55D7298A371200C2C773 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		1A1B55DA298A467E00C2C773 /* FormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
 		1A1B55DE298A703800C2C773 /* PrivacyPolicies.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicies.txt; sourceTree = "<group>"; };
+		1A30FA16298A7A5A007301C1 /* IMG_2136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2136.png; sourceTree = "<group>"; };
+		1A30FA17298A7A5A007301C1 /* IMG_2141.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2141.png; sourceTree = "<group>"; };
+		1A30FA18298A7A5B007301C1 /* IMG_2140.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2140.png; sourceTree = "<group>"; };
+		1A30FA19298A7A5B007301C1 /* IMG_2137.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2137.png; sourceTree = "<group>"; };
+		1A30FA1A298A7A5B007301C1 /* IMG_2142.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2142.png; sourceTree = "<group>"; };
+		1A30FA1B298A7A5B007301C1 /* IMG_2143.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2143.png; sourceTree = "<group>"; };
+		1A30FA1C298A7A5B007301C1 /* IMG_2138.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2138.png; sourceTree = "<group>"; };
+		1A30FA1D298A7A5B007301C1 /* IMG_2139.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2139.png; sourceTree = "<group>"; };
 		1AD48596298923630024F1AB /* Cryato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD48599298923630024F1AB /* CryatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoApp.swift; sourceTree = "<group>"; };
 		1AD4859B298923630024F1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,12 +131,28 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
+		1A30FA15298A7A19007301C1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1A30FA16298A7A5A007301C1 /* IMG_2136.png */,
+				1A30FA19298A7A5B007301C1 /* IMG_2137.png */,
+				1A30FA1C298A7A5B007301C1 /* IMG_2138.png */,
+				1A30FA1D298A7A5B007301C1 /* IMG_2139.png */,
+				1A30FA18298A7A5B007301C1 /* IMG_2140.png */,
+				1A30FA17298A7A5A007301C1 /* IMG_2141.png */,
+				1A30FA1A298A7A5B007301C1 /* IMG_2142.png */,
+				1A30FA1B298A7A5B007301C1 /* IMG_2143.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		1AD4858D298923630024F1AB = {
 			isa = PBXGroup;
 			children = (
 				1A1B55DE298A703800C2C773 /* PrivacyPolicies.txt */,
 				1AD485CD298980F60024F1AB /* LICENSE */,
 				1AD485CC2989562C0024F1AB /* README.md */,
+				1A30FA15298A7A19007301C1 /* Assets */,
 				1AD48598298923630024F1AB /* Cryato */,
 				1AD485A9298923660024F1AB /* CryatoTests */,
 				1AD485B3298923660024F1AB /* CryatoUITests */,
@@ -292,9 +324,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A30FA24298A7A5B007301C1 /* IMG_2138.png in Resources */,
+				1A30FA21298A7A5B007301C1 /* IMG_2137.png in Resources */,
+				1A30FA1E298A7A5B007301C1 /* IMG_2136.png in Resources */,
+				1A30FA20298A7A5B007301C1 /* IMG_2140.png in Resources */,
+				1A30FA1F298A7A5B007301C1 /* IMG_2141.png in Resources */,
 				1AD485CE298980F60024F1AB /* LICENSE in Resources */,
+				1A30FA23298A7A5B007301C1 /* IMG_2143.png in Resources */,
 				1AD485A1298923660024F1AB /* Preview Assets.xcassets in Resources */,
 				1AD4859E298923660024F1AB /* Assets.xcassets in Resources */,
+				1A30FA22298A7A5B007301C1 /* IMG_2142.png in Resources */,
+				1A30FA25298A7A5B007301C1 /* IMG_2139.png in Resources */,
 				1A1B55DF298A703800C2C773 /* PrivacyPolicies.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,14 +525,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Cryato/Preview Content\"";
 				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -502,9 +544,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = blockchain.johnmelodyme.Cryato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -514,14 +559,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Cryato/Preview Content\"";
 				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -531,9 +578,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = blockchain.johnmelodyme.Cryato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

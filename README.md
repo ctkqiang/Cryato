@@ -1,6 +1,7 @@
 # Cryato
 
 ### Introduction
+
 Cryato is a mobile app that makes crypto arbitrage calculations easy.
 It is an offline app that allows users to calculate their profits from buying and selling
 different cryptocurrencies on different exchanges, taking into account the latest
@@ -8,7 +9,6 @@ exchange rates and market conditions. The app is designed to be simple and easy 
 use, and does not require any prior knowledge of trading or crypto arbitrage. With
 Cryato, users can make informed investment decisions and maximize their profits
 from arbitraging in cryptocurrency.
-
 
 ### License
 
@@ -36,3 +36,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ```
+
+### Beta Version (Tesflight)
+
+[Click Here](https://testflight.apple.com/join/MxNNeoaA)
+
+### Download
+
+<div id="download">
+   <a href="#">
+    <img src="./Assets/appstore.png" width="180">
+   </a>
+</div>
+
+### Screenshots
+
+<div id="group-1">
+    <img src="./Assets/1.png" width="160">
+    <img src="./Assets/2.png" width="160">
+    <img src="./Assets/3.png" width="160">
+    <img src="./Assets/4.png" width="160">
+    <img src="./Assets/5.png" width="160">
+    <img src="./Assets/6.png" width="160">
+    <img src="./Assets/7.png" width="160">
+    <img src="./Assets/8.png" width="160">
+</div>
+
+</br>
+
+### Support This Project
+
+<div id="group-2">
+    <img src="./Assets/binance.jpg" width="160">
+</div>
