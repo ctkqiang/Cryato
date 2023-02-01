@@ -12,14 +12,18 @@ struct SellView: View {
     
     @State private var originalPricePlaceholder :String = ""
     @State private var sellingPricePlaceholder :String = ""
+    @State private var currentProfitPlaceholder :String = ""
+    @State private var isShowingResult :Bool = false
+    @State private var isInvalidate :Bool = false
     
     private var sectionOneOriginalPrice :String = "Original Price"
     private var sectionTwoSellingPrice :String = "Selling Price"
     private var calculator :Calculator = Calculator()
+    private var validator :FormValidator = FormValidator()
     
-    private func validate(_ value :String, _ mode :Int) -> Void {
-        if value.isEmpty {
-            print("This field is required")
+    private func validate(_ value :String, _ mode :Int) throws -> Void {
+        if (value.isEmpty) {
+            self.isInvalidate = true
         }
         
         if (mode == 0x0) {
@@ -30,6 +34,14 @@ struct SellView: View {
         }
         
         return
+    }
+    
+    private func customerOrderQuantity(_ value :String, _ quant :Double) -> String {
+        return String(format: "%.2f", (Double(self.currentProfitPlaceholder) ?? 0)! * quant)
+    }
+    
+    private func isNegative(_ value :String) -> String {
+        return (Double(value) ?? 0 < 0) ? "losses": "profits"
     }
     
     var body: some View {
@@ -46,7 +58,7 @@ struct SellView: View {
                         .keyboardType(.decimalPad)
                         .controlSize(.large)
                         .onChange(of: self.originalPricePlaceholder) { input in
-                            self.validate(input, 0x0)
+                           try! self.validate(input, 0x0)
                         }
                     }
                     
@@ -60,20 +72,25 @@ struct SellView: View {
                         .keyboardType(.decimalPad)
                         .controlSize(.large)
                         .onChange(of: self.sellingPricePlaceholder) { input in
-                            self.validate(input, 0x1)
+                           try! self.validate(input, 0x1)
                         }
                     }
                     
                     Button {
-                        print("Original price => \(self.originalPricePlaceholder)")
-                        print("Selling price => \(self.sellingPricePlaceholder)")
+                        let result :Double = (Double(self.sellingPricePlaceholder) ?? 0)! - (Double(self.originalPricePlaceholder) ?? 0)!.roundThreeDigits
                         
-                        let profit :String = String(
-                            format: "%.2f",
-                            (Double(self.sellingPricePlaceholder) ?? 0)! - (Double(self.originalPricePlaceholder) ?? 0)!.roundThreeDigits
-                        )
+                        self.currentProfitPlaceholder = String(format: "%.2f", result)
                         
-                        print("Profits => \(profit)")
+                        if (!(self.originalPricePlaceholder.isEmpty) && !(self.sellingPricePlaceholder.isEmpty)) {
+                            self.isShowingResult = true
+                        }
+                        
+                        if(self.originalPricePlaceholder == "" && self.currentProfitPlaceholder == "") {
+                            self.isInvalidate = true;
+                        }
+                        
+                        hideKeyboard()
+                        
                     } label: {
                         Text("Calculate")
                             .frame(minWidth: 0, maxWidth: .infinity)
@@ -88,11 +105,36 @@ struct SellView: View {
                     .controlSize(.large)
                 }
                 
+                if self.isInvalidate {
+                    Text("Please input the original price and your selling price")
+                }
+                
+                if self.isShowingResult {
+                    
+                    let profits :[String] = [
+                        self.currentProfitPlaceholder,
+                        self.customerOrderQuantity(self.currentProfitPlaceholder, 10),
+                        self.customerOrderQuantity(self.currentProfitPlaceholder, 100),
+                        self.customerOrderQuantity(self.currentProfitPlaceholder, 1000),
+                        self.customerOrderQuantity(self.currentProfitPlaceholder, 10000)
+                    ]
+                    
+                    Text("If they bought $1 you got $\(profits[0]) of \(self.isNegative(profits[0])).")
+                    Text("If they bought $10 you got $\(profits[1]) of \(self.isNegative(profits[1])).")
+                    Text("If they bought $100 you got $\(profits[2]) of \(self.isNegative(profits[2])).")
+                    Text("If they bought $1000 you got $\(profits[3]) of \(self.isNegative(profits[3])).")
+                    Text("If they bought $1000 you got $\(profits[4]) of \(self.isNegative(profits[4])).")
+                }
+                
             }
         }
         .scrollDismissesKeyboard(.interactively)
         .background(self.colorScheme == .dark ? .black : .white)
-        .refreshable { /** Do nothing here */ }
+        .refreshable {
+            self.isShowingResult = false
+            self.sellingPricePlaceholder = ""
+            self.originalPricePlaceholder = ""
+        }
     }
 }
 
