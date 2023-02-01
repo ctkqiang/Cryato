@@ -94,20 +94,17 @@ struct SellView: View {
                     } label: {
                         Text("Calculate")
                             .frame(minWidth: 0, maxWidth: .infinity)
-                            .foregroundColor(self.colorScheme == .dark ? .black : .white)
+                            .foregroundColor(.white)
                     }
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.roundedRectangle)
-                    .tint(self.colorScheme == .dark ? .white.opacity(0.8) : .black)
+                    .tint(.red)
                     .padding()
                     .frame(height: 60)
                     .controlSize(.large)
                 }
                 
-                if self.isInvalidate {
-                    Text("Please input the original price and your selling price")
-                }
                 
                 if self.isShowingResult {
                     

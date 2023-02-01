@@ -11,6 +11,7 @@
 		1A1B55D629899CD800C2C773 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D529899CD800C2C773 /* Double.swift */; };
 		1A1B55D8298A371200C2C773 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D7298A371200C2C773 /* View.swift */; };
 		1A1B55DB298A467E00C2C773 /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55DA298A467E00C2C773 /* FormValidator.swift */; };
+		1A1B55DF298A703800C2C773 /* PrivacyPolicies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A1B55DE298A703800C2C773 /* PrivacyPolicies.txt */; };
 		1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48599298923630024F1AB /* CryatoApp.swift */; };
 		1AD4859C298923630024F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4859B298923630024F1AB /* ContentView.swift */; };
 		1AD4859E298923660024F1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4859D298923660024F1AB /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		1A1B55D529899CD800C2C773 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1A1B55D7298A371200C2C773 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		1A1B55DA298A467E00C2C773 /* FormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
+		1A1B55DE298A703800C2C773 /* PrivacyPolicies.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicies.txt; sourceTree = "<group>"; };
 		1AD48596298923630024F1AB /* Cryato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD48599298923630024F1AB /* CryatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoApp.swift; sourceTree = "<group>"; };
 		1AD4859B298923630024F1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		1AD4858D298923630024F1AB = {
 			isa = PBXGroup;
 			children = (
+				1A1B55DE298A703800C2C773 /* PrivacyPolicies.txt */,
 				1AD485CD298980F60024F1AB /* LICENSE */,
 				1AD485CC2989562C0024F1AB /* README.md */,
 				1AD48598298923630024F1AB /* Cryato */,
@@ -292,6 +295,7 @@
 				1AD485CE298980F60024F1AB /* LICENSE in Resources */,
 				1AD485A1298923660024F1AB /* Preview Assets.xcassets in Resources */,
 				1AD4859E298923660024F1AB /* Assets.xcassets in Resources */,
+				1A1B55DF298A703800C2C773 /* PrivacyPolicies.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
