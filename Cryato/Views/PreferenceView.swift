@@ -72,7 +72,7 @@ struct PreferenceView: View {
                         return Alert(
                             title: Text("Disclaimer"),
                             message: Text(
-                                "You are about to open a donation url in the browser. Proceed?"
+                                "You are about open url in the browser. Proceed?"
                             ),
                             primaryButton: .default(Text("Visit")) {
                                 if let url = URL(string: self.wiseUrl) {
