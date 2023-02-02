@@ -22,6 +22,8 @@
 		1A30FA37298A80A9007301C1 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA2D298A80A9007301C1 /* 4.png */; };
 		1A30FA38298A80A9007301C1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA2E298A80A9007301C1 /* 1.png */; };
 		1A30FA39298A80A9007301C1 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA2F298A80A9007301C1 /* 8.png */; };
+		1A9E74E6298C129000BFB165 /* binancelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E5298C129000BFB165 /* binancelogo.png */; };
+		1A9E74E8298C12A400BFB165 /* wise.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E7298C12A400BFB165 /* wise.png */; };
 		1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48599298923630024F1AB /* CryatoApp.swift */; };
 		1AD4859C298923630024F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4859B298923630024F1AB /* ContentView.swift */; };
 		1AD4859E298923660024F1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4859D298923660024F1AB /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 		1A30FA2D298A80A9007301C1 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		1A30FA2E298A80A9007301C1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		1A30FA2F298A80A9007301C1 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		1A9E74E5298C129000BFB165 /* binancelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = binancelogo.png; sourceTree = "<group>"; };
+		1A9E74E7298C12A400BFB165 /* wise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wise.png; sourceTree = "<group>"; };
 		1AD48596298923630024F1AB /* Cryato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD48599298923630024F1AB /* CryatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoApp.swift; sourceTree = "<group>"; };
 		1AD4859B298923630024F1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 		1A30FA15298A7A19007301C1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1A9E74E7298C12A400BFB165 /* wise.png */,
+				1A9E74E5298C129000BFB165 /* binancelogo.png */,
 				1A30FA2E298A80A9007301C1 /* 1.png */,
 				1A30FA28298A80A9007301C1 /* 2.png */,
 				1A30FA27298A80A9007301C1 /* 3.png */,
@@ -330,8 +336,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9E74E6298C129000BFB165 /* binancelogo.png in Resources */,
 				1A30FA37298A80A9007301C1 /* 4.png in Resources */,
 				1A30FA36298A80A9007301C1 /* 7.png in Resources */,
+				1A9E74E8298C12A400BFB165 /* wise.png in Resources */,
 				1AD485CE298980F60024F1AB /* LICENSE in Resources */,
 				1AD485A1298923660024F1AB /* Preview Assets.xcassets in Resources */,
 				1A30FA32298A80A9007301C1 /* 2.png in Resources */,

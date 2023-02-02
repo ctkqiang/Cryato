@@ -12,55 +12,80 @@ struct PreferenceView: View {
     @Environment(\.openURL) private var openURL
     
     @State private var isPresentingAlert: Bool = false
+    @State private var isPresentingDonation: Bool = false
+    @State private var isShowingWebView: Bool = false
     @State private var selectedItem: String = ""
     
-    private var binanceUrl: String = "https://s.binance.com/8ER0kn3r"
-    private var preferenceItems: [String] = ["Who created this app?", "Support this app", "Version"]
-    
-    private func displayAlert() -> Alert {
-        if (self.selectedItem == self.preferenceItems[1]) {
-            self.openUrl(url: self.binanceUrl)
-        }
-        
-        switch self.selectedItem {
-        case self.preferenceItems[0]:
-            return Alert(
-                title: Text(self.selectedItem),
-                message: Text(
-                    "This application is developed by \nJohn Melody Me"
-                ),
-                dismissButton: .default(Text("Okay"))
-            )
-        case self.preferenceItems[2]:
-            return Alert(
-                title: Text(self.selectedItem),
-                message: Text("You are running on Version 1.0.0"),
-                dismissButton: .default(Text("Okay"))
-            )
-        default:
-            return Alert(title: Text(""), message: Text("Hi 🤗"))
-        }
-    }
+    private var wiseUrl: String = "https://tinyurl.com/johnmelodymewise"
+    private var preferenceItems: [String] = [
+        "Who created this app?",
+        "Version"
+    ]
     
     private func openUrl(url :String) -> Void {
         if (self.selectedItem == self.preferenceItems[1]) {
-            openURL(URL(string: url)!)
+            if let url = URL(string: self.wiseUrl) {
+                UIApplication.shared.open(url, options: [:], completionHandler:nil)
+            }
         }
     }
     
     var body: some View {
-        List {
-            ForEach(self.preferenceItems, id: \.self ) {
-                items in Button {
-                    self.isPresentingAlert = true
-                    self.selectedItem = items
-                } label: {
-                    Text(items).foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
-                }.alert(isPresented: self.$isPresentingAlert, content: {
-                    self.displayAlert()
-                }).fixedSize()
+        VStack {
+            Form {
+                List {
+                    ForEach(self.preferenceItems, id: \.self ) {
+                        items in Button {
+                            self.isPresentingAlert = true
+                            self.selectedItem = items
+                        } label: {
+                            Text(items).foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
+                        }.alert(isPresented: self.$isPresentingAlert, content: {
+                                                
+                            if self.selectedItem == self.preferenceItems[1] {
+                                return Alert(
+                                    title: Text(self.selectedItem),
+                                    message: Text(
+                                        "This app is running on Version 1.0.0"
+                                    ),
+                                    dismissButton: .default(Text("Okay"))
+                                )
+                            }
+                            
+                            
+                            return Alert(
+                                title: Text(self.selectedItem),
+                                message: Text(
+                                    "This application is developed by \nJohn Melody Me"
+                                ),
+                                dismissButton: .default(Text("Okay"))
+                            )
+                        }).fixedSize()
+                    }
+                    
+                    Button("Support this application", action: {
+                        self.isPresentingDonation = true
+                    })
+                    .foregroundColor(
+                        self.colorScheme == .dark ? Color.white : Color.black
+                    ).alert(isPresented: self.$isPresentingDonation, content: {
+                        return Alert(
+                            title: Text("Disclaimer"),
+                            message: Text(
+                                "You are about to open a donation url in the browser. Proceed?"
+                            ),
+                            primaryButton: .default(Text("Visit")) {
+                                if let url = URL(string: self.wiseUrl) {
+                                    openURL(url)
+                                }
+                            },
+                            secondaryButton: .cancel()
+                        )
+                    })
+                }
             }
         }
+        
     }
 }
 
