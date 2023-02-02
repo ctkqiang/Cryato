@@ -1,4 +1,6 @@
-### Support this application
+### Donate via
+
+> Click on the icon to proceed to donate :)
 
 <div id="support">
     <a href="https://wise.com/pay#l8QXeH1uJDssR1cpz9lKNqdXA9s">
