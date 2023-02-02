@@ -16,7 +16,7 @@ struct PreferenceView: View {
     @State private var isShowingWebView: Bool = false
     @State private var selectedItem: String = ""
     
-    private var wiseUrl: String = "https://github.com/johnmelodyme/Cryato/blob/main/Donation.md"
+    private var wiseUrl: String = "https://github.com/johnmelodyme/Cryato"
     private var preferenceItems: [String] = [
         "Who created this app?",
         "Version"
