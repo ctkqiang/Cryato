@@ -108,7 +108,7 @@ struct BuyView: View {
                     if self.isShowingResult {
                         let profits :[String] = [ self.currentProfitPlaceholder ]
                         
-                        Text("If you buy at $\(self.buyingPricePlaceholder) you \(self.isNegative(profits[0])) $\(profits[0]) .")
+                        Text("If you buy 1 USDT at $\(self.buyingPricePlaceholder) you \(self.isNegative(profits[0])) $\(profits[0]) .")
                     }
                 }
             }.scrollDismissesKeyboard(.interactively)

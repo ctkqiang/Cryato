@@ -116,11 +116,11 @@ struct SellView: View {
                         self.customerOrderQuantity(self.currentProfitPlaceholder, 10000)
                     ]
                     
-                    Text("If they bought $1 you got $\(profits[0]) of \(self.isNegative(profits[0])).")
-                    Text("If they bought $10 you got $\(profits[1]) of \(self.isNegative(profits[1])).")
-                    Text("If they bought $100 you got $\(profits[2]) of \(self.isNegative(profits[2])).")
-                    Text("If they bought $1000 you got $\(profits[3]) of \(self.isNegative(profits[3])).")
-                    Text("If they bought $1000 you got $\(profits[4]) of \(self.isNegative(profits[4])).")
+                    Text("If they bought USDT1 you got $\(profits[0]) of \(self.isNegative(profits[0])).")
+                    Text("If they bought USDT10 you got $\(profits[1]) of \(self.isNegative(profits[1])).")
+                    Text("If they bought USDT100 you got $\(profits[2]) of \(self.isNegative(profits[2])).")
+                    Text("If they bought USDT1000 you got $\(profits[3]) of \(self.isNegative(profits[3])).")
+                    Text("If they bought USDT1000 you got $\(profits[4]) of \(self.isNegative(profits[4])).")
                 }
                 
             }

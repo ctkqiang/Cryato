@@ -72,13 +72,9 @@ struct PreferenceView: View {
                         return Alert(
                             title: Text("Disclaimer"),
                             message: Text(
-                                "You are about open url in the browser. Proceed?"
+                                "Visit \(wiseUrl) for more."
                             ),
-                            primaryButton: .default(Text("Visit")) {
-                                if let url = URL(string: self.wiseUrl) {
-                                    openURL(url)
-                                }
-                            },
+                            primaryButton: .default(Text("Ok")),
                             secondaryButton: .cancel()
                         )
                     })
