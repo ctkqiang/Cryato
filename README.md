@@ -44,7 +44,7 @@ SOFTWARE.
 ### Download
 
 <div id="download">
-   <a href="#">
+   <a href="https://apps.apple.com/us/app/cryato/id1669208377">
     <img src="./Assets/appstore.png" width="180">
    </a>
 </div>
