@@ -46,33 +46,47 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Section(header: Text("").foregroundColor(
-                    self.colorScheme == .dark ? Color.white : Color.black).bold().fixedSize()
-                ) {
-                    Picker(selection: $selectedId, label: Text("")) {
-                        Text(options[0]).tag(0x0)
-                        Text(options[1]).tag(0x1)
-                    }.pickerStyle(SegmentedPickerStyle()).listRowSeparator(
-                        .hidden,
-                        edges: [.bottom]
-                    ).padding()
+                TabView {
+                    VStack {
+                        Section(header: Text("").foregroundColor(
+                            self.colorScheme == .dark ? Color.white : Color.black).bold().fixedSize()
+                        ) {
+                            Picker(selection: $selectedId, label: Text("")) {
+                                Text(options[0]).tag(0x0)
+                                Text(options[1]).tag(0x1)
+                            }.pickerStyle(SegmentedPickerStyle()).listRowSeparator(
+                                .hidden,
+                                edges: [.bottom]
+                            ).padding()
+                            
+                            if (self.selectedId == 0x0) {
+                                SellView()
+                            } else {
+                                BuyView()
+                            }
+                        }
+                    }.navigationTitle(navigationTitle).toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            NavigationLink {
+                                /** Navigate to app preference page */
+                                PreferenceView()
+                            } label: {
+                                Image(systemName: "gearshape").foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
+                            }
+                        }
+                    }.tabItem {
+                        Image(systemName: "number")
+                        Text("Calculator")
+                    }
                     
-                    if (self.selectedId == 0x0) {
-                        SellView()
-                    } else {
-                        BuyView()
+                    ScannerView().tabItem {
+                        Image(systemName: "dot.radiowaves.left.and.right")
+                        Text("Scanner")
                     }
-                }
-            }.navigationTitle(navigationTitle).toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink {
-                        /** Navigate to app preference page */
-                        PreferenceView()
-                    } label: {
-                        Image(systemName: "gearshape").foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
-                    }
-                }
+                }.tint(self.colorScheme == .dark ? Color.white : Color.black)
             }
+            
+            
         }.background(self.colorScheme == .dark ? .black : .white)
     }
 }

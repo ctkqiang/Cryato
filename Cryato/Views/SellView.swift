@@ -113,14 +113,16 @@ struct SellView: View {
                         self.customerOrderQuantity(self.currentProfitPlaceholder, 10),
                         self.customerOrderQuantity(self.currentProfitPlaceholder, 100),
                         self.customerOrderQuantity(self.currentProfitPlaceholder, 1000),
-                        self.customerOrderQuantity(self.currentProfitPlaceholder, 10000)
+                        self.customerOrderQuantity(self.currentProfitPlaceholder, 10000),
+                        self.customerOrderQuantity(self.currentProfitPlaceholder, 100000)
                     ]
                     
-                    Text("If they bought USDT1 you got $\(profits[0]) of \(self.isNegative(profits[0])).")
-                    Text("If they bought USDT10 you got $\(profits[1]) of \(self.isNegative(profits[1])).")
-                    Text("If they bought USDT100 you got $\(profits[2]) of \(self.isNegative(profits[2])).")
-                    Text("If they bought USDT1000 you got $\(profits[3]) of \(self.isNegative(profits[3])).")
-                    Text("If they bought USDT1000 you got $\(profits[4]) of \(self.isNegative(profits[4])).")
+                    Text("If they bought 1 unit you got $\(profits[0]) of \(self.isNegative(profits[0])).")
+                    Text("If they bought 10 units got $\(profits[1]) of \(self.isNegative(profits[1])).")
+                    Text("If they bought 100 units you got $\(profits[2]) of \(self.isNegative(profits[2])).")
+                    Text("If they bought 1000 units you got $\(profits[3]) of \(self.isNegative(profits[3])).")
+                    Text("If they bought 10000 units you got $\(profits[4]) of \(self.isNegative(profits[4])).")
+                    Text("If they bought 100000 units you got $\(profits[5]) of \(self.isNegative(profits[5])).")
                 }
                 
             }

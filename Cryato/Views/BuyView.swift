@@ -104,7 +104,6 @@ struct BuyView: View {
                     .frame(height: 60)
                     .controlSize(.large)
                     
-                    
                     if self.isShowingResult {
                         let profits :[String] = [ self.currentProfitPlaceholder ]
                         

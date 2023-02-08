@@ -22,6 +22,7 @@
 		1A30FA37298A80A9007301C1 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA2D298A80A9007301C1 /* 4.png */; };
 		1A30FA38298A80A9007301C1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA2E298A80A9007301C1 /* 1.png */; };
 		1A30FA39298A80A9007301C1 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA2F298A80A9007301C1 /* 8.png */; };
+		1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B04EB2993D547008D46C3 /* ScannerView.swift */; };
 		1A9E74E6298C129000BFB165 /* binancelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E5298C129000BFB165 /* binancelogo.png */; };
 		1A9E74E8298C12A400BFB165 /* wise.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E7298C12A400BFB165 /* wise.png */; };
 		1A9E74EA298C150E00BFB165 /* Donation.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E9298C150E00BFB165 /* Donation.md */; };
@@ -71,6 +72,7 @@
 		1A30FA2D298A80A9007301C1 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		1A30FA2E298A80A9007301C1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		1A30FA2F298A80A9007301C1 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		1A7B04EB2993D547008D46C3 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		1A9E74E5298C129000BFB165 /* binancelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = binancelogo.png; sourceTree = "<group>"; };
 		1A9E74E7298C12A400BFB165 /* wise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wise.png; sourceTree = "<group>"; };
 		1A9E74E9298C150E00BFB165 /* Donation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Donation.md; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				1AD4859B298923630024F1AB /* ContentView.swift */,
 				1AD485C629894D160024F1AB /* SellView.swift */,
 				1AD485C329894C330024F1AB /* BuyView.swift */,
+				1A7B04EB2993D547008D46C3 /* ScannerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */,
 				1A1B55DB298A467E00C2C773 /* FormValidator.swift in Sources */,
 				1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */,
+				1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */,
 				1A1B55D629899CD800C2C773 /* Double.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
