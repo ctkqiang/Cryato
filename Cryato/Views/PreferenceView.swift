@@ -72,7 +72,7 @@ struct PreferenceView: View {
                         return Alert(
                             title: Text("Disclaimer"),
                             message: Text(
-                                "Visit \(wiseUrl) for more."
+                                "Visit \n\(wiseUrl) for more."
                             ),
                             primaryButton: .default(Text("Ok")),
                             secondaryButton: .cancel()
