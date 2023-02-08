@@ -65,28 +65,34 @@ struct ContentView: View {
                                 BuyView()
                             }
                         }
-                    }.navigationTitle(navigationTitle).toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            NavigationLink {
-                                /** Navigate to app preference page */
-                                PreferenceView()
-                            } label: {
-                                Image(systemName: "gearshape").foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
-                            }
-                        }
                     }.tabItem {
                         Image(systemName: "number")
                         Text("Calculator")
                     }
-                    
+                                        
                     ScannerView().tabItem {
                         Image(systemName: "dot.radiowaves.left.and.right")
                         Text("Scanner")
                     }
+                    
+                    RecordsView().tabItem {
+                        Image(systemName: "note.text.badge.plus")
+                        Text("Record")
+                    }
                 }.tint(self.colorScheme == .dark ? Color.white : Color.black)
-            }
-            
-            
+            }.scrollDismissesKeyboard(.interactively)
+                .background(self.colorScheme == .dark ? .black : .white)
+                .refreshable {}
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink {
+                            /** Navigate to app preference page */
+                            PreferenceView()
+                        } label: {
+                            Image(systemName: "gearshape").foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
+                        }
+                    }
+                }
         }.background(self.colorScheme == .dark ? .black : .white)
     }
 }

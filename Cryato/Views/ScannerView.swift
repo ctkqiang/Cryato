@@ -20,10 +20,15 @@ struct ScannerView: View {
                         TextField("TransactionId", text: self.$transactionId)
                         .frame(height: 60)
                         .controlSize(.large)
+                        
+                        
                     }
-                }
+                }.navigationBarTitle("Scanner")
+                    .scrollDismissesKeyboard(.interactively)
+                    .background(self.colorScheme == .dark ? .black : .white)
+                    .refreshable {}
             }.background(self.colorScheme == .dark ? .black : .white)
-        }.navigationTitle("")
+        }
     }
 }
 
