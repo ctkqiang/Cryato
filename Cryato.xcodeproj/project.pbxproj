@@ -28,6 +28,9 @@
 		1A510D282994C07000F65B0D /* SharedPreferenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A510D272994C07000F65B0D /* SharedPreferenceType.swift */; };
 		1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B04EB2993D547008D46C3 /* ScannerView.swift */; };
 		1A7B04EE2993E6FB008D46C3 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */; };
+		1A93904D299533F1004AB56D /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93904C299533F1004AB56D /* AssetsView.swift */; };
+		1A939050299552F3004AB56D /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93904F299552F3004AB56D /* Transactions.swift */; };
+		1A939052299554BE004AB56D /* TransactionsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A939051299554BD004AB56D /* TransactionsHelper.swift */; };
 		1A9E74E6298C129000BFB165 /* binancelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E5298C129000BFB165 /* binancelogo.png */; };
 		1A9E74E8298C12A400BFB165 /* wise.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E7298C12A400BFB165 /* wise.png */; };
 		1A9E74EA298C150E00BFB165 /* Donation.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E9298C150E00BFB165 /* Donation.md */; };
@@ -85,6 +88,9 @@
 		1A510D292994F7B300F65B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1A7B04EB2993D547008D46C3 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
+		1A93904C299533F1004AB56D /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
+		1A93904F299552F3004AB56D /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
+		1A939051299554BD004AB56D /* TransactionsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHelper.swift; sourceTree = "<group>"; };
 		1A9E74E5298C129000BFB165 /* binancelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = binancelogo.png; sourceTree = "<group>"; };
 		1A9E74E7298C12A400BFB165 /* wise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wise.png; sourceTree = "<group>"; };
 		1A9E74E9298C150E00BFB165 /* Donation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Donation.md; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 			children = (
 				1A1B55D2298989BF00C2C773 /* Calculator.swift */,
 				1A510D242994BBD500F65B0D /* SharedPreferences.swift */,
+				1A939051299554BD004AB56D /* TransactionsHelper.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,6 +198,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		1A93904E299552DC004AB56D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A93904F299552F3004AB56D /* Transactions.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1AD4858D298923630024F1AB = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +237,7 @@
 		1AD48598298923630024F1AB /* Cryato */ = {
 			isa = PBXGroup;
 			children = (
+				1A93904E299552DC004AB56D /* Models */,
 				1A510D292994F7B300F65B0D /* Info.plist */,
 				1A510D262994C04900F65B0D /* Constants */,
 				1A1B55D9298A45BB00C2C773 /* Validators */,
@@ -269,6 +285,7 @@
 				1AD485C329894C330024F1AB /* BuyView.swift */,
 				1A7B04EB2993D547008D46C3 /* ScannerView.swift */,
 				1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */,
+				1A93904C299533F1004AB56D /* AssetsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A939050299552F3004AB56D /* Transactions.swift in Sources */,
 				1A1B55D8298A371200C2C773 /* View.swift in Sources */,
 				1A7B04EE2993E6FB008D46C3 /* RecordsView.swift in Sources */,
 				1AD485C729894D160024F1AB /* SellView.swift in Sources */,
@@ -429,7 +447,9 @@
 				1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */,
 				1A510D282994C07000F65B0D /* SharedPreferenceType.swift in Sources */,
 				1A510D252994BBD500F65B0D /* SharedPreferences.swift in Sources */,
+				1A93904D299533F1004AB56D /* AssetsView.swift in Sources */,
 				1A1B55DB298A467E00C2C773 /* FormValidator.swift in Sources */,
+				1A939052299554BE004AB56D /* TransactionsHelper.swift in Sources */,
 				1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */,
 				1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */,
 				1A1B55D629899CD800C2C773 /* Double.swift in Sources */,

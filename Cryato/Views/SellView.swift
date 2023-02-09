@@ -103,7 +103,7 @@ struct SellView: View {
                     .padding()
                     .frame(height: 60)
                     .controlSize(.large)
-                }
+                }.scrollContentBackground(.hidden)
                 
                 
                 if self.isShowingResult {

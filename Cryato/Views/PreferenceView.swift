@@ -14,9 +14,14 @@ struct PreferenceView: View {
     @State private var isPresentingAlert: Bool = false
     @State private var isPresentingDonation: Bool = false
     @State private var isShowingWebView: Bool = false
-    @State private var tronSearchTextFieldIsDisabled :Bool = true
+    @State private var tronSearchTextFieldIsDisabled :Bool = false
     @State private var selectedItem: String = ""
     @State private var tronScanApi: String = ""
+    @State private var bybitApi: String = ""
+    @State private var binanceApi: String = ""
+    @State private var kucoinApi: String = ""
+    @State private var huobiApi: String = ""
+    @State private var bitgetApi: String = ""
     
     private var tronApiKey :String = ""
     private var wiseUrl: String = "https://github.com/johnmelodyme/Cryato"
@@ -52,22 +57,42 @@ struct PreferenceView: View {
             VStack {
                 Form {
                     Section(header: Text("API Integrations")) {
-                        HStack {
-                            TextField(
-                                (self.tronScanApi == "" ? "Tron Scan API" : self.tronScanApi),
-                                text: self.$tronScanApi
-                            )
-                            .frame(height: 20)
-                            .controlSize(.large)
-                            .disabled(self.tronSearchTextFieldIsDisabled)
-                            .font(Font.system(size: 12, design: .default))
-                            
-                            Button("EDIT") {
-                                self.tronSearchTextFieldIsDisabled = false
-                            }
-                            .font(Font.system(size: 12, design: .default))
-                            .foregroundColor(.red)
-                        }
+                        
+                        TextField(
+                            (self.tronScanApi == "" ? "Tron Scan API" : self.tronScanApi),
+                            text: self.$tronScanApi
+                        )
+                        .disabled(self.tronSearchTextFieldIsDisabled)
+                        .font(Font.system(size: 12))
+   
+                        TextField(
+                            "ByBit API",
+                            text: self.$bybitApi
+                        )
+                        .disabled(self.tronSearchTextFieldIsDisabled)
+                        .font(Font.system(size: 12))
+                        
+                        TextField(
+                            "Binance API",
+                            text: self.$binanceApi
+                        )
+                        .disabled(self.tronSearchTextFieldIsDisabled)
+                        .font(Font.system(size: 12))
+                        
+                        TextField(
+                            "KuCoin API",
+                            text: self.$kucoinApi
+                        )
+                        .disabled(self.tronSearchTextFieldIsDisabled)
+                        .font(Font.system(size: 12))
+                        
+                        TextField(
+                            "BitGet API",
+                            text: self.$bitgetApi
+                        )
+                        .disabled(self.tronSearchTextFieldIsDisabled)
+                        .font(Font.system(size: 12))
+                        
                     }
                     
                     Section(header: Text("About")) {
@@ -119,11 +144,13 @@ struct PreferenceView: View {
                                         title: Text("Disclaimer"),
                                         message: Text(
                                             "Visit \n\(wiseUrl) for more."
-                                        ),
+                                        )
+                                        .font(.system(size: 6)),
                                         primaryButton: .default(Text("Ok")),
                                         secondaryButton: .cancel()
                                     )
-                                })
+                                }
+                            )
                         }
                     }
                     

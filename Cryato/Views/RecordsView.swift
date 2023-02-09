@@ -15,9 +15,12 @@ struct RecordsView: View {
             VStack {
                 Form {
                     
-                }
-            }.navigationBarTitle("Records")
-        }
+                }.navigationBarTitle("Records")
+                    .scrollDismissesKeyboard(.interactively)
+                    .background(self.colorScheme == .dark ? .black : .white)
+                    .refreshable {}
+            }.background(self.colorScheme == .dark ? .black : .white)
+        }.background(self.colorScheme == .dark ? .black : .white)
     }
 }
 

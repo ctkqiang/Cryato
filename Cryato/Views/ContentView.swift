@@ -48,28 +48,24 @@ struct ContentView: View {
             VStack {
                 TabView {
                     VStack {
-                        Section(header: Text("").foregroundColor(
-                            self.colorScheme == .dark ? Color.white : Color.black).bold().fixedSize()
-                        ) {
-                            Picker(selection: $selectedId, label: Text("")) {
-                                Text(options[0]).tag(0x0)
-                                Text(options[1]).tag(0x1)
-                            }.pickerStyle(SegmentedPickerStyle()).listRowSeparator(
-                                .hidden,
-                                edges: [.bottom]
-                            ).padding()
+                        Picker(selection: $selectedId, label: Text("")) {
+                            Text(options[0]).tag(0x0)
+                            Text(options[1]).tag(0x1)
+                        }.pickerStyle(SegmentedPickerStyle()).listRowSeparator(
+                            .hidden, edges: [.bottom]
+                        ).padding()
+                        
+                        if (self.selectedId == 0x0) {
+                            SellView()
+                        } else {
+                            BuyView()
                             
-                            if (self.selectedId == 0x0) {
-                                SellView()
-                            } else {
-                                BuyView()
-                            }
                         }
                     }.tabItem {
                         Image(systemName: "number")
                         Text("Calculator")
                     }
-                                        
+                    
                     ScannerView().tabItem {
                         Image(systemName: "dot.radiowaves.left.and.right")
                         Text("Scanner")
@@ -79,21 +75,27 @@ struct ContentView: View {
                         Image(systemName: "note.text.badge.plus")
                         Text("Record")
                     }
-                }.tint(self.colorScheme == .dark ? Color.white : Color.black)
-            }.scrollDismissesKeyboard(.interactively)
-                .background(self.colorScheme == .dark ? .black : .white)
-                .refreshable {}
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink {
-                            /** Navigate to app preference page */
-                            PreferenceView()
-                        } label: {
-                            Image(systemName: "gearshape").foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
-                        }
+                    
+                    AssetsView().tabItem {
+                        Image(systemName: "wallet.pass.fill")
+                        Text("Assets")
                     }
                 }
-        }.background(self.colorScheme == .dark ? .black : .white)
+            }
+            .scrollDismissesKeyboard(.interactively)
+            .background(self.colorScheme == .dark ? .black : .white)
+            .refreshable {}
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        /** Navigate to app preference page */
+                        PreferenceView()
+                    } label: {
+                        Image(systemName: "gearshape").foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
+                    }
+                }
+            }
+        }
     }
 }
 
