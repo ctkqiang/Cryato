@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public struct SharedPreferences {
     public var key :String
     public var type :SharedPreferenceType
@@ -19,22 +18,22 @@ public struct SharedPreferences {
         self.properties = properties
         
         if type == SharedPreferenceType.SET {
-            try SharedPreferences.setData(value: self.properties ?? "", key: self.key)
+            SharedPreferences.setData(value: self.properties ?? "", key: self.key)
         }
     }
 
-    public static func setData(value: Any, key: String) throws -> Void {
-        var userDefault = UserDefaults.standard
+    public static func setData(value: Any, key: String) -> Void {
+        let userDefault = UserDefaults.standard
         
         userDefault.set(value, forKey: key)
         userDefault.synchronize()
     }
     
-    public static func getData(key :String) throws -> String {
-        var userDefault = UserDefaults.standard
+    public static func getData(key :String) -> String {
+        let userDefault = UserDefaults.standard
         
         if userDefault.object(forKey: key) == nil {
-            return ""
+            return "nil"
         }
         
         return userDefault.string(forKey: key)!

@@ -21,7 +21,6 @@ struct ScannerView: View {
                         .frame(height: 60)
                         .controlSize(.large)
                         
-                        
                     }
                 }.navigationBarTitle("Scanner")
                     .scrollDismissesKeyboard(.interactively)

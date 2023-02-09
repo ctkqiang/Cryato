@@ -82,6 +82,7 @@
 		1A510D222994488B00F65B0D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1A510D242994BBD500F65B0D /* SharedPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPreferences.swift; sourceTree = "<group>"; };
 		1A510D272994C07000F65B0D /* SharedPreferenceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPreferenceType.swift; sourceTree = "<group>"; };
+		1A510D292994F7B300F65B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1A7B04EB2993D547008D46C3 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
 		1A9E74E5298C129000BFB165 /* binancelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = binancelogo.png; sourceTree = "<group>"; };
@@ -221,6 +222,7 @@
 		1AD48598298923630024F1AB /* Cryato */ = {
 			isa = PBXGroup;
 			children = (
+				1A510D292994F7B300F65B0D /* Info.plist */,
 				1A510D262994C04900F65B0D /* Constants */,
 				1A1B55D9298A45BB00C2C773 /* Validators */,
 				1A1B55D429899CC700C2C773 /* Extensions */,
@@ -594,6 +596,7 @@
 				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cryato/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -628,6 +631,7 @@
 				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cryato/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
