@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 struct ScannerView: View {
     @Environment(\.colorScheme) private var colorScheme
     
-    @State private var transactions :[Transactions] = [Transactions]()
+    @State private var transaction :[Transaction] = [Transaction]()
     @State private var walletId :String = ""
     
     private var validator :FormValidator = FormValidator()
@@ -20,36 +23,14 @@ struct ScannerView: View {
         return
     }
     
-    private func getTransactions() -> Void {
-        guard let url = URL(
-            string: "https://api.trongrid.io/v1/accounts/\(self.walletId)/transactions/trc20"
-        ) else {
-            print("Url Malfunction or Invalid")
-            return
+    @available(iOS, deprecated: 6.0, obsoleted: 7.0, message: "No longer in need")
+    private func parseData(_ json: Data) -> Void {
+        let decoder = JSONDecoder()
+        
+        if (try? decoder.decode(Transactions.self, from: json)) != nil {
+            // self.transaction = listOfTransactions.data
         }
         
-        let request = URLRequest(url: url)
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data {
-                let decoder = JSONDecoder()
-                
-                decoder.dateDecodingStrategy = .iso8601
-                
-                if let decodedResponse = try?
-                    decoder.decode([Transactions].self, from: data) {
-                    DispatchQueue.main.async {
-                        self.transactions = decodedResponse
-                    }
-                    
-                    return
-                }
-                
-            }
-            
-            print ("Fetch url failed")
-            
-        }.resume()
     }
     
     var body: some View {
@@ -64,11 +45,17 @@ struct ScannerView: View {
                                 try! self.validate(input, 0x0)
                             }
                         
-                        Button("Search") {
-                            print(self.walletId)
+                        Button(action: {
+                            /** Return API to Listview */
                             
-                            self.getTransactions()
-                        }.foregroundColor(.green)
+                            TransactionsHelper.loadTransactions(WalletID: self.walletId) { (result) in
+                                self.transaction = result.data ?? []
+                            }
+                        }) {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.black)
+                                .frame(height:20)
+                        }
                     }
                 }
                 .navigationBarTitle("Scanner")
@@ -77,20 +64,46 @@ struct ScannerView: View {
                 .refreshable { self.walletId = "" }
                 .frame(maxHeight: 60)
                 
-                List {
-                    Section {
-                        ForEach(0..<5) { i in
-                            Section {
-                                Text("A new row \(i)")
-                            }
-                        }
+                List(self.transaction) { data in
+                    
+                    VStack(alignment: .leading) {
+                        Text("Transaction ID: \(data.transaction_id)")
+                            .listRowSeparator(.hidden)
+                            .font(Font.system(size: 12))
+                        
+                        Text("Transaction FROM: \(data.from)")
+                            .listRowSeparator(.hidden)
+                            .font(Font.system(size: 12))
+                        
+                        Text("Transaction TO: \(data.to)")
+                            .listRowSeparator(.hidden)
+                            .font(Font.system(size: 12))
+                        
+                        Text("Transaction VALUE: \(data.value)")
+                            .listRowSeparator(.hidden)
+                            .font(Font.system(size: 12))
+                        
+                        Text("BLOCK TIMESTAMP: \(data.block_timestamp)")
+                            .listRowSeparator(.hidden)
+                            .font(Font.system(size: 12))
                     }
+                    .padding()
+                    .overlay(RoundedRectangle(cornerRadius: 5)
+                    .stroke(.gray.opacity(0.3), lineWidth: 1))
                 }
+                .onAppear {
+                    /** Remove Underline */
+                    UITableView.appearance().separatorStyle = .none
+                }
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                .listRowSeparator(.hidden)
                 .background(.gray.opacity(0.0))
-                .onAppear(perform: self.getTransactions)
-                .listStyle(.insetGrouped)
+                .listStyle(.plain)
             }
-            
+            .scrollContentBackground(.hidden)
+            .refreshable {
+                self.walletId = ""
+            }
         }
     }
 }
