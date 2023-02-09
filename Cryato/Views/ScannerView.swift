@@ -55,7 +55,6 @@ struct ScannerView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
                 Form {
                     HStack {
                         TextField("Wallet Address", text: self.$walletId)
@@ -70,12 +69,11 @@ struct ScannerView: View {
                             
                             self.getTransactions()
                         }.foregroundColor(.green)
-                    }.textFieldStyle(.roundedBorder)
+                    }
                 }
                 .navigationBarTitle("Scanner")
                 .scrollDismissesKeyboard(.interactively)
-                .scrollContentBackground(.hidden)
-                .background(self.colorScheme == .dark ? .black : .white)
+                .background(self.colorScheme == .dark ? .black : .gray.opacity(0.1))
                 .refreshable { self.walletId = "" }
                 .frame(maxHeight: 60)
                 
@@ -88,7 +86,6 @@ struct ScannerView: View {
                         }
                     }
                 }
-                .scrollContentBackground(.hidden)
                 .background(.gray.opacity(0.0))
                 .onAppear(perform: self.getTransactions)
                 .listStyle(.insetGrouped)

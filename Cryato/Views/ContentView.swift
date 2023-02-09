@@ -80,7 +80,7 @@ struct ContentView: View {
                         Image(systemName: "wallet.pass.fill")
                         Text("Assets")
                     }
-                }
+                }.tint(self.colorScheme == .dark ? Color.white : Color.black)
             }
             .scrollDismissesKeyboard(.interactively)
             .background(self.colorScheme == .dark ? .black : .white)
@@ -95,7 +95,7 @@ struct ContentView: View {
                     }
                 }
             }
-        }
+        }.background(self.colorScheme == .dark ? .black : .white)
     }
 }
 
