@@ -15,6 +15,7 @@ struct PreferenceView: View {
     @State private var isPresentingDonation: Bool = false
     @State private var isShowingWebView: Bool = false
     @State private var tronSearchTextFieldIsDisabled :Bool = false
+    @State private var bybitSearchTextFieldIsDisabled :Bool = false
     @State private var selectedItem: String = ""
     @State private var tronScanApi: String = ""
     @State private var bybitApi: String = ""
@@ -50,6 +51,34 @@ struct PreferenceView: View {
                 self.tronSearchTextFieldIsDisabled = true
             }
         }
+        
+        #if DEBUG
+        
+        if let bybitApiKey = Bundle.main.infoDictionary?["BYBIT_API_KEY"] as? String {
+            self.bybitApi = bybitApiKey
+            self.bybitSearchTextFieldIsDisabled = true
+            self._bybitApi = State(wrappedValue: bybitApiKey)
+        }
+        
+        #else
+        
+        if SharedPreferences.getData(key: "bybitApiKey") as String == nil {
+            SharedPreferences(
+                key: "bybitApiKey",
+                properties: self.bybitApi,
+                type: SharedPreferenceType.SET
+            )
+            self.bybitSearchTextFieldIsDisabled = true
+        }
+        
+        if let bybitApiKeyLocal = SharedPreferences.getData(key: "bybitApiKey") as String {
+            self.bybitApi = bybitApiKeyLocal
+            self.bybitSearchTextFieldIsDisabled = true
+            
+            self._bybitApi = State(wrappedValue: bybitApiKeyLocal)
+        }
+        
+        #endif
     }
     
     var body: some View {
@@ -66,10 +95,10 @@ struct PreferenceView: View {
                         .font(Font.system(size: 12))
    
                         TextField(
-                            "ByBit API",
+                            (self.bybitApi == "" ? "ByBit API" : self.bybitApi),
                             text: self.$bybitApi
                         )
-                        .disabled(self.tronSearchTextFieldIsDisabled)
+                        .disabled(self.bybitSearchTextFieldIsDisabled)
                         .font(Font.system(size: 12))
                         
                         TextField(

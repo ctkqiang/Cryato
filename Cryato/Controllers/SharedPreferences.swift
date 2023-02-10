@@ -12,7 +12,7 @@ public struct SharedPreferences {
     public var type :SharedPreferenceType
     public var properties :String?
     
-    public init(_ key :String, _ properties :String?, _ type :SharedPreferenceType) throws {
+    public init(key :String, properties :String, type :SharedPreferenceType) throws {
         self.key = key
         self.type = type
         self.properties = properties

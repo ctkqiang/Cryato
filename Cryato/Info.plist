@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BYBIT_API_SECRET</key>
+	<string>$(BYBIT_API_SECRET)</string>
+	<key>BYBIT_API_KEY</key>
+	<string>$(BYBIT_API_KEY)</string>
 	<key>TRON_SEARCH_API</key>
 	<string>$(TRON_SEARCH_API)</string>
 </dict>

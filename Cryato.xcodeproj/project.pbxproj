@@ -34,6 +34,7 @@
 		1A9E74E6298C129000BFB165 /* binancelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E5298C129000BFB165 /* binancelogo.png */; };
 		1A9E74E8298C12A400BFB165 /* wise.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E7298C12A400BFB165 /* wise.png */; };
 		1A9E74EA298C150E00BFB165 /* Donation.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E9298C150E00BFB165 /* Donation.md */; };
+		1AADCC4F2996F43D009EF086 /* Bybit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADCC4E2996F43D009EF086 /* Bybit.swift */; };
 		1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48599298923630024F1AB /* CryatoApp.swift */; };
 		1AD4859C298923630024F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4859B298923630024F1AB /* ContentView.swift */; };
 		1AD4859E298923660024F1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4859D298923660024F1AB /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 		1A9E74E5298C129000BFB165 /* binancelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = binancelogo.png; sourceTree = "<group>"; };
 		1A9E74E7298C12A400BFB165 /* wise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wise.png; sourceTree = "<group>"; };
 		1A9E74E9298C150E00BFB165 /* Donation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Donation.md; sourceTree = "<group>"; };
+		1AADCC4E2996F43D009EF086 /* Bybit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bybit.swift; sourceTree = "<group>"; };
 		1AD48596298923630024F1AB /* Cryato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD48599298923630024F1AB /* CryatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoApp.swift; sourceTree = "<group>"; };
 		1AD4859B298923630024F1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1AADCC4D2996F42F009EF086 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				1AADCC4E2996F43D009EF086 /* Bybit.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
 		1AD4858D298923630024F1AB = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +247,7 @@
 		1AD48598298923630024F1AB /* Cryato */ = {
 			isa = PBXGroup;
 			children = (
+				1AADCC4D2996F42F009EF086 /* Endpoints */,
 				1A93904E299552DC004AB56D /* Models */,
 				1A510D292994F7B300F65B0D /* Info.plist */,
 				1A510D262994C04900F65B0D /* Constants */,
@@ -453,6 +464,7 @@
 				1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */,
 				1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */,
 				1A1B55D629899CD800C2C773 /* Double.swift in Sources */,
+				1AADCC4F2996F43D009EF086 /* Bybit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

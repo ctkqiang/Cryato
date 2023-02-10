@@ -48,8 +48,10 @@ struct ScannerView: View {
                         Button(action: {
                             /** Return API to Listview */
                             
-                            TransactionsHelper.loadTransactions(WalletID: self.walletId) { (result) in
-                                self.transaction = result.data ?? []
+                            Task {
+                                TransactionsHelper.loadTransactions(WalletID: self.walletId) { (result) in
+                                    self.transaction = result.data ?? []
+                                }
                             }
                         }) {
                             Image(systemName: "magnifyingglass")
