@@ -55,7 +55,7 @@ struct ScannerView: View {
                             }
                         }) {
                             Image(systemName: "magnifyingglass")
-                                .foregroundColor(.black)
+                                .foregroundColor(self.colorScheme == .dark ? .black : .gray.opacity(0.1))
                                 .frame(height:20)
                         }
                     }

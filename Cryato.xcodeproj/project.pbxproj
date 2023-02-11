@@ -28,6 +28,8 @@
 		1A510D282994C07000F65B0D /* SharedPreferenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A510D272994C07000F65B0D /* SharedPreferenceType.swift */; };
 		1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B04EB2993D547008D46C3 /* ScannerView.swift */; };
 		1A7B04EE2993E6FB008D46C3 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */; };
+		1A7BC4DF299786A70046D622 /* BybitEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BC4DE299786A70046D622 /* BybitEncryption.swift */; };
+		1A7BC4E129978BF80046D622 /* DatetimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BC4E029978BF80046D622 /* DatetimeHelper.swift */; };
 		1A93904D299533F1004AB56D /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93904C299533F1004AB56D /* AssetsView.swift */; };
 		1A939050299552F3004AB56D /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A93904F299552F3004AB56D /* Transactions.swift */; };
 		1A939052299554BE004AB56D /* TransactionsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A939051299554BD004AB56D /* TransactionsHelper.swift */; };
@@ -89,6 +91,8 @@
 		1A510D292994F7B300F65B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1A7B04EB2993D547008D46C3 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
+		1A7BC4DE299786A70046D622 /* BybitEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BybitEncryption.swift; sourceTree = "<group>"; };
+		1A7BC4E029978BF80046D622 /* DatetimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatetimeHelper.swift; sourceTree = "<group>"; };
 		1A93904C299533F1004AB56D /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		1A93904F299552F3004AB56D /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		1A939051299554BD004AB56D /* TransactionsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHelper.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 				1A1B55D2298989BF00C2C773 /* Calculator.swift */,
 				1A510D242994BBD500F65B0D /* SharedPreferences.swift */,
 				1A939051299554BD004AB56D /* TransactionsHelper.swift */,
+				1A7BC4E029978BF80046D622 /* DatetimeHelper.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -200,6 +205,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		1A7BC4DD299786990046D622 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				1A7BC4DE299786A70046D622 /* BybitEncryption.swift */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
 		1A93904E299552DC004AB56D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +260,7 @@
 		1AD48598298923630024F1AB /* Cryato */ = {
 			isa = PBXGroup;
 			children = (
+				1A7BC4DD299786990046D622 /* Security */,
 				1AADCC4D2996F42F009EF086 /* Endpoints */,
 				1A93904E299552DC004AB56D /* Models */,
 				1A510D292994F7B300F65B0D /* Info.plist */,
@@ -461,9 +475,11 @@
 				1A93904D299533F1004AB56D /* AssetsView.swift in Sources */,
 				1A1B55DB298A467E00C2C773 /* FormValidator.swift in Sources */,
 				1A939052299554BE004AB56D /* TransactionsHelper.swift in Sources */,
+				1A7BC4E129978BF80046D622 /* DatetimeHelper.swift in Sources */,
 				1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */,
 				1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */,
 				1A1B55D629899CD800C2C773 /* Double.swift in Sources */,
+				1A7BC4DF299786A70046D622 /* BybitEncryption.swift in Sources */,
 				1AADCC4F2996F43D009EF086 /* Bybit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

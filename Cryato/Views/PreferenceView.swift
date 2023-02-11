@@ -63,11 +63,7 @@ struct PreferenceView: View {
         #else
         
         if SharedPreferences.getData(key: "bybitApiKey") as String == nil {
-            SharedPreferences(
-                key: "bybitApiKey",
-                properties: self.bybitApi,
-                type: SharedPreferenceType.SET
-            )
+            SharedPreferences.setData(key: "bybitApiKey", value: self.bybitApi)
             self.bybitSearchTextFieldIsDisabled = true
         }
         
