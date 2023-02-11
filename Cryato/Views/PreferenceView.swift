@@ -60,6 +60,8 @@ struct PreferenceView: View {
             self._bybitApi = State(wrappedValue: bybitApiKey)
         }
         
+        NSLog("TESTING") //TODO REMOVE
+        
         #else
         
         if SharedPreferences.getData(key: "bybitApiKey") as String == nil {

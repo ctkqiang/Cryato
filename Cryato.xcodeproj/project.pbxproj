@@ -48,6 +48,9 @@
 		1AD485C729894D160024F1AB /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD485C629894D160024F1AB /* SellView.swift */; };
 		1AD485CB2989537D0024F1AB /* PreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD485CA2989537D0024F1AB /* PreferenceView.swift */; };
 		1AD485CE298980F60024F1AB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1AD485CD298980F60024F1AB /* LICENSE */; };
+		1AF58EB4299795D6003BD1DA /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF58EB3299795D6003BD1DA /* Toast */; };
+		1AF58EB629979F34003BD1DA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF58EB529979F34003BD1DA /* String.swift */; };
+		1AF58EB92997A5E7003BD1DA /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF58EB82997A5E7003BD1DA /* AlertToast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +91,7 @@
 		1A510D222994488B00F65B0D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1A510D242994BBD500F65B0D /* SharedPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPreferences.swift; sourceTree = "<group>"; };
 		1A510D272994C07000F65B0D /* SharedPreferenceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPreferenceType.swift; sourceTree = "<group>"; };
-		1A510D292994F7B300F65B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1A510D292994F7B300F65B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A7B04EB2993D547008D46C3 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
 		1A7BC4DE299786A70046D622 /* BybitEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BybitEncryption.swift; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		1AD485CA2989537D0024F1AB /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
 		1AD485CC2989562C0024F1AB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		1AD485CD298980F60024F1AB /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		1AF58EB529979F34003BD1DA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF58EB4299795D6003BD1DA /* Toast in Frameworks */,
+				1AF58EB92997A5E7003BD1DA /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +164,7 @@
 			children = (
 				1A1B55D529899CD800C2C773 /* Double.swift */,
 				1A1B55D7298A371200C2C773 /* View.swift */,
+				1AF58EB529979F34003BD1DA /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,10 +267,10 @@
 		1AD48598298923630024F1AB /* Cryato */ = {
 			isa = PBXGroup;
 			children = (
+				1A510D292994F7B300F65B0D /* Info.plist */,
 				1A7BC4DD299786990046D622 /* Security */,
 				1AADCC4D2996F42F009EF086 /* Endpoints */,
 				1A93904E299552DC004AB56D /* Models */,
-				1A510D292994F7B300F65B0D /* Info.plist */,
 				1A510D262994C04900F65B0D /* Constants */,
 				1A1B55D9298A45BB00C2C773 /* Validators */,
 				1A1B55D429899CC700C2C773 /* Extensions */,
@@ -331,6 +338,10 @@
 			dependencies = (
 			);
 			name = Cryato;
+			packageProductDependencies = (
+				1AF58EB3299795D6003BD1DA /* Toast */,
+				1AF58EB82997A5E7003BD1DA /* AlertToast */,
+			);
 			productName = Cryato;
 			productReference = 1AD48596298923630024F1AB /* Cryato.app */;
 			productType = "com.apple.product-type.application";
@@ -403,6 +414,10 @@
 				Base,
 			);
 			mainGroup = 1AD4858D298923630024F1AB;
+			packageReferences = (
+				1AF58EB2299795D6003BD1DA /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				1AF58EB72997A5E7003BD1DA /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = 1AD48597298923630024F1AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -464,6 +479,7 @@
 			files = (
 				1A939050299552F3004AB56D /* Transactions.swift in Sources */,
 				1A1B55D8298A371200C2C773 /* View.swift in Sources */,
+				1AF58EB629979F34003BD1DA /* String.swift in Sources */,
 				1A7B04EE2993E6FB008D46C3 /* RecordsView.swift in Sources */,
 				1AD485C729894D160024F1AB /* SellView.swift in Sources */,
 				1AD4859C298923630024F1AB /* ContentView.swift in Sources */,
@@ -568,7 +584,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -623,7 +639,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -639,7 +655,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Cryato/Preview Content\"";
 				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
 				ENABLE_PREVIEWS = YES;
@@ -656,7 +672,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = blockchain.johnmelodyme.Cryato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -674,7 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Cryato/Preview Content\"";
 				DEVELOPMENT_TEAM = 9W5GY4L6GJ;
 				ENABLE_PREVIEWS = YES;
@@ -691,7 +707,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = blockchain.johnmelodyme.Cryato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -819,6 +835,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1AF58EB2299795D6003BD1DA /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		1AF58EB72997A5E7003BD1DA /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnmelodyme/AlertToast.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1AF58EB3299795D6003BD1DA /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1AF58EB2299795D6003BD1DA /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		1AF58EB82997A5E7003BD1DA /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1AF58EB72997A5E7003BD1DA /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1AD4858E298923630024F1AB /* Project object */;
 }

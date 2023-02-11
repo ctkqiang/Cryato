@@ -10,7 +10,7 @@ import Foundation
 class TransactionsHelper : ObservableObject {
     public static func loadTransactions(WalletID :String, completion: @escaping (Transactions) -> ()) {
         guard let url = URL(string: "https://api.trongrid.io/v1/accounts/\(WalletID)/transactions/trc20") else {
-            print("The url is not working...")
+            NSLog("The url is not working...")
             return
         }
         

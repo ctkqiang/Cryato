@@ -12,9 +12,12 @@ import CryptoKit
 #endif
 
 struct BybitEncryption {
-    public static func getSignature(parameters :String?, secret :String?) -> String? {
+    public func getSignature(parameters :String?, secret :String?) -> String? {
+        let key = SymmetricKey(data: secret!.data(using: .utf8)!)
+        let signature = HMAC<SHA256>.authenticationCode(for: Data(parameters!.utf8), using: key)
         
+        // TODO
         
-        return ""
+        return "\(signature)"
     }
 }

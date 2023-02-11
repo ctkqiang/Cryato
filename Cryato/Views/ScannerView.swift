@@ -6,8 +6,17 @@
 //
 
 import SwiftUI
+
 #if canImport(FoundationNetworking)
 import FoundationNetworking
+#endif
+
+#if canImport(Toast)
+import Toast
+#endif
+
+#if canImport(AlertToast)
+import AlertToast
 #endif
 
 struct ScannerView: View {
@@ -15,12 +24,12 @@ struct ScannerView: View {
     
     @State private var transaction :[Transaction] = [Transaction]()
     @State private var walletId :String = ""
+    @State private var showAlert :Bool = false
     
     private var validator :FormValidator = FormValidator()
     
     private func validate(_ value :String, _ mode :Int) throws -> Void {
-        if (value.isEmpty) {}
-        return
+        if (value.isEmpty) {}; return
     }
     
     @available(iOS, deprecated: 6.0, obsoleted: 7.0, message: "No longer in need")
@@ -48,6 +57,12 @@ struct ScannerView: View {
                         Button(action: {
                             /** Return API to Listview */
                             
+                            if try! self.walletId.isContainSpecialChars() {
+                                self.showAlert = true
+                                
+                                NSLog("User Input an invalid Wallet Address")
+                            }
+                            
                             Task {
                                 TransactionsHelper.loadTransactions(WalletID: self.walletId) { (result) in
                                     self.transaction = result.data ?? []
@@ -55,16 +70,15 @@ struct ScannerView: View {
                             }
                         }) {
                             Image(systemName: "magnifyingglass")
-                                .foregroundColor(self.colorScheme == .dark ? .black : .gray.opacity(0.1))
+                                .foregroundColor(self.colorScheme == .dark ? .white : .black)
                                 .frame(height:20)
                         }
                     }
                 }
                 .navigationBarTitle("Scanner")
-                .scrollDismissesKeyboard(.interactively)
                 .background(self.colorScheme == .dark ? .black : .gray.opacity(0.1))
-                .refreshable { self.walletId = "" }
-                .frame(maxHeight: 60)
+                .frame(maxHeight: 70)
+                .scrollDismissesKeyboard(.interactively)
                 
                 List(self.transaction) { data in
                     
@@ -97,14 +111,24 @@ struct ScannerView: View {
                     /** Remove Underline */
                     UITableView.appearance().separatorStyle = .none
                 }
+                .scrollDismissesKeyboard(.interactively)
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 .listRowSeparator(.hidden)
                 .background(.gray.opacity(0.0))
                 .listStyle(.plain)
             }
+            .toast(isPresenting: self.$showAlert, alert: {
+                AlertToast(
+                    type: .error(.red),
+                    title: "Warning",
+                    subTitle: "Please Input a Valid Wallet Address"
+                )
+            })
             .scrollContentBackground(.hidden)
+            .scrollDismissesKeyboard(.interactively)
             .refreshable {
                 self.walletId = ""
+                self.showAlert = false
             }
         }
     }
