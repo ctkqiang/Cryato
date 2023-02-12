@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A0242C329994837005C40BE /* PNL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242C229994837005C40BE /* PNL.swift */; };
+		1A0242C72999840B005C40BE /* Binance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242C62999840B005C40BE /* Binance.swift */; };
+		1A0242C9299986C9005C40BE /* BinanceFundingAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242C8299986C9005C40BE /* BinanceFundingAccount.swift */; };
 		1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D2298989BF00C2C773 /* Calculator.swift */; };
 		1A1B55D629899CD800C2C773 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D529899CD800C2C773 /* Double.swift */; };
 		1A1B55D8298A371200C2C773 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D7298A371200C2C773 /* View.swift */; };
@@ -75,6 +77,8 @@
 
 /* Begin PBXFileReference section */
 		1A0242C229994837005C40BE /* PNL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNL.swift; sourceTree = "<group>"; };
+		1A0242C62999840B005C40BE /* Binance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binance.swift; sourceTree = "<group>"; };
+		1A0242C8299986C9005C40BE /* BinanceFundingAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinanceFundingAccount.swift; sourceTree = "<group>"; };
 		1A1B55D2298989BF00C2C773 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		1A1B55D529899CD800C2C773 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1A1B55D7298A371200C2C773 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				1A93904F299552F3004AB56D /* Transactions.swift */,
+				1A0242C8299986C9005C40BE /* BinanceFundingAccount.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				1AADCC4E2996F43D009EF086 /* Bybit.swift */,
+				1A0242C62999840B005C40BE /* Binance.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -500,8 +506,10 @@
 				1A510D252994BBD500F65B0D /* SharedPreferences.swift in Sources */,
 				1A93904D299533F1004AB56D /* AssetsView.swift in Sources */,
 				1A1B55DB298A467E00C2C773 /* FormValidator.swift in Sources */,
+				1A0242C9299986C9005C40BE /* BinanceFundingAccount.swift in Sources */,
 				1A939052299554BE004AB56D /* TransactionsHelper.swift in Sources */,
 				1A7BC4E129978BF80046D622 /* DatetimeHelper.swift in Sources */,
+				1A0242C72999840B005C40BE /* Binance.swift in Sources */,
 				1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */,
 				1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */,
 				1AF58EBD2998FF04003BD1DA /* Cryptocurrencies.swift in Sources */,
