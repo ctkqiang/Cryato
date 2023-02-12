@@ -51,6 +51,8 @@
 		1AF58EB4299795D6003BD1DA /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF58EB3299795D6003BD1DA /* Toast */; };
 		1AF58EB629979F34003BD1DA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF58EB529979F34003BD1DA /* String.swift */; };
 		1AF58EB92997A5E7003BD1DA /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF58EB82997A5E7003BD1DA /* AlertToast */; };
+		1AF58EBB2998FD70003BD1DA /* CryptoSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF58EBA2998FD6F003BD1DA /* CryptoSelector.swift */; };
+		1AF58EBD2998FF04003BD1DA /* Cryptocurrencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF58EBC2998FF04003BD1DA /* Cryptocurrencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		1AD485CC2989562C0024F1AB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		1AD485CD298980F60024F1AB /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		1AF58EB529979F34003BD1DA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		1AF58EBA2998FD6F003BD1DA /* CryptoSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSelector.swift; sourceTree = "<group>"; };
+		1AF58EBC2998FF04003BD1DA /* Cryptocurrencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptocurrencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				1A510D272994C07000F65B0D /* SharedPreferenceType.swift */,
+				1AF58EBA2998FD6F003BD1DA /* CryptoSelector.swift */,
+				1AF58EBC2998FF04003BD1DA /* Cryptocurrencies.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -494,9 +500,11 @@
 				1A7BC4E129978BF80046D622 /* DatetimeHelper.swift in Sources */,
 				1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */,
 				1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */,
+				1AF58EBD2998FF04003BD1DA /* Cryptocurrencies.swift in Sources */,
 				1A1B55D629899CD800C2C773 /* Double.swift in Sources */,
 				1A7BC4DF299786A70046D622 /* BybitEncryption.swift in Sources */,
 				1AADCC4F2996F43D009EF086 /* Bybit.swift in Sources */,
+				1AF58EBB2998FD70003BD1DA /* CryptoSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

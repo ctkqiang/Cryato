@@ -54,13 +54,13 @@ struct BuyView: View {
                             self.sectionOneOriginalPrice,
                             text: self.$originalPricePlaceholder
                         )
-                        .frame(height: 60)
+                        .frame(height: 100)
                         .keyboardType(.decimalPad)
                         .controlSize(.large)
                         .onChange(of: self.originalPricePlaceholder) { input in
                            try! self.validate(input, 0x0)
                         }
-                    }
+                    }.frame(height: 80)
                     
                     HStack {
                         Image(systemName: "dollarsign.circle").controlSize(ControlSize.large)
@@ -68,13 +68,13 @@ struct BuyView: View {
                             self.sectionTwoBuyingPrice,
                             text: self.$buyingPricePlaceholder
                         )
-                        .frame(height: 60)
+                        .frame(height: 100)
                         .keyboardType(.decimalPad)
                         .controlSize(.large)
                         .onChange(of: self.buyingPricePlaceholder) { input in
                            try! self.validate(input, 0x1)
                         }
-                    }
+                    }.frame(height: 80)
                     
                     Button {
                         let result :Double = (Double(self.originalPricePlaceholder) ?? 0)! - (Double(self.buyingPricePlaceholder) ?? 0)!.roundThreeDigits
