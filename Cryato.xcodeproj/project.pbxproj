@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0242C329994837005C40BE /* PNL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242C229994837005C40BE /* PNL.swift */; };
 		1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D2298989BF00C2C773 /* Calculator.swift */; };
 		1A1B55D629899CD800C2C773 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D529899CD800C2C773 /* Double.swift */; };
 		1A1B55D8298A371200C2C773 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D7298A371200C2C773 /* View.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A0242C229994837005C40BE /* PNL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNL.swift; sourceTree = "<group>"; };
 		1A1B55D2298989BF00C2C773 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		1A1B55D529899CD800C2C773 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1A1B55D7298A371200C2C773 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				1A510D272994C07000F65B0D /* SharedPreferenceType.swift */,
 				1AF58EBA2998FD6F003BD1DA /* CryptoSelector.swift */,
 				1AF58EBC2998FF04003BD1DA /* Cryptocurrencies.swift */,
+				1A0242C229994837005C40BE /* PNL.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				1AD485C429894C330024F1AB /* BuyView.swift in Sources */,
 				1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */,
 				1A510D282994C07000F65B0D /* SharedPreferenceType.swift in Sources */,
+				1A0242C329994837005C40BE /* PNL.swift in Sources */,
 				1A510D252994BBD500F65B0D /* SharedPreferences.swift in Sources */,
 				1A93904D299533F1004AB56D /* AssetsView.swift in Sources */,
 				1A1B55DB298A467E00C2C773 /* FormValidator.swift in Sources */,

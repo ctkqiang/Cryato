@@ -100,7 +100,6 @@ struct BuyView: View {
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.roundedRectangle)
                     .tint(.green)
-                    .padding()
                     .frame(height: 60)
                     .controlSize(.large)
                     

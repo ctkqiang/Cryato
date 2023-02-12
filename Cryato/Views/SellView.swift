@@ -7,20 +7,30 @@
 
 import SwiftUI
 
+#if canImport(Toast)
+import Toast
+#endif
+
+#if canImport(AlertToast)
+import AlertToast
+#endif
+
 struct SellView: View {
     @Environment(\.colorScheme) private var colorScheme
     
     @State private var originalPricePlaceholder :String = ""
     @State private var sellingPricePlaceholder :String = ""
     @State private var currentProfitPlaceholder :String = ""
-    @State private var unitPlaceholder :String = ""
+    @State private var currentunitPlaceholder :String = ""
     @State private var selectedCurrency :String = CryptoSelector.cryptoCurrenciesChoices[0]
     @State private var isShowingResult :Bool = false
     @State private var isInvalidate :Bool = false
+    @State private var isProfit :Bool = false
+    @State private var showAlert :Bool = false
     
     private var sectionOneOriginalPrice :String = "What's the original price?"
     private var sectionTwoSellingPrice :String = "What's the price you selling?"
-    private var sectionTwoSellingUnit :String = "How many you sell?"
+    private var sectionThreeSellingUnit :String = "How many you sell?"
     private var calculator :Calculator = Calculator()
     private var validator :FormValidator = FormValidator()
     
@@ -43,6 +53,7 @@ struct SellView: View {
         return String(format: "%.2f", (Double(self.currentProfitPlaceholder) ?? 0)! * quant)
     }
     
+    
     private func isNegative(_ value :String) -> String {
         return (Double(value) ?? 0 < 0) ? "losses": "profits"
     }
@@ -59,12 +70,14 @@ struct SellView: View {
                             
                             Text(self.selectedCurrency).foregroundColor(.black)
                         } label: {
-                            Text("Cryptocurrency").font(Font.system(size: 20))
+                            Text("Cryptocurrency")
+                                .font(Font.system(size: 20))
+                                .foregroundColor(.gray)
                         }
                         .frame(height:60)
                         .font(Font.system(size: 20))
                         .pickerStyle(.menu)
-                            
+                        
                         TextField(
                             self.sectionOneOriginalPrice,
                             text: self.$originalPricePlaceholder
@@ -93,29 +106,39 @@ struct SellView: View {
                         }
                         
                         TextField(
-                            self.sectionTwoSellingUnit,
-                            text: self.$unitPlaceholder
+                            self.sectionThreeSellingUnit,
+                            text: self.$currentunitPlaceholder
                         )
                         .frame(height: 60)
                         .font(Font.system(size: 20))
                         .textFieldStyle(.plain)
                         .listRowSeparator(.hidden)
                         .keyboardType(.decimalPad)
-                        .onChange(of: self.originalPricePlaceholder) { input in
-                            try! self.validate(input, 0x0)
+                        .onChange(of: self.currentunitPlaceholder) { input in
+                            // Do nothing here
                         }
                         
                         Button {
-                            let result :Double = (Double(self.sellingPricePlaceholder) ?? 0)! - (Double(self.originalPricePlaceholder) ?? 0)!.roundThreeDigits
-                            
-                            self.currentProfitPlaceholder = String(format: "%.2f", result)
-                            
-                            if (!(self.originalPricePlaceholder.isEmpty) && !(self.sellingPricePlaceholder.isEmpty)) {
+                            if (!(self.originalPricePlaceholder.isEmpty) && !(self.sellingPricePlaceholder.isEmpty) &&
+                                !(self.currentunitPlaceholder.isEmpty)
+                            ) {
                                 self.isShowingResult = true
+                                
+                                if try! Calculator.profit(
+                                    original: self.originalPricePlaceholder,
+                                    selling: self.sellingPricePlaceholder,
+                                    unit: self.currentunitPlaceholder
+                                )[1] == PNL.PROFIT.rawValue {
+                                    self.isProfit = true
+                                }
                             }
                             
-                            if(self.originalPricePlaceholder == "" && self.currentProfitPlaceholder == "") {
+                            if(self.originalPricePlaceholder == "" &&
+                               self.currentProfitPlaceholder == "" &&
+                               self.currentunitPlaceholder == ""
+                            ) {
                                 self.isInvalidate = true;
+                                self.showAlert = true;
                             }
                             
                             hideKeyboard()
@@ -129,19 +152,33 @@ struct SellView: View {
                         .buttonStyle(.borderedProminent)
                         .buttonBorderShape(.roundedRectangle)
                         .tint(.red)
-                        .padding()
                         .frame(height: 60)
                         .controlSize(.large)
                     }
                 }.scrollContentBackground(.hidden)
                 
-                if !self.isShowingResult { // @TODO change to true
+                if self.isShowingResult {
                     VStack {
-                        Text("RESULTS HERE")
+                        Text(
+                            try! Calculator.profit(
+                                original: self.originalPricePlaceholder,
+                                selling: self.sellingPricePlaceholder,
+                                unit: self.currentunitPlaceholder
+                            )[0]
+                        )
+                        .foregroundColor(self.isProfit ? .green : .red)
+                        .font(.headline)
                     }
                 }
                 
             }
+            .toast(isPresenting: self.$showAlert, alert: {
+                AlertToast(
+                    type: .error(.red),
+                    title: "Warning",
+                    subTitle: "Please fill in all the required field!"
+                )
+            })
         }
         .scrollDismissesKeyboard(.interactively)
         .background(self.colorScheme == .dark ? .black : .white)
@@ -149,7 +186,11 @@ struct SellView: View {
             self.isShowingResult = false
             self.sellingPricePlaceholder = ""
             self.originalPricePlaceholder = ""
+            self.currentunitPlaceholder = ""
+            self.isProfit = false
+            self.showAlert = false
         }
+        
     }
 }
 
