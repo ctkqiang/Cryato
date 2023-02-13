@@ -12,15 +12,18 @@ struct RecordsView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Form {
-                    
-                }.navigationBarTitle("Records")
-                    .scrollDismissesKeyboard(.interactively)
-                    .background(self.colorScheme == .dark ? .black : .white)
-                    .refreshable {}
-            }.background(self.colorScheme == .dark ? .black : .white)
-        }.background(self.colorScheme == .dark ? .black : .white)
+            Form {
+                VStack {
+                    Text("Records here")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                }
+            }
+            .navigationBarTitle("Records")
+            .scrollDismissesKeyboard(.interactively)
+            .refreshable {
+                // @TODO
+            }
+        }
     }
 }
 

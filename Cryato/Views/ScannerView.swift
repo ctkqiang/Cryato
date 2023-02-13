@@ -78,34 +78,43 @@ struct ScannerView: View {
                 .navigationBarTitle("Scanner")
                 .background(self.colorScheme == .dark ? .black : .gray.opacity(0.1))
                 .frame(maxHeight: 70)
-                .scrollDismissesKeyboard(.interactively)
                 
                 List(self.transaction) { data in
                     
-                    VStack(alignment: .leading) {
-                        Text("Transaction ID: \(data.transaction_id)")
-                            .listRowSeparator(.hidden)
-                            .font(Font.system(size: 12))
-                        
-                        Text("Transaction FROM: \(data.from)")
-                            .listRowSeparator(.hidden)
-                            .font(Font.system(size: 12))
-                        
-                        Text("Transaction TO: \(data.to)")
-                            .listRowSeparator(.hidden)
-                            .font(Font.system(size: 12))
-                        
-                        Text("Transaction VALUE: \(data.value)")
-                            .listRowSeparator(.hidden)
-                            .font(Font.system(size: 12))
-                        
-                        Text("BLOCK TIMESTAMP: \(data.block_timestamp)")
-                            .listRowSeparator(.hidden)
-                            .font(Font.system(size: 12))
+                    Button(action: {
+                        NSLog("\(data)")
+                    }) {
+                        VStack(alignment: .leading) {
+                            Text("Transaction ID: \(data.transaction_id)")
+                                .listRowSeparator(.hidden)
+                                .font(Font.system(size: 12))
+                            
+                            Text("Transaction FROM: \(data.from)")
+                                .listRowSeparator(.hidden)
+                                .font(Font.system(size: 12))
+                            
+                            Text("Transaction TO: \(data.to)")
+                                .listRowSeparator(.hidden)
+                                .font(Font.system(size: 12))
+                            
+                            Text("Transaction VALUE: \(data.value)")
+                                .listRowSeparator(.hidden)
+                                .font(Font.system(size: 12))
+                            
+                            Text("BLOCK TIMESTAMP: \(data.block_timestamp)")
+                                .listRowSeparator(.hidden)
+                                .font(Font.system(size: 12))
+                        }
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .overlay(RoundedRectangle(cornerRadius: 5).stroke(.gray.opacity(0.3), lineWidth: 1))
                     }
-                    .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 5)
-                    .stroke(.gray.opacity(0.3), lineWidth: 1))
+                    .background(Color.gray.opacity(0.1))
+                }
+                .scrollContentBackground(.hidden)
+                .refreshable {
+                    self.walletId = ""
+                    self.showAlert = false
                 }
                 .onAppear {
                     /** Remove Underline */
@@ -114,7 +123,6 @@ struct ScannerView: View {
                 .scrollDismissesKeyboard(.interactively)
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 .listRowSeparator(.hidden)
-                .background(.gray.opacity(0.0))
                 .listStyle(.plain)
             }
             .toast(isPresenting: self.$showAlert, alert: {
@@ -124,12 +132,7 @@ struct ScannerView: View {
                     subTitle: "Please Input a Valid Wallet Address"
                 )
             })
-            .scrollContentBackground(.hidden)
-            .scrollDismissesKeyboard(.interactively)
-            .refreshable {
-                self.walletId = ""
-                self.showAlert = false
-            }
+            .background(Color.gray.opacity(0.1))
         }
     }
 }

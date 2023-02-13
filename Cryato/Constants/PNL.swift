@@ -10,4 +10,5 @@ import Foundation
 enum PNL : String, CaseIterable {
     case PROFIT = "earned"
     case LOST = "lossed"
+    case SAVED = "saved"
 }

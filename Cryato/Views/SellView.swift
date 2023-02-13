@@ -77,6 +77,9 @@ struct SellView: View {
                         .frame(height:60)
                         .font(Font.system(size: 20))
                         .pickerStyle(.menu)
+                        .onChange(of: self.selectedCurrency) { currency in
+                            self.selectedCurrency = currency
+                        }
                         
                         TextField(
                             self.sectionOneOriginalPrice,
@@ -127,7 +130,8 @@ struct SellView: View {
                                 if try! Calculator.profit(
                                     original: self.originalPricePlaceholder,
                                     selling: self.sellingPricePlaceholder,
-                                    unit: self.currentunitPlaceholder
+                                    unit: self.currentunitPlaceholder,
+                                    cryptoCurrency: self.selectedCurrency
                                 )[1] == PNL.PROFIT.rawValue {
                                     self.isProfit = true
                                 }
@@ -163,7 +167,8 @@ struct SellView: View {
                             try! Calculator.profit(
                                 original: self.originalPricePlaceholder,
                                 selling: self.sellingPricePlaceholder,
-                                unit: self.currentunitPlaceholder
+                                unit: self.currentunitPlaceholder,
+                                cryptoCurrency: self.selectedCurrency
                             )[0]
                         )
                         .foregroundColor(self.isProfit ? .green : .red)

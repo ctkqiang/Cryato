@@ -39,7 +39,7 @@ struct PreferenceView: View {
         }
     }
     
-    init() {
+    public init() {
         if let tronDefaultAPI = Bundle.main.infoDictionary?["TRON_SEARCH_API"] as? String {
             if SharedPreferences.getData(key: "tronapi") != "nil" {
                 self.tronScanApi = SharedPreferences.getData(key: "tronapi")
@@ -59,8 +59,6 @@ struct PreferenceView: View {
             self.bybitSearchTextFieldIsDisabled = true
             self._bybitApi = State(wrappedValue: bybitApiKey)
         }
-        
-        NSLog("TESTING") //TODO REMOVE
         
         #else
         
@@ -124,8 +122,7 @@ struct PreferenceView: View {
                     
                     Section(header: Text("About")) {
                         List {
-                            ForEach(self.preferenceItems, id: \.self) {
-                                items in
+                            ForEach(self.preferenceItems, id: \.self) { items in
                                 Button {
                                     self.isPresentingAlert = true
                                     self.selectedItem = items

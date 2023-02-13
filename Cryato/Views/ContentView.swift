@@ -25,14 +25,13 @@ struct ContentView: View {
                             Text(options[0]).tag(0x0)
                             Text(options[1]).tag(0x1)
                         }.pickerStyle(SegmentedPickerStyle()).listRowSeparator(
-                            .hidden, edges: [.bottom]
+                            .hidden, edges: [.top]
                         ).padding()
                         
-                        if (self.selectedId == 0x0) {
+                        if self.selectedId == 0x0 {
                             SellView()
                         } else {
                             BuyView()
-                            
                         }
                     }.tabItem {
                         Image(systemName: "number")
