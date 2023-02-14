@@ -43,9 +43,15 @@ struct ContentView: View {
                         Text("Scanner")
                     }
                     
+                    
                     RecordsView().tabItem {
                         Image(systemName: "note.text.badge.plus")
                         Text("Record")
+                    }
+                    
+                    ScamView().tabItem {
+                        Image(systemName: "exclamationmark.triangle.fill")
+                        Text("Scams")
                     }
                     
                     AssetsView().tabItem {

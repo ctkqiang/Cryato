@@ -1,0 +1,22 @@
+[
+    {
+        "id" : 0,
+        "userId" : "User4204QyYTmY",
+        "walletId" : "",
+        "paymentMethod" : "Wise",
+        "platform" : "ByBit",
+        "currency" : "ILS",
+        "scamTechnique" : "The scammer utilized Wise to make a payment which appeared as \"receiving\" in Wise, and then cancelled the transaction immediately after I released the tokens to the buyer.",
+        "reportedBy" : "johnmelodyme"
+    },
+    {
+        "id" : 1,
+        "userId" : "User4654nShgrH",
+        "walletId" : "",
+        "paymentMethod" : "Wise",
+        "platform" : "ByBit",
+        "currency" : "USD",
+        "scamTechnique" : "The scammer utilized Wise to make a payment which appeared as \"receiving\" in Wise, and then cancelled the transaction immediately after I released the tokens to the buyer.",
+        "reportedBy" : "johnmelodyme"
+    }
+]
