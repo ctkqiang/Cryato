@@ -21,10 +21,12 @@ import AlertToast
 
 struct ScannerView: View {
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.openURL) private var openURL
     
     @State private var transaction :[Transaction] = [Transaction]()
     @State private var walletId :String = ""
     @State private var showAlert :Bool = false
+    @State private var showSafari :Bool = false
     
     private var validator :FormValidator = FormValidator()
     
@@ -47,7 +49,7 @@ struct ScannerView: View {
             VStack {
                 Form {
                     HStack {
-                        TextField("Wallet Address", text: self.$walletId)
+                        TextField("Wallet Address (TRC20)", text: self.$walletId)
                             .frame(height: 30)
                             .controlSize(.large)
                             .onChange(of: self.walletId) { input in
@@ -73,6 +75,8 @@ struct ScannerView: View {
                                 .foregroundColor(self.colorScheme == .dark ? .white : .black)
                                 .frame(height:20)
                         }
+                        
+                        
                     }
                 }
                 .navigationBarTitle("Scanner")
@@ -82,7 +86,12 @@ struct ScannerView: View {
                 List(self.transaction) { data in
                     
                     Button(action: {
+                        self.walletId = data.from
+                        
+                        showSafari.toggle()
+                        
                         NSLog("\(data)")
+                        
                     }) {
                         VStack(alignment: .leading) {
                             Text("Transaction ID: \(data.transaction_id)")
@@ -107,6 +116,7 @@ struct ScannerView: View {
                         }
                         .padding()
                         .background(Color.gray.opacity(0.1))
+                        .scrollDismissesKeyboard(.interactively)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(.gray.opacity(0.3), lineWidth: 1))
                     }
                     .background(Color.gray.opacity(0.1))
@@ -133,6 +143,10 @@ struct ScannerView: View {
                 )
             })
             .background(Color.gray.opacity(0.1))
+            .fullScreenCover(isPresented: $showSafari, content: {
+                SFSafariViewWrapper(url: URL(string:"https://tronscan.org/#/address/\(self.walletId)")!)
+            })
+            .scrollDismissesKeyboard(.interactively)
         }
     }
 }

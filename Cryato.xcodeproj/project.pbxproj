@@ -16,6 +16,7 @@
 		1A0242D3299B8880005C40BE /* PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242D2299B8880005C40BE /* PaymentMethods.swift */; };
 		1A0242D5299B8AF2005C40BE /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242D4299B8AF2005C40BE /* Documentation.docc */; };
 		1A0242D8299B8B4B005C40BE /* scam.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A0242D7299B8B4B005C40BE /* scam.json */; };
+		1A0242DA299BA278005C40BE /* InAppWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242D9299BA278005C40BE /* InAppWeb.swift */; };
 		1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D2298989BF00C2C773 /* Calculator.swift */; };
 		1A1B55D629899CD800C2C773 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D529899CD800C2C773 /* Double.swift */; };
 		1A1B55D8298A371200C2C773 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D7298A371200C2C773 /* View.swift */; };
@@ -91,6 +92,7 @@
 		1A0242D2299B8880005C40BE /* PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethods.swift; sourceTree = "<group>"; };
 		1A0242D4299B8AF2005C40BE /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		1A0242D7299B8B4B005C40BE /* scam.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scam.json; sourceTree = "<group>"; };
+		1A0242D9299BA278005C40BE /* InAppWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InAppWeb.swift; path = Cryato/Controllers/InAppWeb.swift; sourceTree = SOURCE_ROOT; };
 		1A1B55D2298989BF00C2C773 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		1A1B55D529899CD800C2C773 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1A1B55D7298A371200C2C773 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				1A1B55D529899CD800C2C773 /* Double.swift */,
 				1A1B55D7298A371200C2C773 /* View.swift */,
 				1AF58EB529979F34003BD1DA /* String.swift */,
+				1A0242D9299BA278005C40BE /* InAppWeb.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */,
 				1AF58EBD2998FF04003BD1DA /* Cryptocurrencies.swift in Sources */,
 				1A1B55D629899CD800C2C773 /* Double.swift in Sources */,
+				1A0242DA299BA278005C40BE /* InAppWeb.swift in Sources */,
 				1A7BC4DF299786A70046D622 /* BybitEncryption.swift in Sources */,
 				1AADCC4F2996F43D009EF086 /* Bybit.swift in Sources */,
 				1AF58EBB2998FD70003BD1DA /* CryptoSelector.swift in Sources */,
