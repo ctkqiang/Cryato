@@ -39,7 +39,7 @@ struct PreferenceView: View {
         }
     }
     
-    public init() {
+    public init() { 
         if let tronDefaultAPI = Bundle.main.infoDictionary?["TRON_SEARCH_API"] as? String {
             if SharedPreferences.getData(key: "tronapi") != "nil" {
                 self.tronScanApi = SharedPreferences.getData(key: "tronapi")

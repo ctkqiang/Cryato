@@ -17,6 +17,9 @@
 		1A0242D5299B8AF2005C40BE /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242D4299B8AF2005C40BE /* Documentation.docc */; };
 		1A0242D8299B8B4B005C40BE /* scam.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A0242D7299B8B4B005C40BE /* scam.json */; };
 		1A0242DA299BA278005C40BE /* InAppWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242D9299BA278005C40BE /* InAppWeb.swift */; };
+		1A0242DC299BC1DD005C40BE /* Scam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242DB299BC1DD005C40BE /* Scam.swift */; };
+		1A0242DE299BC262005C40BE /* ScamListHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242DD299BC262005C40BE /* ScamListHandler.swift */; };
+		1A0242E1299C06B7005C40BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A0242E3299C06B7005C40BE /* Localizable.strings */; };
 		1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D2298989BF00C2C773 /* Calculator.swift */; };
 		1A1B55D629899CD800C2C773 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D529899CD800C2C773 /* Double.swift */; };
 		1A1B55D8298A371200C2C773 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D7298A371200C2C773 /* View.swift */; };
@@ -93,6 +96,11 @@
 		1A0242D4299B8AF2005C40BE /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		1A0242D7299B8B4B005C40BE /* scam.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scam.json; sourceTree = "<group>"; };
 		1A0242D9299BA278005C40BE /* InAppWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InAppWeb.swift; path = Cryato/Controllers/InAppWeb.swift; sourceTree = SOURCE_ROOT; };
+		1A0242DB299BC1DD005C40BE /* Scam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scam.swift; sourceTree = "<group>"; };
+		1A0242DD299BC262005C40BE /* ScamListHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamListHandler.swift; sourceTree = "<group>"; };
+		1A0242E2299C06B7005C40BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1A0242E4299C06BA005C40BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1A0242E5299C06BB005C40BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1A1B55D2298989BF00C2C773 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		1A1B55D529899CD800C2C773 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1A1B55D7298A371200C2C773 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 				1A510D242994BBD500F65B0D /* SharedPreferences.swift */,
 				1A939051299554BD004AB56D /* TransactionsHelper.swift */,
 				1A7BC4E029978BF80046D622 /* DatetimeHelper.swift */,
+				1A0242DD299BC262005C40BE /* ScamListHandler.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +254,7 @@
 				1AF58EBA2998FD6F003BD1DA /* CryptoSelector.swift */,
 				1AF58EBC2998FF04003BD1DA /* Cryptocurrencies.swift */,
 				1A0242C229994837005C40BE /* PNL.swift */,
+				1A0242DB299BC1DD005C40BE /* Scam.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -280,6 +290,7 @@
 		1AD4858D298923630024F1AB = {
 			isa = PBXGroup;
 			children = (
+				1A0242E3299C06B7005C40BE /* Localizable.strings */,
 				1A510D202994484600F65B0D /* Configurations */,
 				1A510D1B2993EF6700F65B0D /* Podfile */,
 				1A9E74E9298C150E00BFB165 /* Donation.md */,
@@ -456,6 +467,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ru,
 			);
 			mainGroup = 1AD4858D298923630024F1AB;
 			packageReferences = (
@@ -488,6 +501,7 @@
 				1A510D1C2993EF6700F65B0D /* Podfile in Resources */,
 				1AD485A1298923660024F1AB /* Preview Assets.xcassets in Resources */,
 				1A30FA32298A80A9007301C1 /* 2.png in Resources */,
+				1A0242E1299C06B7005C40BE /* Localizable.strings in Resources */,
 				1A30FA38298A80A9007301C1 /* 1.png in Resources */,
 				1A30FA39298A80A9007301C1 /* 8.png in Resources */,
 				1A510D232994488B00F65B0D /* .gitignore in Resources */,
@@ -531,9 +545,11 @@
 				1AD485C729894D160024F1AB /* SellView.swift in Sources */,
 				1AD4859C298923630024F1AB /* ContentView.swift in Sources */,
 				1A0242CF299B832F005C40BE /* ScamView.swift in Sources */,
+				1A0242DC299BC1DD005C40BE /* Scam.swift in Sources */,
 				1AD485CB2989537D0024F1AB /* PreferenceView.swift in Sources */,
 				1A0242D1299B84F8005C40BE /* ScamList.swift in Sources */,
 				1AD485C429894C330024F1AB /* BuyView.swift in Sources */,
+				1A0242DE299BC262005C40BE /* ScamListHandler.swift in Sources */,
 				1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */,
 				1A0242D5299B8AF2005C40BE /* Documentation.docc in Sources */,
 				1A510D282994C07000F65B0D /* SharedPreferenceType.swift in Sources */,
@@ -587,6 +603,19 @@
 			targetProxy = 1AD485B1298923660024F1AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1A0242E3299C06B7005C40BE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A0242E2299C06B7005C40BE /* en */,
+				1A0242E4299C06BA005C40BE /* zh-Hans */,
+				1A0242E5299C06BB005C40BE /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1AD485B8298923660024F1AB /* Debug */ = {

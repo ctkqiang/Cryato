@@ -27,6 +27,7 @@ struct ScannerView: View {
     @State private var walletId :String = ""
     @State private var showAlert :Bool = false
     @State private var showSafari :Bool = false
+    @State private var selectedCurrency :String = CryptoSelector.cryptoCurrenciesChoices[0]
     
     private var validator :FormValidator = FormValidator()
     
@@ -41,7 +42,6 @@ struct ScannerView: View {
         if (try? decoder.decode(Transactions.self, from: json)) != nil {
             // self.transaction = listOfTransactions.data
         }
-        
     }
     
     var body: some View {
@@ -64,6 +64,8 @@ struct ScannerView: View {
                                 
                                 NSLog("User Input an invalid Wallet Address")
                             }
+                            
+                            try! ScamListHandler.getScamList()  // TODO REMOVE THIS
                             
                             Task {
                                 TransactionsHelper.loadTransactions(WalletID: self.walletId) { (result) in
