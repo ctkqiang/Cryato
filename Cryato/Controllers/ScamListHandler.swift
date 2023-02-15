@@ -6,26 +6,21 @@
 //
 
 import Foundation
-#if canImport(FoundationNetworking)
-import FoundationNetworking
-#endif
 
-struct ScamListHandler {
-    public static func getScamList() throws -> Void {
-        var responseData :Scam
-        print("asdasd")
-        
-        if let url = URL(string: Scams.endpoints) {
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data {
-                    print (response as Any)
-                }
-                
-                if let error = error {
-                    NSLog("\(error)")
-                }
-            
-            }.resume()
+
+class ScamListHandler : ObservableObject {
+    public static func loadScamList(completion: @escaping ([Scam]) -> ()) {
+        guard let url = URL(string: Scams.endpoints) else {
+            NSLog("The url is not working...")
+            return
         }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            let result = try! JSONDecoder().decode([Scam].self, from: data!)
+            
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }.resume()
     }
 }

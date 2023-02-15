@@ -65,8 +65,6 @@ struct ScannerView: View {
                                 NSLog("User Input an invalid Wallet Address")
                             }
                             
-                            try! ScamListHandler.getScamList()  // TODO REMOVE THIS
-                            
                             Task {
                                 TransactionsHelper.loadTransactions(WalletID: self.walletId) { (result) in
                                     self.transaction = result.data ?? []

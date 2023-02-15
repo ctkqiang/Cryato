@@ -8,16 +8,66 @@
 import SwiftUI
 
 struct ScamView: View {
+    @Environment(\.scenePhase) var scenePhase
+    
+    @State private var scam :[Scam] = [Scam]()
+    
+    public init() {
+        self.scam = []
+    }
+    
+    private func onLoad() throws -> Void {
+        Task {
+            ScamListHandler.loadScamList() { result in
+                print(result)
+                self.scam = result
+            }
+        }
+    }
+    
     var body: some View {
         NavigationView {
             Form {
-                VStack {
-                    Text("All the Scammers history are listed here")
+                List(self.scam) { data in
+                    Section(header: Text("Scammer User ID: \(data.userId!)")) {
+                        Button() {
+                            // Do Nothing
+                        } label: {
+                            VStack(alignment: .leading) {
+                                Text("Wallet ID: \(data.walletId == "" ? "Not Specified" : data.walletId!)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                Text("Payment Method: \(data.paymentMethod!)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                Text("Currency: \(data.currency!)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                Text("Platform: \(data.platform!)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                Text("Reported By: \(data.reportedBy!)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                Text("Scam Technique: \"\(data.scamTechnique!)\"")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                            }
+                        }
+                    }
                 }
             }
             .navigationBarTitle("Scams")
             .refreshable {
-                // @TODO
+                self.scam = []
+                try! self.onLoad()
+            }
+        }.onAppear {
+            try! self.onLoad()
+        }
+        .onChange(of: self.scenePhase) { newPhrase in
+            if newPhrase == .active {
+                try! self.onLoad()
             }
         }
     }

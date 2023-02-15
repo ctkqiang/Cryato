@@ -16,6 +16,7 @@ struct RecordsView: View {
                 VStack {
                     Text("Records here")
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+          
                 }
             }
             .navigationBarTitle("Records")
