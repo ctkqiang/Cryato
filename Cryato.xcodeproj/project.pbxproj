@@ -20,6 +20,8 @@
 		1A0242DC299BC1DD005C40BE /* Scam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242DB299BC1DD005C40BE /* Scam.swift */; };
 		1A0242DE299BC262005C40BE /* ScamListHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242DD299BC262005C40BE /* ScamListHandler.swift */; };
 		1A0242E1299C06B7005C40BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A0242E3299C06B7005C40BE /* Localizable.strings */; };
+		1A0242E8299CBAAB005C40BE /* SwiftUI-FAB in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0242E7299CBAAB005C40BE /* SwiftUI-FAB */; };
+		1A0242EB299CBB84005C40BE /* LogToDiscord in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0242EA299CBB84005C40BE /* LogToDiscord */; };
 		1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D2298989BF00C2C773 /* Calculator.swift */; };
 		1A1B55D629899CD800C2C773 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D529899CD800C2C773 /* Double.swift */; };
 		1A1B55D8298A371200C2C773 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D7298A371200C2C773 /* View.swift */; };
@@ -159,6 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AF58EB4299795D6003BD1DA /* Toast in Frameworks */,
+				1A0242EB299CBB84005C40BE /* LogToDiscord in Frameworks */,
+				1A0242E8299CBAAB005C40BE /* SwiftUI-FAB in Frameworks */,
 				1AF58EB92997A5E7003BD1DA /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +400,8 @@
 			packageProductDependencies = (
 				1AF58EB3299795D6003BD1DA /* Toast */,
 				1AF58EB82997A5E7003BD1DA /* AlertToast */,
+				1A0242E7299CBAAB005C40BE /* SwiftUI-FAB */,
+				1A0242EA299CBB84005C40BE /* LogToDiscord */,
 			);
 			productName = Cryato;
 			productReference = 1AD48596298923630024F1AB /* Cryato.app */;
@@ -474,6 +480,8 @@
 			packageReferences = (
 				1AF58EB2299795D6003BD1DA /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				1AF58EB72997A5E7003BD1DA /* XCRemoteSwiftPackageReference "AlertToast" */,
+				1A0242E6299CBAAB005C40BE /* XCRemoteSwiftPackageReference "SwiftUI-FAB" */,
+				1A0242E9299CBB84005C40BE /* XCRemoteSwiftPackageReference "LogToDiscord" */,
 			);
 			productRefGroup = 1AD48597298923630024F1AB /* Products */;
 			projectDirPath = "";
@@ -922,6 +930,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1A0242E6299CBAAB005C40BE /* XCRemoteSwiftPackageReference "SwiftUI-FAB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnmelodyme/SwiftUI-FAB.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		1A0242E9299CBB84005C40BE /* XCRemoteSwiftPackageReference "LogToDiscord" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnmelodyme/LogToDiscord.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		1AF58EB2299795D6003BD1DA /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -941,6 +965,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1A0242E7299CBAAB005C40BE /* SwiftUI-FAB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A0242E6299CBAAB005C40BE /* XCRemoteSwiftPackageReference "SwiftUI-FAB" */;
+			productName = "SwiftUI-FAB";
+		};
+		1A0242EA299CBB84005C40BE /* LogToDiscord */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A0242E9299CBB84005C40BE /* XCRemoteSwiftPackageReference "LogToDiscord" */;
+			productName = LogToDiscord;
+		};
 		1AF58EB3299795D6003BD1DA /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1AF58EB2299795D6003BD1DA /* XCRemoteSwiftPackageReference "Toast-Swift" */;

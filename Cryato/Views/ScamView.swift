@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+#if canImport(SwiftUI_FAB)
+import SwiftUI_FAB
+#endif
+
 struct ScamView: View {
     @Environment(\.scenePhase) var scenePhase
     
@@ -69,6 +73,11 @@ struct ScamView: View {
             if newPhrase == .active {
                 try! self.onLoad()
             }
+        }.floatingActionButton(
+            color: .black,
+            image: Image(systemName: "plus") .foregroundColor(.white)) {
+            
+                // @TODO add request 
         }
     }
 }

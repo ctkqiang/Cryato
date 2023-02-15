@@ -10,6 +10,24 @@
       }
     },
     {
+      "identity" : "logtodiscord",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnmelodyme/LogToDiscord.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "967d008563ec0e8a40d6ab07ba88fccf0b35b0da"
+      }
+    },
+    {
+      "identity" : "swiftui-fab",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnmelodyme/SwiftUI-FAB.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "57750b196060836da3881a591809b9b36c59c8fc"
+      }
+    },
+    {
       "identity" : "toast-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scalessec/Toast-Swift.git",
