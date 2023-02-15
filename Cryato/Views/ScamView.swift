@@ -12,9 +12,11 @@ import SwiftUI_FAB
 #endif
 
 struct ScamView: View {
-    @Environment(\.scenePhase) var scenePhase
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.colorScheme) private var colorScheme
     
     @State private var scam :[Scam] = [Scam]()
+    @State private var isListView :Bool = true
     
     public init() {
         self.scam = []
@@ -29,35 +31,42 @@ struct ScamView: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationView {
             Form {
-                List(self.scam) { data in
-                    Section(header: Text("Scammer User ID: \(data.userId!)")) {
-                        Button() {
-                            // Do Nothing
-                        } label: {
-                            VStack(alignment: .leading) {
-                                Text("Wallet ID: \(data.walletId == "" ? "Not Specified" : data.walletId!)")
-                                    .listRowSeparator(.hidden)
-                                    .font(Font.system(size: 12))
-                                Text("Payment Method: \(data.paymentMethod!)")
-                                    .listRowSeparator(.hidden)
-                                    .font(Font.system(size: 12))
-                                Text("Currency: \(data.currency!)")
-                                    .listRowSeparator(.hidden)
-                                    .font(Font.system(size: 12))
-                                Text("Platform: \(data.platform!)")
-                                    .listRowSeparator(.hidden)
-                                    .font(Font.system(size: 12))
-                                Text("Reported By: \(data.reportedBy!)")
-                                    .listRowSeparator(.hidden)
-                                    .font(Font.system(size: 12))
-                                Text("Scam Technique: \"\(data.scamTechnique!)\"")
-                                    .listRowSeparator(.hidden)
-                                    .font(Font.system(size: 12))
+                if self.isListView {
+                    List(self.scam) { data in
+                        Section(header: Text("Scammer User ID: \(data.userId!)")) {
+                            Button() {
+                                // Do Nothing
+                            } label: {
+                                VStack(alignment: .leading) {
+                                    Text("Wallet ID: \(data.walletId == "" ? "Not Specified" : data.walletId!)")
+                                        .listRowSeparator(.hidden)
+                                        .font(Font.system(size: 12))
+                                    Text("Payment Method: \(data.paymentMethod!)")
+                                        .listRowSeparator(.hidden)
+                                        .font(Font.system(size: 12))
+                                    Text("Currency: \(data.currency!)")
+                                        .listRowSeparator(.hidden)
+                                        .font(Font.system(size: 12))
+                                    Text("Platform: \(data.platform!)")
+                                        .listRowSeparator(.hidden)
+                                        .font(Font.system(size: 12))
+                                    Text("Reported By: \(data.reportedBy!)")
+                                        .listRowSeparator(.hidden)
+                                        .font(Font.system(size: 12))
+                                    Text("Scam Technique: \"\(data.scamTechnique!)\"")
+                                        .listRowSeparator(.hidden)
+                                        .font(Font.system(size: 12))
+                                }
                             }
                         }
+                    }
+                } else {
+                    AddScamList().refreshable {
+                        self.scam = []
+                        self.isListView = true
                     }
                 }
             }
@@ -67,18 +76,20 @@ struct ScamView: View {
                 try! self.onLoad()
             }
         }.onAppear {
+            self.isListView = true
             try! self.onLoad()
         }
         .onChange(of: self.scenePhase) { newPhrase in
             if newPhrase == .active {
+                self.isListView = true
                 try! self.onLoad()
             }
         }.floatingActionButton(
-            color: .black,
-            image: Image(systemName: "plus") .foregroundColor(.white)) {
-            
-                // @TODO add request 
-        }
+            color: colorScheme == .dark ? .white : .black,
+            image: Image(systemName: "plus")
+                .foregroundColor(colorScheme == .dark ? .black : .white)) {
+                self.isListView = false
+            }
     }
 }
 

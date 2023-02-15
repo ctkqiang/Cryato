@@ -58,7 +58,7 @@ struct SellView: View {
         return (Double(value) ?? 0 < 0) ? "losses": "profits"
     }
     
-    var body: some View {
+    public var body: some View {
         VStack {
             Form {
                 Section(header: Text("Arbitraging calculator")) {

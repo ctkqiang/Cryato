@@ -15,8 +15,7 @@ struct ContentView: View {
     
     private var navigationTitle :String = "Cryato"
 
-    
-    var body: some View {
+    public var body: some View {
         NavigationView {
             VStack {
                 TabView {

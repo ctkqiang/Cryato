@@ -77,7 +77,7 @@ struct PreferenceView: View {
         #endif
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationView {
             VStack {
                 Form {
