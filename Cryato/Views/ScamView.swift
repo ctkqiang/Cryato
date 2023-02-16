@@ -25,7 +25,6 @@ struct ScamView: View {
     private func onLoad() throws -> Void {
         Task {
             ScamListHandler.loadScamList() { result in
-                print(result)
                 self.scam = result
             }
         }
