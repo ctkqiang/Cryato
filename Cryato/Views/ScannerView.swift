@@ -44,6 +44,22 @@ struct ScannerView: View {
         }
     }
     
+    private func search() throws -> Void {
+        /** Return API to Listview */
+        
+        if try! self.walletId.isContainSpecialChars() {
+            self.showAlert = true
+            
+            NSLog("User Input an invalid Wallet Address")
+        }
+        
+        Task {
+            TransactionsHelper.loadTransactions(WalletID: self.walletId) { (result) in
+                self.transaction = result.data ?? []
+            }
+        }
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -56,70 +72,68 @@ struct ScannerView: View {
                                 try! self.validate(input, 0x0)
                             }
                         
-                        Button(action: {
-                            /** Return API to Listview */
-                            
-                            if try! self.walletId.isContainSpecialChars() {
-                                self.showAlert = true
-                                
-                                NSLog("User Input an invalid Wallet Address")
+                        Button(
+                            action: {
+                                self.walletId = ""
+                                self.showAlert = false
                             }
-                            
-                            Task {
-                                TransactionsHelper.loadTransactions(WalletID: self.walletId) { (result) in
-                                    self.transaction = result.data ?? []
-                                }
-                            }
-                        }) {
-                            Image(systemName: "magnifyingglass")
-                                .foregroundColor(self.colorScheme == .dark ? .white : .black)
+                        ) {
+                            Image(systemName: "delete.left.fill")
+                                .foregroundColor(.red)
                                 .frame(height:20)
                         }
-                        
-                        
                     }
                 }
                 .navigationBarTitle("Scanner")
-                .background(self.colorScheme == .dark ? .black : .gray.opacity(0.1))
+                .background(self.colorScheme == .dark ? .black : .gray.opacity(0.0))
                 .frame(maxHeight: 70)
                 
                 List(self.transaction) { data in
                     
-                    Button(action: {
-                        self.walletId = data.from
-                        
-                        showSafari.toggle()
-                        
-                        NSLog("\(data)")
-                        
-                    }) {
-                        VStack(alignment: .leading) {
-                            Text("Transaction ID: \(data.transaction_id)")
-                                .listRowSeparator(.hidden)
-                                .font(Font.system(size: 12))
+                    if data.transaction_id.isEmpty {
+                        Text("No Transactions Found")
+                    } else {
+                        Button(action: {
+                            self.walletId = data.from
                             
-                            Text("Transaction FROM: \(data.from)")
-                                .listRowSeparator(.hidden)
-                                .font(Font.system(size: 12))
+                            showSafari.toggle()
                             
-                            Text("Transaction TO: \(data.to)")
-                                .listRowSeparator(.hidden)
-                                .font(Font.system(size: 12))
+                            NSLog("\(data)")
                             
-                            Text("Transaction VALUE: \(data.value)")
-                                .listRowSeparator(.hidden)
-                                .font(Font.system(size: 12))
-                            
-                            Text("BLOCK TIMESTAMP: \(data.block_timestamp)")
-                                .listRowSeparator(.hidden)
-                                .font(Font.system(size: 12))
+                        }) {
+                            VStack(alignment: .leading) {
+                                Text("Transaction ID: \(data.transaction_id)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                
+                                Text("Transaction FROM: \(data.from)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                
+                                Text("Transaction TO: \(data.to)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                
+                                Text("Transaction VALUE: \(data.value)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                
+                                Text("BLOCK TIMESTAMP: \(data.block_timestamp)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                            }
+                            .padding()
+                            .background(Color.gray.opacity(0.1))
+                            .scrollDismissesKeyboard(.interactively)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5).stroke(
+                                    .gray.opacity(0.3),
+                                    lineWidth: 1
+                                )
+                            )
                         }
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
-                        .scrollDismissesKeyboard(.interactively)
-                        .overlay(RoundedRectangle(cornerRadius: 5).stroke(.gray.opacity(0.3), lineWidth: 1))
+                        .background(.white.opacity(0.1))
                     }
-                    .background(Color.gray.opacity(0.1))
                 }
                 .scrollContentBackground(.hidden)
                 .refreshable {
@@ -142,17 +156,19 @@ struct ScannerView: View {
                     subTitle: "Please Input a Valid Wallet Address"
                 )
             })
-            .background(Color.gray.opacity(0.1))
+            .background(.gray.opacity(0.1))
             .fullScreenCover(isPresented: $showSafari, content: {
-                SFSafariViewWrapper(url: URL(string:"https://tronscan.org/#/address/\(self.walletId)")!)
+                SFSafariViewWrapper(url:URL(string:"https://tronscan.org/#/address/\(self.walletId)")!)
             })
             .scrollDismissesKeyboard(.interactively)
+            .onSubmit { try! self.search() }
+            .submitLabel(.search)
         }
     }
 }
 
 struct Scanner_Previews: PreviewProvider {
-    static var previews: some View {
+    public static var previews: some View {
         ScannerView()
     }
 }
