@@ -32,7 +32,7 @@ struct ScamView: View {
     }
     
     public var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 if self.isListView {
                     List(self.scam) { data in
@@ -63,10 +63,30 @@ struct ScamView: View {
                             }
                         }
                     }
-                } else {
+                }
+                else {
                     AddScamList().refreshable {
                         self.scam = []
-                        self.isListView = true
+                        if self.isListView == false {
+                            self.isListView = true
+                        }
+                    }
+                }
+                
+                if self.isListView {
+                    Section(header: Text("Click Here To Add")) {
+                        Button(
+                            action: {
+                                self.isListView = false
+                            }
+                        ){
+                            Text("ADD SCAMMER")
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .background(.blue)
+                                .cornerRadius(10)
+                        }
                     }
                 }
             }
@@ -74,6 +94,9 @@ struct ScamView: View {
             .refreshable {
                 self.scam = []
                 try! self.onLoad()
+                if self.isListView == false {
+                    self.isListView = true
+                }
             }
         }.onAppear {
             self.isListView = true
@@ -84,12 +107,7 @@ struct ScamView: View {
                 self.isListView = true
                 try! self.onLoad()
             }
-        }.floatingActionButton(
-            color: colorScheme == .dark ? .white : .black,
-            image: Image(systemName: "plus")
-                .foregroundColor(colorScheme == .dark ? .black : .white)) {
-                self.isListView = false
-            }
+        }
     }
 }
 

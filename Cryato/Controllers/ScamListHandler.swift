@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class ScamListHandler : ObservableObject {
     public static func loadScamList(completion: @escaping ([Scam]) -> ()) {
         guard let url = URL(string: Scams.endpoints) else {

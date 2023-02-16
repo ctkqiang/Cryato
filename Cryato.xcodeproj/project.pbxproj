@@ -23,6 +23,7 @@
 		1A0242E8299CBAAB005C40BE /* SwiftUI-FAB in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0242E7299CBAAB005C40BE /* SwiftUI-FAB */; };
 		1A0242EB299CBB84005C40BE /* LogToDiscord in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0242EA299CBB84005C40BE /* LogToDiscord */; };
 		1A0242ED299CC765005C40BE /* AddScamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242EC299CC764005C40BE /* AddScamList.swift */; };
+		1A0242EF299E8C74005C40BE /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242EE299E8C74005C40BE /* Helper.swift */; };
 		1A1B55D3298989BF00C2C773 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D2298989BF00C2C773 /* Calculator.swift */; };
 		1A1B55D629899CD800C2C773 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D529899CD800C2C773 /* Double.swift */; };
 		1A1B55D8298A371200C2C773 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D7298A371200C2C773 /* View.swift */; };
@@ -105,6 +106,7 @@
 		1A0242E4299C06BA005C40BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1A0242E5299C06BB005C40BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1A0242EC299CC764005C40BE /* AddScamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScamList.swift; sourceTree = "<group>"; };
+		1A0242EE299E8C74005C40BE /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		1A1B55D2298989BF00C2C773 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		1A1B55D529899CD800C2C773 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1A1B55D7298A371200C2C773 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				1A939051299554BD004AB56D /* TransactionsHelper.swift */,
 				1A7BC4E029978BF80046D622 /* DatetimeHelper.swift */,
 				1A0242DD299BC262005C40BE /* ScamListHandler.swift */,
+				1A0242EE299E8C74005C40BE /* Helper.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				1A93904D299533F1004AB56D /* AssetsView.swift in Sources */,
 				1A1B55DB298A467E00C2C773 /* FormValidator.swift in Sources */,
 				1A0242C9299986C9005C40BE /* BinanceFundingAccount.swift in Sources */,
+				1A0242EF299E8C74005C40BE /* Helper.swift in Sources */,
 				1A939052299554BE004AB56D /* TransactionsHelper.swift in Sources */,
 				1A7BC4E129978BF80046D622 /* DatetimeHelper.swift in Sources */,
 				1A0242C72999840B005C40BE /* Binance.swift in Sources */,

@@ -2,15 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
-	<key>BYBIT_API_SECRET</key>
-	<string>$(BYBIT_API_SECRET)</string>
 	<key>BYBIT_API_KEY</key>
 	<string>$(BYBIT_API_KEY)</string>
+	<key>BYBIT_API_SECRET</key>
+	<string>$(BYBIT_API_SECRET)</string>
+	<key>DISCORD_WEBHOOK</key>
+	<string>$(DISCORD_WEBHOOK)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>TRON_SEARCH_API</key>
 	<string>$(TRON_SEARCH_API)</string>
-	<key>BINANCE_API_KEY</key>
-	<string>$(BINANCE_API_KEY)</string>
 </dict>
 </plist>

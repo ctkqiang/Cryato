@@ -11,15 +11,22 @@ import SwiftUI
 import AlertToast
 #endif
 
+#if canImport(LogToDiscord)
+import LogToDiscord
+#endif
+
 struct AddScamList: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     @State private var walletID: String = ""
     @State private var paymentMethod: String = ""
     @State private var currency: String = ""
     @State private var platform: String = ""
     @State private var name: String = ""
     @State private var technique: String = ""
+    @State private var showAlert :Bool = false
     
-    private var WalletIdPlaceholder :String = "What's the scammer's Wallet Address?"
+    private var WalletIdPlaceholder :String = "What's the scammer's Wallet Address or Username?"
     private var PaymentMethodPlaceholder :String = "What's the payment method?"
     private var CurrencyPlaceholder :String = "What's the Currency?"
     private var PlatformPlaceholder :String = "What's the platform the scammer used?"
@@ -27,35 +34,85 @@ struct AddScamList: View {
     private var TechniquePlaceholder :String = "What's the technique the scammer used?"
     
     public var body: some View {
-        TextField(self.WalletIdPlaceholder, text: self.$walletID)
-            .textFieldStyle(.roundedBorder)
-            .font(Font.system(size: 15))
-            .padding(5)
-        
-        TextField(self.PaymentMethodPlaceholder, text: self.$paymentMethod)
-            .textFieldStyle(.roundedBorder)
-            .font(Font.system(size: 15))
-            .padding(5)
-        
-        TextField(self.CurrencyPlaceholder, text: self.$currency)
-            .textFieldStyle(.roundedBorder)
-            .font(Font.system(size: 15))
-            .padding(5)
-        
-        TextField(self.PlatformPlaceholder, text: self.$platform)
-            .textFieldStyle(.roundedBorder)
-            .font(Font.system(size: 15))
-            .padding(5)
-        
-        TextField(self.NamePlaceholder, text: self.$name)
-            .textFieldStyle(.roundedBorder)
-            .font(Font.system(size: 15))
-            .padding(5)
-        
-        TextField(self.TechniquePlaceholder, text: self.$technique)
-            .textFieldStyle(.roundedBorder)
-            .font(Font.system(size: 15))
-            .padding(5)
+        VStack(alignment: .leading) {
+            Section(header: Text("")) {
+                TextField(self.WalletIdPlaceholder, text: self.$walletID)
+                    .textFieldStyle(.roundedBorder)
+                    .font(Font.system(size: 12))
+                    .padding(5)
+                
+                TextField(self.PaymentMethodPlaceholder, text: self.$paymentMethod)
+                    .textFieldStyle(.roundedBorder)
+                    .font(Font.system(size: 12))
+                    .padding(5)
+                
+                TextField(self.CurrencyPlaceholder, text: self.$currency)
+                    .textFieldStyle(.roundedBorder)
+                    .font(Font.system(size: 12))
+                    .padding(5)
+                
+                TextField(self.PlatformPlaceholder, text: self.$platform)
+                    .textFieldStyle(.roundedBorder)
+                    .font(Font.system(size: 12))
+                    .padding(5)
+                
+                TextField(self.NamePlaceholder, text: self.$name)
+                    .textFieldStyle(.roundedBorder)
+                    .font(Font.system(size: 12))
+                    .padding(5)
+                
+                TextField(self.TechniquePlaceholder, text: self.$technique)
+                    .textFieldStyle(.roundedBorder)
+                    .font(Font.system(size: 12))
+                    .padding(5)
+                
+                Button {
+                    if self.currency.isEmpty ||
+                        self.platform.isEmpty ||
+                        self.name.isEmpty ||
+                        self.technique.isEmpty {
+                        self.showAlert = true
+                    } else {
+                        
+                        let data :[String: String] = [
+                            "Name" : self.name,
+                            "WalletID" : self.walletID,
+                            "PaymentMethod" : self.paymentMethod,
+                            "Currency" : self.currency,
+                            "Platform" : self.platform,
+                            "Techniques" : self.technique
+                        ]
+                        
+                        if let discordChannel = Bundle.main.infoDictionary?["DISCORD_WEBHOOK"] as? String {
+                            try! LogToDiscord(
+                                appName: "Cryato APP",
+                                webhookUrl: "https://\(discordChannel)"
+                            ).send(message: "\(data)", level: Level.Debug, delay: 0x1)
+                        }
+                    }
+                    
+                    hideKeyboard()
+                } label: {
+                    Text("ADD TO DATABASE")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .foregroundColor(.white)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle)
+                .tint(.blue)
+                .frame(height: 60)
+                .controlSize(.large)
+                .padding()
+            }
+        }
+        .toast(isPresenting: self.$showAlert, alert: {
+            AlertToast(
+                type: .error(.red),
+                title: "Warning",
+                subTitle: "Please fill in all the required field!\n(except for \"walletid\")"
+            )
+        })
     }
 }
 
