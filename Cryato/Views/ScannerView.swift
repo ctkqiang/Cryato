@@ -64,25 +64,12 @@ struct ScannerView: View {
         NavigationView {
             VStack {
                 Form {
-                    HStack {
-                        TextField("Wallet Address (TRC20)", text: self.$walletId)
-                            .frame(height: 30)
-                            .controlSize(.large)
-                            .onChange(of: self.walletId) { input in
-                                try! self.validate(input, 0x0)
-                            }
-                        
-                        Button(
-                            action: {
-                                self.walletId = ""
-                                self.showAlert = false
-                            }
-                        ) {
-                            Image(systemName: "delete.left.fill")
-                                .foregroundColor(.red)
-                                .frame(height:20)
+                    TextField("Wallet Address (TRC20)", text: self.$walletId)
+                        .frame(height: 30)
+                        .controlSize(.large)
+                        .onChange(of: self.walletId) { input in
+                            try! self.validate(input, 0x0)
                         }
-                    }
                 }
                 .navigationBarTitle("Scanner")
                 .background(self.colorScheme == .dark ? .black : .gray.opacity(0.0))
