@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct AssetsView: View {
-    var body: some View {
+    @Environment(\.colorScheme) private var colorScheme
+    
+    public var body: some View {
         NavigationView {
             Form {
                 VStack {
@@ -18,13 +20,22 @@ struct AssetsView: View {
             .navigationBarTitle("Assets")
             .refreshable {
                 // @TODO
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        /** Navigate to app preference page */
+                        PreferenceView()
+                    } label: {
+                        Image(systemName: "gearshape").foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
+                    }
+                }
             }
         }
     }
 }
 
 struct AssetsView_Previews: PreviewProvider {
-    static var previews: some View {
+    public static var previews: some View {
         AssetsView()
     }
 }

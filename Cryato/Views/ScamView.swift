@@ -33,63 +33,46 @@ struct ScamView: View {
     public var body: some View {
         NavigationStack {
             Form {
-                if self.isListView {
-                    List(self.scam) { data in
-                        Section(header: Text("Scammer User ID: \(data.userId!)")) {
-                            Button() {
-                                // Do Nothing
-                            } label: {
-                                VStack(alignment: .leading) {
-                                    Text("Wallet ID: \(data.walletId == "" ? "Not Specified" : data.walletId!)")
-                                        .listRowSeparator(.hidden)
-                                        .font(Font.system(size: 12))
-                                    Text("Payment Method: \(data.paymentMethod!)")
-                                        .listRowSeparator(.hidden)
-                                        .font(Font.system(size: 12))
-                                    Text("Currency: \(data.currency!)")
-                                        .listRowSeparator(.hidden)
-                                        .font(Font.system(size: 12))
-                                    Text("Platform: \(data.platform!)")
-                                        .listRowSeparator(.hidden)
-                                        .font(Font.system(size: 12))
-                                    Text("Reported By: \(data.reportedBy!)")
-                                        .listRowSeparator(.hidden)
-                                        .font(Font.system(size: 12))
-                                    Text("Scam Technique: \"\(data.scamTechnique!)\"")
-                                        .listRowSeparator(.hidden)
-                                        .font(Font.system(size: 12))
-                                }
-                            }
-                        }
-                    }
-                }
-                else {
-                    AddScamList().refreshable {
-                        self.scam = []
-                        if self.isListView == false {
-                            self.isListView = true
-                        }
-                    }
-                }
                 
-                if self.isListView {
-                    Section(header: Text("Click Here To Add")) {
-                        Button(
-                            action: {
-                                self.isListView = false
+                List(self.scam) { data in
+                    Section(header: Text("Scammer User ID: \(data.userId!)")) {
+                        Button() {
+                            // Do Nothing
+                        } label: {
+                            VStack(alignment: .leading) {
+                                Text("Wallet ID: \(data.walletId == "" ? "Not Specified" : data.walletId!)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                Text("Payment Method: \(data.paymentMethod!)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                Text("Currency: \(data.currency!)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                Text("Platform: \(data.platform!)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                Text("Reported By: \(data.reportedBy!)")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
+                                Text("Scam Technique: \"\(data.scamTechnique!)\"")
+                                    .listRowSeparator(.hidden)
+                                    .font(Font.system(size: 12))
                             }
-                        ){
-                            Text("ADD SCAMMER")
-                                .frame(maxWidth: .infinity)
-                                .foregroundColor(.white)
-                                .padding(10)
-                                .background(.blue)
-                                .cornerRadius(10)
                         }
                     }
                 }
             }
             .navigationBarTitle("Scams")
+            .toolbar {
+                NavigationLink {
+                    AddScamList()
+                } label: {
+                    Image(systemName: "person.fill.badge.plus").foregroundColor(
+                        colorScheme.self == .dark ? .white : .black
+                    )
+                }
+            }
             .refreshable {
                 self.scam = []
                 try! self.onLoad()

@@ -14,16 +14,17 @@ struct ContentView: View {
     @State private var options :[String] = ["Sell", "Buy"]
     
     private var navigationTitle :String = "Cryato"
-
+    
     public var body: some View {
         NavigationView {
             VStack {
                 TabView {
+                    
                     VStack {
                         Picker(selection: $selectedId, label: Text("")) {
-                            Text(options[0]).tag(0x0)
-                            Text(options[1]).tag(0x1)
-                        }.pickerStyle(SegmentedPickerStyle()).listRowSeparator(
+                            Text(options[0]).tag(0x0).font(Font.system(size: 12))
+                            Text(options[1]).tag(0x1).font(Font.system(size: 12))
+                        }.pickerStyle(.segmented).listRowSeparator(
                             .hidden, edges: [.top]
                         ).padding()
                         
@@ -41,7 +42,6 @@ struct ContentView: View {
                         Image(systemName: "dot.radiowaves.left.and.right")
                         Text("Scanner")
                     }
-                    
                     
                     RecordsView().tabItem {
                         Image(systemName: "note.text.badge.plus")
@@ -62,22 +62,12 @@ struct ContentView: View {
             .scrollDismissesKeyboard(.interactively)
             .background(self.colorScheme == .dark ? .black : .white)
             .refreshable {}
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink {
-                        /** Navigate to app preference page */
-                        PreferenceView()
-                    } label: {
-                        Image(systemName: "gearshape").foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
-                    }
-                }
-            }
         }.background(self.colorScheme == .dark ? .black : .white)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
+    public static var previews: some View {
         ContentView().environment(\.locale, .init(identifier: "zh"))
     }
 }

@@ -26,6 +26,7 @@ struct ScannerView: View {
     @State private var transaction :[Transaction] = [Transaction]()
     @State private var walletId :String = ""
     @State private var showAlert :Bool = false
+    @State private var showAlertEmpty :Bool = false
     @State private var showSafari :Bool = false
     @State private var selectedCurrency :String = CryptoSelector.cryptoCurrenciesChoices[0]
     
@@ -53,9 +54,11 @@ struct ScannerView: View {
             NSLog("User Input an invalid Wallet Address")
         }
         
-        Task {
-            TransactionsHelper.loadTransactions(WalletID: self.walletId) { (result) in
-                self.transaction = result.data ?? []
+        TransactionsHelper.loadTransactions(WalletID: self.walletId) { (result) in
+            self.transaction = result.data ?? []
+            
+            if result.data?.isEmpty == nil {
+                self.showAlertEmpty = true
             }
         }
     }
@@ -77,7 +80,7 @@ struct ScannerView: View {
                 
                 List(self.transaction) { data in
                     
-                    if data.transaction_id.isEmpty {
+                    if self.showAlertEmpty {
                         Text("No Transactions Found")
                     } else {
                         Button(action: {
@@ -126,6 +129,7 @@ struct ScannerView: View {
                 .refreshable {
                     self.walletId = ""
                     self.showAlert = false
+                    self.showAlertEmpty = false
                 }
                 .onAppear {
                     /** Remove Underline */
@@ -143,12 +147,23 @@ struct ScannerView: View {
                     subTitle: "Please Input a Valid Wallet Address"
                 )
             })
+            .toast(isPresenting: self.$showAlertEmpty, alert: {
+                AlertToast(
+                    type: .error(.red),
+                    title: "Warning",
+                    subTitle: "No Transactions Found"
+                )
+            })
             .background(.gray.opacity(0.1))
             .fullScreenCover(isPresented: $showSafari, content: {
                 SFSafariViewWrapper(url:URL(string:"https://tronscan.org/#/address/\(self.walletId)")!)
             })
             .scrollDismissesKeyboard(.interactively)
-            .onSubmit { try! self.search() }
+            .onSubmit {
+                Task {
+                    try! self.search()
+                }
+            }
             .submitLabel(.search)
         }
     }

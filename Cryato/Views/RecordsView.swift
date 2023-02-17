@@ -10,13 +10,15 @@ import SwiftUI
 struct RecordsView: View {
     @Environment(\.colorScheme) private var colorScheme
     
-    var body: some View {
+    private func addRecords() throws -> Void {
+        
+    }
+    
+    public var body: some View {
         NavigationView {
             Form {
                 VStack {
-                    Text("Records here")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-          
+                    Text("asdassd")
                 }
             }
             .navigationBarTitle("Records")
@@ -24,12 +26,22 @@ struct RecordsView: View {
             .refreshable {
                 // @TODO
             }
+            .toolbar {
+                NavigationLink {
+                    AddRecordsView()
+                } label: {
+                    Image(systemName: "doc.fill.badge.plus").foregroundColor(
+                        colorScheme.self == .dark ? .white : .black
+                    )
+                }
+               
+            }
         }
     }
 }
 
 struct RecordsView_Previews: PreviewProvider {
-    static var previews: some View {
+    public static var previews: some View {
         RecordsView()
     }
 }

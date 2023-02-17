@@ -58,137 +58,139 @@ struct BuyView: View {
     }
     
     public var body: some View {
-        VStack {
-            Form {
-                Section(header: Text("Arbitraging calculator")) {
-                    VStack {
-                        Picker(selection: self.$selectedCurrency) {
-                            ForEach(CryptoSelector.cryptoCurrenciesChoices, id:\.self) {
-                                Text($0)
-                            }
-                            
-                            Text(self.selectedCurrency).foregroundColor(.black)
-                        } label: {
-                            Text("Cryptocurrency")
-                                .font(Font.system(size: 20))
-                                .foregroundColor(.gray)
-                        }
-                        .frame(height:60)
-                        .font(Font.system(size: 20))
-                        .pickerStyle(.menu)
-                        .onChange(of: self.selectedCurrency) { currency in
-                            self.selectedCurrency = currency
-                        }
-                        
-                        TextField(
-                            self.sectionOneOriginalPrice,
-                            text: self.$originalPricePlaceholder
-                        )
-                        .frame(height:60)
-                        .font(Font.system(size: 20))
-                        .textFieldStyle(.plain)
-                        .listRowSeparator(.hidden)
-                        .keyboardType(.decimalPad)
-                        .onChange(of: self.originalPricePlaceholder) { input in
-                            try! self.validate(input, 0x0)
-                        }
-                        
-                        TextField(
-                            self.sectionTwoBuyingPrice,
-                            text: self.$buyingPricePlaceholder
-                        )
-                        .frame(height: 60)
-                        .font(Font.system(size: 20))
-                        .textFieldStyle(.plain)
-                        .listRowSeparator(.hidden)
-                        .keyboardType(.decimalPad)
-                        .controlSize(.large)
-                        .onChange(of: self.buyingPricePlaceholder) { input in
-                            try! self.validate(input, 0x1)
-                        }
-                        
-                        TextField(
-                            self.sectionThreeBuyUnit,
-                            text: self.$currentunitPlaceholder
-                        )
-                        .frame(height: 60)
-                        .font(Font.system(size: 20))
-                        .textFieldStyle(.plain)
-                        .listRowSeparator(.hidden)
-                        .keyboardType(.decimalPad)
-                        .onChange(of: self.currentunitPlaceholder) { input in  }
-                        
-                        Button {
-                            if (!(self.originalPricePlaceholder.isEmpty) && !(self.buyingPricePlaceholder.isEmpty) &&
-                                !(self.currentunitPlaceholder.isEmpty)
-                            ) {
-                                self.isShowingResult = true
-                                
-                                if try! Calculator.saved(
-                                    original: self.originalPricePlaceholder,
-                                    buying: self.buyingPricePlaceholder,
-                                    unit: self.currentunitPlaceholder,
-                                    cryptoCurrency: self.selectedCurrency
-                                )[1] == PNL.SAVED.rawValue {
-                                    self.isProfit = true
-                                }
-                            }
-                            
-                            if(self.originalPricePlaceholder == "" &&
-                               self.currentProfitPlaceholder == "" &&
-                               self.currentunitPlaceholder == ""
-                            ) {
-                                self.isInvalidate = true;
-                                self.showAlert = true;
-                            }
-                            
-                            hideKeyboard()
-                            
-                        } label: {
-                            Text("Calculate")
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .foregroundColor(.white)
-                        }
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .buttonStyle(.borderedProminent)
-                        .buttonBorderShape(.roundedRectangle)
-                        .tint(.green)
-                        .frame(height: 60)
-                        .controlSize(.large)
-                    }
-                    
-                    if self.isShowingResult {
+        NavigationView {
+            VStack {
+                Form {
+                    Section(header: Text("Arbitraging calculator")) {
                         VStack {
-                            Text(
-                                try! Calculator.saved(
-                                    original: self.originalPricePlaceholder,
-                                    buying: self.buyingPricePlaceholder,
-                                    unit: self.currentunitPlaceholder,
-                                    cryptoCurrency: self.selectedCurrency
-                                )[0]
+                            Picker(selection: self.$selectedCurrency) {
+                                ForEach(CryptoSelector.cryptoCurrenciesChoices, id:\.self) {
+                                    Text($0)
+                                }
+                                
+                                Text(self.selectedCurrency).foregroundColor(.black)
+                            } label: {
+                                Text("Cryptocurrency")
+                                    .font(Font.system(size: 20))
+                                    .foregroundColor(.gray)
+                            }
+                            .frame(height:60)
+                            .font(Font.system(size: 20))
+                            .pickerStyle(.menu)
+                            .onChange(of: self.selectedCurrency) { currency in
+                                self.selectedCurrency = currency
+                            }
+                            
+                            TextField(
+                                self.sectionOneOriginalPrice,
+                                text: self.$originalPricePlaceholder
                             )
-                            .foregroundColor(self.isProfit ? .green : .red)
-                            .font(.headline)
+                            .frame(height:60)
+                            .font(Font.system(size: 20))
+                            .textFieldStyle(.plain)
+                            .listRowSeparator(.hidden)
+                            .keyboardType(.decimalPad)
+                            .onChange(of: self.originalPricePlaceholder) { input in
+                                try! self.validate(input, 0x0)
+                            }
+                            
+                            TextField(
+                                self.sectionTwoBuyingPrice,
+                                text: self.$buyingPricePlaceholder
+                            )
+                            .frame(height: 60)
+                            .font(Font.system(size: 20))
+                            .textFieldStyle(.plain)
+                            .listRowSeparator(.hidden)
+                            .keyboardType(.decimalPad)
+                            .controlSize(.large)
+                            .onChange(of: self.buyingPricePlaceholder) { input in
+                                try! self.validate(input, 0x1)
+                            }
+                            
+                            TextField(
+                                self.sectionThreeBuyUnit,
+                                text: self.$currentunitPlaceholder
+                            )
+                            .frame(height: 60)
+                            .font(Font.system(size: 20))
+                            .textFieldStyle(.plain)
+                            .listRowSeparator(.hidden)
+                            .keyboardType(.decimalPad)
+                            .onChange(of: self.currentunitPlaceholder) { input in  }
+                            
+                            Button {
+                                if (!(self.originalPricePlaceholder.isEmpty) && !(self.buyingPricePlaceholder.isEmpty) &&
+                                    !(self.currentunitPlaceholder.isEmpty)
+                                ) {
+                                    self.isShowingResult = true
+                                    
+                                    if try! Calculator.saved(
+                                        original: self.originalPricePlaceholder,
+                                        buying: self.buyingPricePlaceholder,
+                                        unit: self.currentunitPlaceholder,
+                                        cryptoCurrency: self.selectedCurrency
+                                    )[1] == PNL.SAVED.rawValue {
+                                        self.isProfit = true
+                                    }
+                                }
+                                
+                                if(self.originalPricePlaceholder == "" &&
+                                   self.currentProfitPlaceholder == "" &&
+                                   self.currentunitPlaceholder == ""
+                                ) {
+                                    self.isInvalidate = true;
+                                    self.showAlert = true;
+                                }
+                                
+                                hideKeyboard()
+                                
+                            } label: {
+                                Text("Calculate")
+                                    .frame(minWidth: 0, maxWidth: .infinity)
+                                    .foregroundColor(.white)
+                            }
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .buttonStyle(.borderedProminent)
+                            .buttonBorderShape(.roundedRectangle)
+                            .tint(.green)
+                            .frame(height: 60)
+                            .controlSize(.large)
+                        }
+                        
+                        if self.isShowingResult {
+                            VStack {
+                                Text(
+                                    try! Calculator.saved(
+                                        original: self.originalPricePlaceholder,
+                                        buying: self.buyingPricePlaceholder,
+                                        unit: self.currentunitPlaceholder,
+                                        cryptoCurrency: self.selectedCurrency
+                                    )[0]
+                                )
+                                .foregroundColor(self.isProfit ? .green : .red)
+                                .font(.headline)
+                            }
                         }
                     }
                 }
+                .scrollDismissesKeyboard(.interactively)
+                .background(self.colorScheme == .dark ? .black : .white)
+                .refreshable {
+                    self.isShowingResult = false
+                    self.buyingPricePlaceholder = ""
+                    self.originalPricePlaceholder = ""
+                    self.currentunitPlaceholder = ""
+                    self.isProfit = false
+                }
+                .toast(isPresenting: self.$showAlert, alert: {
+                    AlertToast(
+                        type: .error(.red),
+                        title: "Warning",
+                        subTitle: "Please fill in all the required field!"
+                    )
+                })
             }
-            .scrollDismissesKeyboard(.interactively)
-            .background(self.colorScheme == .dark ? .black : .white)
-            .refreshable {
-                self.isShowingResult = false
-                self.buyingPricePlaceholder = ""
-                self.originalPricePlaceholder = ""
-                self.currentunitPlaceholder = ""
-                self.isProfit = false
-            }
-            .toast(isPresenting: self.$showAlert, alert: {
-                AlertToast(
-                    type: .error(.red),
-                    title: "Warning",
-                    subTitle: "Please fill in all the required field!"
-                )
-            })
         }
     }
 }
