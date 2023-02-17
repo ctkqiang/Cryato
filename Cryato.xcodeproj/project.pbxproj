@@ -44,6 +44,9 @@
 		1A510D252994BBD500F65B0D /* SharedPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A510D242994BBD500F65B0D /* SharedPreferences.swift */; };
 		1A510D282994C07000F65B0D /* SharedPreferenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A510D272994C07000F65B0D /* SharedPreferenceType.swift */; };
 		1A736E34299FB76F001E6921 /* AddRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A736E33299FB76F001E6921 /* AddRecordsView.swift */; };
+		1A736E3729A00FEC001E6921 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 1A736E3629A00FEC001E6921 /* SQLite */; };
+		1A736E3929A0109C001E6921 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A736E3829A0109C001E6921 /* DatabaseManager.swift */; };
+		1A736E3B29A010DA001E6921 /* DBTransactionsRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A736E3A29A010DA001E6921 /* DBTransactionsRecords.swift */; };
 		1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B04EB2993D547008D46C3 /* ScannerView.swift */; };
 		1A7B04EE2993E6FB008D46C3 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */; };
 		1A7BC4DF299786A70046D622 /* BybitEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BC4DE299786A70046D622 /* BybitEncryption.swift */; };
@@ -130,6 +133,8 @@
 		1A510D272994C07000F65B0D /* SharedPreferenceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPreferenceType.swift; sourceTree = "<group>"; };
 		1A510D292994F7B300F65B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A736E33299FB76F001E6921 /* AddRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordsView.swift; sourceTree = "<group>"; };
+		1A736E3829A0109C001E6921 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		1A736E3A29A010DA001E6921 /* DBTransactionsRecords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTransactionsRecords.swift; sourceTree = "<group>"; };
 		1A7B04EB2993D547008D46C3 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
 		1A7BC4DE299786A70046D622 /* BybitEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BybitEncryption.swift; sourceTree = "<group>"; };
@@ -166,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A736E3729A00FEC001E6921 /* SQLite in Frameworks */,
 				1AF58EB4299795D6003BD1DA /* Toast in Frameworks */,
 				1A0242EB299CBB84005C40BE /* LogToDiscord in Frameworks */,
 				1A0242E8299CBAAB005C40BE /* SwiftUI-FAB in Frameworks */,
@@ -207,6 +213,7 @@
 				1A7BC4E029978BF80046D622 /* DatetimeHelper.swift */,
 				1A0242DD299BC262005C40BE /* ScamListHandler.swift */,
 				1A0242EE299E8C74005C40BE /* Helper.swift */,
+				1A736E3829A0109C001E6921 /* DatabaseManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -285,6 +292,7 @@
 				1A0242C8299986C9005C40BE /* BinanceFundingAccount.swift */,
 				1A0242D0299B84F8005C40BE /* ScamList.swift */,
 				1A0242D2299B8880005C40BE /* PaymentMethods.swift */,
+				1A736E3A29A010DA001E6921 /* DBTransactionsRecords.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -411,6 +419,7 @@
 				1AF58EB82997A5E7003BD1DA /* AlertToast */,
 				1A0242E7299CBAAB005C40BE /* SwiftUI-FAB */,
 				1A0242EA299CBB84005C40BE /* LogToDiscord */,
+				1A736E3629A00FEC001E6921 /* SQLite */,
 			);
 			productName = Cryato;
 			productReference = 1AD48596298923630024F1AB /* Cryato.app */;
@@ -491,6 +500,7 @@
 				1AF58EB72997A5E7003BD1DA /* XCRemoteSwiftPackageReference "AlertToast" */,
 				1A0242E6299CBAAB005C40BE /* XCRemoteSwiftPackageReference "SwiftUI-FAB" */,
 				1A0242E9299CBB84005C40BE /* XCRemoteSwiftPackageReference "LogToDiscord" */,
+				1A736E3529A00FEC001E6921 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = 1AD48597298923630024F1AB /* Products */;
 			projectDirPath = "";
@@ -554,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A939050299552F3004AB56D /* Transactions.swift in Sources */,
+				1A736E3B29A010DA001E6921 /* DBTransactionsRecords.swift in Sources */,
 				1A1B55D8298A371200C2C773 /* View.swift in Sources */,
 				1AF58EB629979F34003BD1DA /* String.swift in Sources */,
 				1A0242D3299B8880005C40BE /* PaymentMethods.swift in Sources */,
@@ -569,6 +580,7 @@
 				1A0242DE299BC262005C40BE /* ScamListHandler.swift in Sources */,
 				1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */,
 				1A0242D5299B8AF2005C40BE /* Documentation.docc in Sources */,
+				1A736E3929A0109C001E6921 /* DatabaseManager.swift in Sources */,
 				1A510D282994C07000F65B0D /* SharedPreferenceType.swift in Sources */,
 				1A0242C329994837005C40BE /* PNL.swift in Sources */,
 				1A510D252994BBD500F65B0D /* SharedPreferences.swift in Sources */,
@@ -958,6 +970,14 @@
 				kind = branch;
 			};
 		};
+		1A736E3529A00FEC001E6921 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
 		1AF58EB2299795D6003BD1DA /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -986,6 +1006,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A0242E9299CBB84005C40BE /* XCRemoteSwiftPackageReference "LogToDiscord" */;
 			productName = LogToDiscord;
+		};
+		1A736E3629A00FEC001E6921 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A736E3529A00FEC001E6921 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
 		};
 		1AF58EB3299795D6003BD1DA /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;

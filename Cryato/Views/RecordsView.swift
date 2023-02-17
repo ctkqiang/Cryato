@@ -17,9 +17,9 @@ struct RecordsView: View {
     public var body: some View {
         NavigationView {
             Form {
-                VStack {
+                VStack(spacing: 0) {
                     Text("asdassd")
-                }
+                }.ignoresSafeArea()
             }
             .navigationBarTitle("Records")
             .scrollDismissesKeyboard(.interactively)

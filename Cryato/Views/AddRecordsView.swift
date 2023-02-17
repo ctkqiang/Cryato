@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct AddRecordsView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    public var body: some View {
+        NavigationView {
+            
+        }
     }
 }
 
 struct AddRecordsView_Previews: PreviewProvider {
-    static var previews: some View {
+    public static var previews: some View {
         AddRecordsView()
     }
 }
