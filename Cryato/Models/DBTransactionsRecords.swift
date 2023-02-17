@@ -13,4 +13,5 @@ struct DBTransRecords : Identifiable {
     public var unitPurchased :Int64 = 0
     public var originalPrice :Double = 0.0
     public var sellingPrice :Double = 0.0
+    public var cryptoCurrencyName :String = ""
 }

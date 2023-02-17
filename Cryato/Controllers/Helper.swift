@@ -8,5 +8,7 @@
 import Foundation
 
 struct Helper {
-   
+    public static func currentDate() throws -> String {
+        return String(DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short))
+    }
 }
