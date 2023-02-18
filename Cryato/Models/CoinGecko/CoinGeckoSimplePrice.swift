@@ -9,4 +9,6 @@ import Foundation
 struct CoinGeckoSimplePrice : Decodable {
     public var id :String?
     public var ticker: String?
+    
+    
 }

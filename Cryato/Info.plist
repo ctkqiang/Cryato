@@ -12,5 +12,12 @@
 	<false/>
 	<key>TRON_SEARCH_API</key>
 	<string>$(TRON_SEARCH_API)</string>
+<key>UIApplicationShortcutItems</key>
+<array>
+    <dict>
+        <key>UIApplicationShortcutItemType</key>
+        <string>BTCUSDT</string>
+    </dict>
+</array>
 </dict>
 </plist>

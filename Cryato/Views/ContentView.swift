@@ -20,7 +20,6 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 TabView {
-                    
                     VStack {
                         Picker(selection: $selectedId, label: Text("")) {
                             Text(options[0]).tag(0x0).font(Font.system(size: 12))
@@ -28,6 +27,7 @@ struct ContentView: View {
                         }.pickerStyle(.segmented).listRowSeparator(
                             .hidden, edges: [.top]
                         ).padding()
+                        .background(Color(UIColor.systemGroupedBackground))
                         
                         if self.selectedId == 0x0 {
                             SellView()
@@ -37,7 +37,7 @@ struct ContentView: View {
                     }.tabItem {
                         Image(systemName: "number")
                         Text("Calculator")
-                    }
+                    }.background(Color(UIColor.systemGroupedBackground))
                     
                     ScannerView().tabItem {
                         Image(systemName: "dot.radiowaves.left.and.right")
@@ -61,14 +61,14 @@ struct ContentView: View {
                 }.tint(self.colorScheme == .dark ? Color.white : Color.black)
             }
             .scrollDismissesKeyboard(.interactively)
-            .background(self.colorScheme == .dark ? .black : .white)
+            .background(Color(UIColor.systemGroupedBackground))
             .refreshable {}
             .onAppear {
                 if try! Helper().status() != NetworkStatus.CONNECTED {
                     self.isConnected = false
                 }
             }
-        }.background(self.colorScheme == .dark ? .black : .white)
+        }.background(Color(UIColor.systemGroupedBackground))
     }
 }
 

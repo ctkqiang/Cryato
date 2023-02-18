@@ -154,7 +154,7 @@ struct ScannerView: View {
                     subTitle: "No Transactions Found"
                 )
             })
-            .background(.gray.opacity(0.1))
+            .background(Color(UIColor.systemGroupedBackground))
             .fullScreenCover(isPresented: $showSafari, content: {
                 SFSafariViewWrapper(url:URL(string:"https://tronscan.org/#/address/\(self.walletId)")!)
             })

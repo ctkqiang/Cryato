@@ -60,6 +60,8 @@ struct BuyView: View {
     public var body: some View {
         NavigationView {
             VStack {
+                CryptoPriceView().frame(height: 80)
+                
                 Form {
                     Section(header: Text("Arbitraging calculator")) {
                         VStack {
@@ -175,7 +177,7 @@ struct BuyView: View {
                     }
                 }
                 .scrollDismissesKeyboard(.interactively)
-                .background(self.colorScheme == .dark ? .black : .white)
+                .background(Color(UIColor.systemGroupedBackground))
                 .refreshable {
                     self.isShowingResult = false
                     self.buyingPricePlaceholder = ""
@@ -190,7 +192,7 @@ struct BuyView: View {
                         subTitle: "Please fill in all the required field!"
                     )
                 })
-            }
+            }.background(Color(UIColor.systemGroupedBackground))
         }
     }
 }

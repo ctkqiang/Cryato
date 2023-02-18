@@ -16,7 +16,7 @@ struct RecordsView: View {
         NavigationView {
             VStack {
                 if records.isEmpty {
-                    Text("No Records")
+                    Text("No Records").background(Color(UIColor.systemGroupedBackground))
                 }
                 else {
                     Form {
@@ -35,6 +35,7 @@ struct RecordsView: View {
             .onAppear {
                 self.records = try! DatabaseManager().getRecords()
             }
+            .background(Color(UIColor.systemGroupedBackground))
             .navigationBarTitle("Records")
             .scrollDismissesKeyboard(.interactively)
             .refreshable {
@@ -50,7 +51,7 @@ struct RecordsView: View {
                 }
                
             }
-        }
+        }.background(Color(UIColor.systemGroupedBackground))
     }
 }
 

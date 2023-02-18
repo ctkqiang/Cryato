@@ -61,6 +61,8 @@ struct SellView: View {
     public var body: some View {
         NavigationView {
             VStack {
+                CryptoPriceView().frame(height: 80)
+                
                 Form {
                     Section(header: Text("Arbitraging calculator")) {
                         VStack {
@@ -187,7 +189,7 @@ struct SellView: View {
                 })
             }
             .scrollDismissesKeyboard(.interactively)
-            .background(self.colorScheme == .dark ? .black : .white)
+            .background(Color(UIColor.systemGroupedBackground))
             .refreshable {
                 self.isShowingResult = false
                 self.sellingPricePlaceholder = ""
@@ -197,7 +199,7 @@ struct SellView: View {
                 self.showAlert = false
             }
             .onAppear {
-                NSLog(" [Here]\(try! CoinGecko().getSimplePrice(ticker: "TETHER", currencry: SupportableCurrencies.currencies[5]))")
+                
             }
         }
         
