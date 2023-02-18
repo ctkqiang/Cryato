@@ -39,38 +39,44 @@ struct AddScamList: View {
             VStack {
                 Form {
                     VStack(alignment: .leading) {
-                        Section(header: Text("")) {
-                            TextField(self.WalletIdPlaceholder, text: self.$walletID)
-                                .textFieldStyle(.roundedBorder)
-                                .font(Font.system(size: 12))
-                                .padding(5)
-                            
-                            TextField(self.PaymentMethodPlaceholder, text: self.$paymentMethod)
-                                .textFieldStyle(.roundedBorder)
-                                .font(Font.system(size: 12))
-                                .padding(5)
-                            
-                            TextField(self.CurrencyPlaceholder, text: self.$currency)
-                                .textFieldStyle(.roundedBorder)
-                                .font(Font.system(size: 12))
-                                .padding(5)
-                            
-                            TextField(self.PlatformPlaceholder, text: self.$platform)
-                                .textFieldStyle(.roundedBorder)
-                                .font(Font.system(size: 12))
-                                .padding(5)
-                            
-                            TextField(self.NamePlaceholder, text: self.$name)
-                                .textFieldStyle(.roundedBorder)
-                                .font(Font.system(size: 12))
-                                .padding(5)
-                            
-                            TextField(self.TechniquePlaceholder, text: self.$technique)
-                                .textFieldStyle(.roundedBorder)
-                                .font(Font.system(size: 12))
-                                .padding(5)
-                        }
+                        
+                        TextField(self.WalletIdPlaceholder, text: self.$walletID)
+                            .textFieldStyle(.roundedBorder)
+                            .font(Font.system(size: 12))
+                            .background(Color(.systemGray6))
+                            .padding(5)
+                        
+                        TextField(self.PaymentMethodPlaceholder, text: self.$paymentMethod)
+                            .textFieldStyle(.roundedBorder)
+                            .font(Font.system(size: 12))
+                            .background(Color(.systemGray6))
+                            .padding(5)
+                        
+                        TextField(self.CurrencyPlaceholder, text: self.$currency)
+                            .textFieldStyle(.roundedBorder)
+                            .font(Font.system(size: 12))
+                            .background(Color(.systemGray6))
+                            .padding(5)
+                        
+                        TextField(self.PlatformPlaceholder, text: self.$platform)
+                            .textFieldStyle(.roundedBorder)
+                            .font(Font.system(size: 12))
+                            .background(Color(.systemGray6))
+                            .padding(5)
+                        
+                        TextField(self.NamePlaceholder, text: self.$name)
+                            .textFieldStyle(.roundedBorder)
+                            .font(Font.system(size: 12))
+                            .background(Color(.systemGray6))
+                            .padding(5)
+                        
+                        TextField(self.TechniquePlaceholder, text: self.$technique)
+                            .textFieldStyle(.roundedBorder)
+                            .font(Font.system(size: 12))
+                            .background(Color(.systemGray6))
+                            .padding(5)
                     }
+                    
                     .toast(isPresenting: self.$showAlert, alert: {
                         AlertToast(
                             type: .error(.red),
@@ -111,14 +117,13 @@ struct AddScamList: View {
                     Text("ADD TO DATABASE")
                         .frame(minWidth: 0, maxWidth: .infinity)
                 }
-            
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .buttonStyle(.borderedProminent)
-            .buttonBorderShape(.roundedRectangle)
-            .tint(.blue)
-            .frame(height: 60)
-            .controlSize(.large)
-            .padding()
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle)
+                .tint(.blue)
+                .frame(height: 60)
+                .controlSize(.large)
+                .padding()
             }
         }
     }

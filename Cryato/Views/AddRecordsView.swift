@@ -52,44 +52,42 @@ struct AddRecordsView: View {
     }
     
     public var body: some View {
-        NavigationView {
-            VStack {
-                Form {
-                    Picker("What Crypto-currency have you sold", selection: self.$selectedCrypto) {
-                        ForEach(self.cryptoPair, id: \.self) {
-                            Text($0)
-                        }
+        
+        VStack {
+            Form {
+                Picker("What Crypto-currency have you sold", selection: self.$selectedCrypto) {
+                    ForEach(self.cryptoPair, id: \.self) {
+                        Text($0)
                     }
-                    
-                    TextField("How many unit(s) do you sell?", text: self.$unitPurchased)
-                        .padding(10)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(5)
-                        .disableAutocorrection(true)
-                        .keyboardType(.decimalPad)
-                    
-                    TextField("What was your selling price?", text: self.$sellingPrice)
-                        .padding(10)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(5)
-                        .disableAutocorrection(true)
-                        .keyboardType(.decimalPad)
                 }
-                .navigationTitle("Add Record")
                 
-                Button {
-                    try! self.saveIntoDatabase()
-                } label: {
-                    Text("SAVE TO DATABASE").frame(minWidth: 0, maxWidth: .infinity)
-                }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.roundedRectangle)
-                .tint(.blue)
-                .frame(height: 60)
-                .controlSize(.large)
-                .padding()
+                TextField("How many unit(s) do you sell?", text: self.$unitPurchased)
+                    .padding(10)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(5)
+                    .disableAutocorrection(true)
+                    .keyboardType(.decimalPad)
+                
+                TextField("What was your selling price?", text: self.$sellingPrice)
+                    .padding(10)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(5)
+                    .disableAutocorrection(true)
+                    .keyboardType(.decimalPad)
             }
+            
+            Button {
+                try! self.saveIntoDatabase()
+            } label: {
+                Text("SAVE TO DATABASE").frame(minWidth: 0, maxWidth: .infinity)
+            }
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.roundedRectangle)
+            .tint(.blue)
+            .frame(height: 60)
+            .controlSize(.large)
+            .padding()
         }
         .scrollDismissesKeyboard(.interactively)
         .toast(isPresenting: self.$showAlertSpec, alert: {
