@@ -50,6 +50,7 @@
 		1A736E3D29A0E3B3001E6921 /* SupportableCurrencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A736E3C29A0E3B3001E6921 /* SupportableCurrencies.swift */; };
 		1A736E3F29A103E7001E6921 /* CoinGecko.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A736E3E29A103E7001E6921 /* CoinGecko.swift */; };
 		1A736E4229A10583001E6921 /* CoinGeckoSimplePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A736E4129A10583001E6921 /* CoinGeckoSimplePrice.swift */; };
+		1A736E4429A126CB001E6921 /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A736E4329A126CB001E6921 /* NetworkStatus.swift */; };
 		1A7B04EC2993D547008D46C3 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B04EB2993D547008D46C3 /* ScannerView.swift */; };
 		1A7B04EE2993E6FB008D46C3 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */; };
 		1A7BC4DF299786A70046D622 /* BybitEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BC4DE299786A70046D622 /* BybitEncryption.swift */; };
@@ -141,6 +142,7 @@
 		1A736E3C29A0E3B3001E6921 /* SupportableCurrencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportableCurrencies.swift; sourceTree = "<group>"; };
 		1A736E3E29A103E7001E6921 /* CoinGecko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGecko.swift; sourceTree = "<group>"; };
 		1A736E4129A10583001E6921 /* CoinGeckoSimplePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGeckoSimplePrice.swift; sourceTree = "<group>"; };
+		1A736E4329A126CB001E6921 /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
 		1A7B04EB2993D547008D46C3 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		1A7B04ED2993E6FB008D46C3 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
 		1A7BC4DE299786A70046D622 /* BybitEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BybitEncryption.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				1A0242D0299B84F8005C40BE /* ScamList.swift */,
 				1A0242D2299B8880005C40BE /* PaymentMethods.swift */,
 				1A736E3A29A010DA001E6921 /* DBTransactionsRecords.swift */,
+				1A736E4329A126CB001E6921 /* NetworkStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				1A736E3B29A010DA001E6921 /* DBTransactionsRecords.swift in Sources */,
 				1A1B55D8298A371200C2C773 /* View.swift in Sources */,
 				1AF58EB629979F34003BD1DA /* String.swift in Sources */,
+				1A736E4429A126CB001E6921 /* NetworkStatus.swift in Sources */,
 				1A0242D3299B8880005C40BE /* PaymentMethods.swift in Sources */,
 				1A736E3F29A103E7001E6921 /* CoinGecko.swift in Sources */,
 				1A7B04EE2993E6FB008D46C3 /* RecordsView.swift in Sources */,

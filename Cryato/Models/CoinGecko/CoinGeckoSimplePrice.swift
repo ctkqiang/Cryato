@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct CoinGeckoSimplePrice : Codable, Identifiable {
+struct CoinGeckoSimplePrice : Decodable {
     public var id :String?
-    public var thether: String?
+    public var ticker: String?
 }

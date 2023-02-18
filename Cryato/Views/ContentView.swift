@@ -11,6 +11,7 @@ struct ContentView: View {
     @Environment(\.colorScheme) private var colorScheme
     
     @State private var selectedId :Int = 0x0
+    @State private var isConnected :Bool = true
     @State private var options :[String] = ["Sell", "Buy"]
     
     private var navigationTitle :String = "Cryato"
@@ -62,6 +63,11 @@ struct ContentView: View {
             .scrollDismissesKeyboard(.interactively)
             .background(self.colorScheme == .dark ? .black : .white)
             .refreshable {}
+            .onAppear {
+                if try! Helper().status() != NetworkStatus.CONNECTED {
+                    self.isConnected = false
+                }
+            }
         }.background(self.colorScheme == .dark ? .black : .white)
     }
 }

@@ -32,7 +32,12 @@ struct CoinGecko {
                 
                 if let responseString = String(data: data, encoding: .utf8) {
                     print("responseString = \(String(describing: responseString))")
+                    
+                    let jsonData = responseString.data(using: .utf8)!
+                    
+                    
                     // @TODO do adjustment
+                    
                 }
             }
             
