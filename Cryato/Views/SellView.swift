@@ -196,6 +196,9 @@ struct SellView: View {
                 self.isProfit = false
                 self.showAlert = false
             }
+            .onAppear {
+                NSLog(" [Here]\(try! CoinGecko().getSimplePrice(ticker: "TETHER", currencry: SupportableCurrencies.currencies[5]))")
+            }
         }
         
     }

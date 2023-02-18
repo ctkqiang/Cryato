@@ -10,16 +10,30 @@ import SwiftUI
 struct RecordsView: View {
     @Environment(\.colorScheme) private var colorScheme
     
-    private func addRecords() throws -> Void {
-        
-    }
+    @State private var records :[DBTransRecords] = [DBTransRecords]()
     
     public var body: some View {
         NavigationView {
-            Form {
-                VStack(spacing: 0) {
-                    Text("asdassd")
-                }.ignoresSafeArea()
+            VStack {
+                if records.isEmpty {
+                    Text("No Records")
+                }
+                else {
+                    Form {
+                        List (self.records) { record in
+                            Section(header: Text("\(record.cryptoCurrencyName)")) {
+                                Text("s")
+                                Text("Ori: \(record.originalPrice)")
+                                Text("Sell: \(record.sellingPrice)")
+                                Text("Earned: \(record.earned)")
+                                Text("Date: \(record.dateTime)")
+                            }
+                        }
+                    }
+                }
+            }
+            .onAppear {
+                self.records = try! DatabaseManager().getRecords()
             }
             .navigationBarTitle("Records")
             .scrollDismissesKeyboard(.interactively)

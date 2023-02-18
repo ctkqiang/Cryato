@@ -75,4 +75,26 @@ class DatabaseManager {
         
         NSLog("Saved TO Database")
     }
+    
+    public func getRecords() throws -> [DBTransRecords] {
+        var dbTransRecords :[DBTransRecords] = [DBTransRecords]()
+        
+        do {
+            for record in try! self.database.prepare(self.RECORDS) {
+                var dbRecord :DBTransRecords = DBTransRecords()
+                
+                dbRecord.id = record[id]
+                dbRecord.originalPrice = record[originalPrice]
+                dbRecord.sellingPrice = record[sellingPrice]
+                dbRecord.unitPurchased = record[unitPurchased]
+                dbRecord.earned = record[earned]
+                dbRecord.cryptoCurrencyName = record[cryptoCurrencyName]
+                dbRecord.dateTime = record[dateTime]
+                
+                dbTransRecords.append(dbRecord)
+            }
+        }
+        
+        return dbTransRecords
+    }
 }
