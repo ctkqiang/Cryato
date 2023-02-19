@@ -8,43 +8,64 @@
 import SwiftUI
 
 struct CryptoPriceView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     @State private var pricing :[String] = [String]()
     @State private var isGeckoAvailable :Bool = false
     
     public var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
-                Button("BTCUSDT") {
+                Button {
                     
+                } label: {
+                    Text("BTCUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
                 }
                 .padding()
-                .background(.white)
+                .background(self.colorScheme == .dark ? .gray : .white)
                 .cornerRadius(10)
                 
-                Button("ETHUSDT") {}
-                    .padding()
-                    .background(.white)
-                    .cornerRadius(10)
                 
-                Button("SHIBUSDT") {}
-                    .padding()
-                    .background(.white)
-                    .cornerRadius(10)
+                Button {
+                    
+                } label: {
+                    Text("ETHUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
+                }
+                .padding()
+                .background(self.colorScheme == .dark ? .gray : .white)
+                .cornerRadius(10)
                 
-                Button("XRPUSDT") {}
-                    .padding()
-                    .background(.white)
-                    .cornerRadius(10)
+                Button {
+                    
+                } label: {
+                    Text("SHIBUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
+                }
+                .padding()
+                .background(self.colorScheme == .dark ? .gray : .white)
+                .cornerRadius(10)
                 
-                Button("MATICUSDT"){}
-                    .padding()
-                    .background(.white)
-                    .cornerRadius(10)
+                Button {
+                    
+                } label: {
+                    Text("XRPUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
+                }
+                .padding()
+                .background(self.colorScheme == .dark ? .gray : .white)
+                .cornerRadius(10)
+                
+                Button {
+                    
+                } label: {
+                    Text("MATICUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
+                }
+                .padding()
+                .background(self.colorScheme == .dark ? .gray : .white)
+                .cornerRadius(10)
             }.padding()
         }
-        .onAppear {            
+        .onAppear {
             try! CoinGecko.ping() { result in
-
+                
                 if result.gecko_says.contains("(V3) To the Moon!") {
                     self.isGeckoAvailable = true
                 }

@@ -4,7 +4,6 @@
 //
 //  Created by John Melody Me on 31/01/2023.
 //
-
 import SwiftUI
 
 #if canImport(Toast)
@@ -42,8 +41,7 @@ struct BuyView: View {
         
         if (mode == 0x0) {
             self.originalPricePlaceholder = value
-        }
-        else {
+        } else {
             self.buyingPricePlaceholder = value
         }
         
@@ -197,7 +195,7 @@ struct BuyView: View {
                 })
                 .onAppear {
                     try! CoinGecko.ping() { result in
-
+                        
                         if result.gecko_says.contains("(V3) To the Moon!") {
                             self.isGeckoAvailable = true
                         }
