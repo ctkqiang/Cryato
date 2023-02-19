@@ -12,6 +12,7 @@ import SQLite
 #endif
 
 class DatabaseManager {
+    private var userDefaults = UserDefaults.standard
     private var FILE_NAME :String = "Records.sqlite3"
     private var database :Connection!
     private var RECORDS :Table!
@@ -96,5 +97,15 @@ class DatabaseManager {
         }
         
         return dbTransRecords
+    }
+    
+    public func write(key :String, value :Any) throws -> Void {
+        self.userDefaults.set(value, forKey: key)
+    }
+    
+    public func read(key: String, completion : @escaping (String) -> ()) throws -> Void {
+        DispatchQueue.main.async {
+            completion(String(describing: self.userDefaults.object(forKey: key)))
+        }
     }
 }

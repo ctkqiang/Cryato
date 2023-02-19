@@ -20,16 +20,41 @@ struct CryptoPriceView: View {
                     
                 } label: {
                     Text("BTCUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
+                    AsyncImage(
+                        url: URL(
+                            string: "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                        ),
+                        content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 50, maxHeight: 50)
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
+                    )
                 }
                 .padding()
                 .background(self.colorScheme == .dark ? .gray : .white)
                 .cornerRadius(10)
                 
-                
                 Button {
                     
                 } label: {
                     Text("ETHUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
+                    AsyncImage(
+                        url: URL(
+                            string: "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png"
+                        ),
+                        content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 50, maxHeight: 50)
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
+                    )
                 }
                 .padding()
                 .background(self.colorScheme == .dark ? .gray : .white)
@@ -39,6 +64,19 @@ struct CryptoPriceView: View {
                     
                 } label: {
                     Text("SHIBUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
+                    AsyncImage(
+                        url: URL(
+                            string: "https://s2.coinmarketcap.com/static/img/coins/64x64/23558.png"
+                        ),
+                        content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 50, maxHeight: 50)
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
+                    )
                 }
                 .padding()
                 .background(self.colorScheme == .dark ? .gray : .white)
@@ -48,6 +86,19 @@ struct CryptoPriceView: View {
                     
                 } label: {
                     Text("XRPUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
+                    AsyncImage(
+                        url: URL(
+                            string: "https://s2.coinmarketcap.com/static/img/coins/64x64/52.png"
+                        ),
+                        content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 50, maxHeight: 50)
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
+                    )
                 }
                 .padding()
                 .background(self.colorScheme == .dark ? .gray : .white)
@@ -57,6 +108,19 @@ struct CryptoPriceView: View {
                     
                 } label: {
                     Text("MATICUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
+                    AsyncImage(
+                        url: URL(
+                            string: "https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png"
+                        ),
+                        content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 50, maxHeight: 50)
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
+                    )
                 }
                 .padding()
                 .background(self.colorScheme == .dark ? .gray : .white)

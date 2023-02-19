@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "defaultskit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnmelodyme/DefaultsKit.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "c51ad1d66c4a84f26330399046b72c76cd39ddfd"
+      }
+    },
+    {
       "identity" : "logtodiscord",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/johnmelodyme/LogToDiscord.git",

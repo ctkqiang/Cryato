@@ -63,6 +63,7 @@
 		1A9E74E8298C12A400BFB165 /* wise.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E7298C12A400BFB165 /* wise.png */; };
 		1A9E74EA298C150E00BFB165 /* Donation.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E9298C150E00BFB165 /* Donation.md */; };
 		1AA61E4D29A223B0006D981E /* CoinGeckoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA61E4C29A223B0006D981E /* CoinGeckoStatus.swift */; };
+		1AA61E5029A2B595006D981E /* DefaultsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1AA61E4F29A2B595006D981E /* DefaultsKit */; };
 		1AADCC4F2996F43D009EF086 /* Bybit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADCC4E2996F43D009EF086 /* Bybit.swift */; };
 		1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48599298923630024F1AB /* CryatoApp.swift */; };
 		1AD4859C298923630024F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4859B298923630024F1AB /* ContentView.swift */; };
@@ -184,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A736E3729A00FEC001E6921 /* SQLite in Frameworks */,
+				1AA61E5029A2B595006D981E /* DefaultsKit in Frameworks */,
 				1AF58EB4299795D6003BD1DA /* Toast in Frameworks */,
 				1A0242EB299CBB84005C40BE /* LogToDiscord in Frameworks */,
 				1A0242E8299CBAAB005C40BE /* SwiftUI-FAB in Frameworks */,
@@ -454,6 +456,7 @@
 				1A0242E7299CBAAB005C40BE /* SwiftUI-FAB */,
 				1A0242EA299CBB84005C40BE /* LogToDiscord */,
 				1A736E3629A00FEC001E6921 /* SQLite */,
+				1AA61E4F29A2B595006D981E /* DefaultsKit */,
 			);
 			productName = Cryato;
 			productReference = 1AD48596298923630024F1AB /* Cryato.app */;
@@ -535,6 +538,7 @@
 				1A0242E6299CBAAB005C40BE /* XCRemoteSwiftPackageReference "SwiftUI-FAB" */,
 				1A0242E9299CBB84005C40BE /* XCRemoteSwiftPackageReference "LogToDiscord" */,
 				1A736E3529A00FEC001E6921 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				1AA61E4E29A2B594006D981E /* XCRemoteSwiftPackageReference "DefaultsKit" */,
 			);
 			productRefGroup = 1AD48597298923630024F1AB /* Products */;
 			projectDirPath = "";
@@ -1020,6 +1024,14 @@
 				minimumVersion = 0.9.2;
 			};
 		};
+		1AA61E4E29A2B594006D981E /* XCRemoteSwiftPackageReference "DefaultsKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnmelodyme/DefaultsKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		1AF58EB2299795D6003BD1DA /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -1053,6 +1065,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A736E3529A00FEC001E6921 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
 			productName = SQLite;
+		};
+		1AA61E4F29A2B595006D981E /* DefaultsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1AA61E4E29A2B594006D981E /* XCRemoteSwiftPackageReference "DefaultsKit" */;
+			productName = DefaultsKit;
 		};
 		1AF58EB3299795D6003BD1DA /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
