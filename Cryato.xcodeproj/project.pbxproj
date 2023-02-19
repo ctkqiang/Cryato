@@ -62,6 +62,7 @@
 		1A9E74E6298C129000BFB165 /* binancelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E5298C129000BFB165 /* binancelogo.png */; };
 		1A9E74E8298C12A400BFB165 /* wise.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E7298C12A400BFB165 /* wise.png */; };
 		1A9E74EA298C150E00BFB165 /* Donation.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E74E9298C150E00BFB165 /* Donation.md */; };
+		1AA61E4D29A223B0006D981E /* CoinGeckoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA61E4C29A223B0006D981E /* CoinGeckoStatus.swift */; };
 		1AADCC4F2996F43D009EF086 /* Bybit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADCC4E2996F43D009EF086 /* Bybit.swift */; };
 		1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48599298923630024F1AB /* CryatoApp.swift */; };
 		1AD4859C298923630024F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4859B298923630024F1AB /* ContentView.swift */; };
@@ -155,6 +156,7 @@
 		1A9E74E5298C129000BFB165 /* binancelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = binancelogo.png; sourceTree = "<group>"; };
 		1A9E74E7298C12A400BFB165 /* wise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wise.png; sourceTree = "<group>"; };
 		1A9E74E9298C150E00BFB165 /* Donation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Donation.md; sourceTree = "<group>"; };
+		1AA61E4C29A223B0006D981E /* CoinGeckoStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGeckoStatus.swift; sourceTree = "<group>"; };
 		1AADCC4E2996F43D009EF086 /* Bybit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bybit.swift; sourceTree = "<group>"; };
 		1AD48596298923630024F1AB /* Cryato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD48599298923630024F1AB /* CryatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoApp.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				1A736E4129A10583001E6921 /* CoinGeckoSimplePrice.swift */,
+				1AA61E4C29A223B0006D981E /* CoinGeckoStatus.swift */,
 			);
 			path = CoinGecko;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				1A0242D5299B8AF2005C40BE /* Documentation.docc in Sources */,
 				1A736E3929A0109C001E6921 /* DatabaseManager.swift in Sources */,
 				1A510D282994C07000F65B0D /* SharedPreferenceType.swift in Sources */,
+				1AA61E4D29A223B0006D981E /* CoinGeckoStatus.swift in Sources */,
 				1A0242C329994837005C40BE /* PNL.swift in Sources */,
 				1A510D252994BBD500F65B0D /* SharedPreferences.swift in Sources */,
 				1A93904D299533F1004AB56D /* AssetsView.swift in Sources */,
@@ -691,6 +695,7 @@
 			baseConfigurationReference = 1A510D212994485C00F65B0D /* private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -752,6 +757,7 @@
 			baseConfigurationReference = 1A510D212994485C00F65B0D /* private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

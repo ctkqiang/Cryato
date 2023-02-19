@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CryptoPriceView: View {
     @State private var pricing :[String] = [String]()
+    @State private var isGeckoAvailable :Bool = false
     
     public var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -40,7 +41,16 @@ struct CryptoPriceView: View {
                     .background(.white)
                     .cornerRadius(10)
             }.padding()
-        }.background(Color(UIColor.systemGroupedBackground))
+        }
+        .onAppear {            
+            try! CoinGecko.ping() { result in
+
+                if result.gecko_says.contains("(V3) To the Moon!") {
+                    self.isGeckoAvailable = true
+                }
+            }
+        }
+        .background(Color(UIColor.systemGroupedBackground))
     }
 }
 

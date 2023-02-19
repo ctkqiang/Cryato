@@ -27,6 +27,7 @@ struct BuyView: View {
     @State private var isInvalidate :Bool = false
     @State private var isProfit :Bool = false
     @State private var showAlert :Bool = false
+    @State private var isGeckoAvailable :Bool = false
     
     private var sectionOneOriginalPrice :String = "What's the original price?"
     private var sectionTwoBuyingPrice :String = "What's the price you bought?"
@@ -60,7 +61,9 @@ struct BuyView: View {
     public var body: some View {
         NavigationView {
             VStack {
-                CryptoPriceView().frame(height: 80)
+                if self.isGeckoAvailable {
+                    CryptoPriceView().frame(height: 80)
+                }
                 
                 Form {
                     Section(header: Text("Arbitraging calculator")) {
@@ -192,6 +195,14 @@ struct BuyView: View {
                         subTitle: "Please fill in all the required field!"
                     )
                 })
+                .onAppear {
+                    try! CoinGecko.ping() { result in
+
+                        if result.gecko_says.contains("(V3) To the Moon!") {
+                            self.isGeckoAvailable = true
+                        }
+                    }
+                }
             }.background(Color(UIColor.systemGroupedBackground))
         }
     }

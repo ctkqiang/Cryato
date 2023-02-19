@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var selectedId :Int = 0x0
     @State private var isConnected :Bool = true
     @State private var options :[String] = ["Sell", "Buy"]
+    @State private var isGeckoAvailable :Bool = false
     
     private var navigationTitle :String = "Cryato"
     
@@ -66,6 +67,13 @@ struct ContentView: View {
             .onAppear {
                 if try! Helper().status() != NetworkStatus.CONNECTED {
                     self.isConnected = false
+                }
+                
+                try! CoinGecko.ping() { result in
+
+                    if result.gecko_says.contains("(V3) To the Moon!") {
+                        self.isGeckoAvailable = true
+                    }
                 }
             }
         }.background(Color(UIColor.systemGroupedBackground))
