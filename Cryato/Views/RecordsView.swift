@@ -16,20 +16,19 @@ struct RecordsView: View {
         NavigationView {
             VStack {
                 if records.isEmpty {
-                    Text("No Records").background(Color(UIColor.systemGroupedBackground))
+                    Text("No Records").background(.white)
                 }
                 else {
                     Form {
                         List (self.records) { record in
                             Section(header: Text("\(record.cryptoCurrencyName)")) {
-                                Text("s")
                                 Text("Ori: \(record.originalPrice)")
                                 Text("Sell: \(record.sellingPrice)")
                                 Text("Earned: \(record.earned)")
                                 Text("Date: \(record.dateTime)")
                             }
                         }
-                    }
+                    }.background(Color(UIColor.systemGroupedBackground))
                 }
             }
             .onAppear {
@@ -39,18 +38,17 @@ struct RecordsView: View {
             .navigationBarTitle("Records")
             .scrollDismissesKeyboard(.interactively)
             .refreshable {
-                // @TODO
+                // @TODO 
             }
             .toolbar {
                 NavigationLink {
                     AddRecordsView()
                 } label: {
-                    Image(systemName: "doc.fill.badge.plus").foregroundColor(
+                    Image(systemName: "doc.badge.plus").foregroundColor(
                         colorScheme.self == .dark ? .white : .black
                     )
                 }
-               
-            }
+            }.background(Color(UIColor.systemGroupedBackground))
         }.background(Color(UIColor.systemGroupedBackground))
     }
 }

@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+#if canImport(Toast)
+import Toast
+#endif
+
+#if canImport(AlertToast)
+import AlertToast
+#endif
+
+
 struct PreferenceView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.openURL) private var openURL
@@ -16,6 +25,8 @@ struct PreferenceView: View {
     @State private var isShowingWebView: Bool = false
     @State private var tronSearchTextFieldIsDisabled :Bool = false
     @State private var bybitSearchTextFieldIsDisabled :Bool = false
+    @State private var showWechatContact :Bool = false
+    @State private var selectedCurrency :String = ""
     @State private var selectedItem: String = ""
     @State private var tronScanApi: String = ""
     @State private var bybitApi: String = ""
@@ -25,11 +36,13 @@ struct PreferenceView: View {
     @State private var bitgetApi: String = ""
     
     private var tronApiKey :String = ""
+    private var wechatContact :String = "weixin://dl/chat?johnmelodyme"
     private var wiseUrl: String = "https://github.com/johnmelodyme/Cryato"
     private var preferenceItems: [String] = [
         "Who created this app?",
         "Version",
     ]
+    private var currencies :[String] = SupportableCurrencies.currencies
     
     private func openUrl(url: String) {
         if self.selectedItem == self.preferenceItems[1] {
@@ -39,7 +52,7 @@ struct PreferenceView: View {
         }
     }
     
-    public init() { 
+    public init() {
         if let tronDefaultAPI = Bundle.main.infoDictionary?["TRON_SEARCH_API"] as? String {
             if SharedPreferences.getData(key: "tronapi") != "nil" {
                 self.tronScanApi = SharedPreferences.getData(key: "tronapi")
@@ -52,7 +65,7 @@ struct PreferenceView: View {
             }
         }
         
-        #if DEBUG
+#if DEBUG
         
         if let bybitApiKey = Bundle.main.infoDictionary?["BYBIT_API_KEY"] as? String {
             self.bybitApi = bybitApiKey
@@ -60,7 +73,7 @@ struct PreferenceView: View {
             self._bybitApi = State(wrappedValue: bybitApiKey)
         }
         
-        #else
+#else
         
         if SharedPreferences.getData(key: "bybitApiKey") as String == nil {
             SharedPreferences.setData(key: "bybitApiKey", value: self.bybitApi)
@@ -74,22 +87,40 @@ struct PreferenceView: View {
             self._bybitApi = State(wrappedValue: bybitApiKeyLocal)
         }
         
-        #endif
+#endif
     }
     
     public var body: some View {
         NavigationView {
             VStack {
                 Form {
+                    Section(header: Text("App Setting")) {
+                        Picker("Currency", selection: self.$selectedCurrency) {
+                            ForEach(self.currencies, id: \.self) {
+                                Text($0)
+                            }
+                        }
+                        .onChange(of: self.selectedCurrency) { currency in
+                            NSLog("User selected \(currency)")
+                            
+                            try! DatabaseManager.read(key: "currency") { selected in
+                                if selected.isEmpty {
+                                    try! DatabaseManager.write(key: "currency", value: currency)
+                                    
+                                    NSLog("\(self.selectedCurrency) added to User Defaults")
+                                }
+                            }
+                        }
+                    }
+                    
                     Section(header: Text("API Integrations")) {
-                        
                         TextField(
                             (self.tronScanApi == "" ? "Tron Scan API" : self.tronScanApi),
                             text: self.$tronScanApi
                         )
                         .disabled(self.tronSearchTextFieldIsDisabled)
                         .font(Font.system(size: 12))
-   
+                        
                         TextField(
                             (self.bybitApi == "" ? "ByBit API" : self.bybitApi),
                             text: self.$bybitApi
@@ -175,10 +206,32 @@ struct PreferenceView: View {
                                     )
                                 }
                             )
+                            
+                            Button(
+                                "Contact Developer",
+                                action: {
+                                    self.showWechatContact = true
+                                    
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                                        try! Helper.openUrl(url: self.wechatContact) { status in
+                                            NSLog(String(describing: status))
+                                        }
+                                    }
+                                }
+                            ).foregroundColor(
+                                self.colorScheme == .dark ? Color.white : Color.black
+                            )
                         }
                     }
                     
                 }
+                .toast(isPresenting: self.$showWechatContact, alert: {
+                    AlertToast(
+                        type: .complete(.green),
+                        title: "Contact Developer",
+                        subTitle: "Wechat: @johnmelodyme"
+                    )
+                })
             }
         }
         

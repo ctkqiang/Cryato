@@ -11,6 +11,14 @@ import Foundation
 import Network
 #endif
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
+#if canImport(SafariServices)
+import SafariServices
+#endif
+
 class Helper {
     public static var shared = Helper()
     
@@ -43,5 +51,27 @@ class Helper {
         
         let queue = DispatchQueue.global(qos: .background)
         self.monitor.start(queue: queue)
+    }
+    
+    public static func openUrl(url :String, status :@escaping (Bool) -> ()) throws -> Void {
+        var isOk :Bool = false
+        
+        do {
+            guard let _url = URL(string: url) else {
+                return
+            }
+            
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(_url, options: [:], completionHandler: nil)
+                isOk = true
+            } else {
+                UIApplication.shared.openURL(_url)
+                isOk = true
+            }
+        }
+        
+        DispatchQueue.main.async {
+            status(isOk)
+        }
     }
 }

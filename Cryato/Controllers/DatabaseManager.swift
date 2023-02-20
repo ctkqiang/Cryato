@@ -99,13 +99,13 @@ class DatabaseManager {
         return dbTransRecords
     }
     
-    public func write(key :String, value :Any) throws -> Void {
-        self.userDefaults.set(value, forKey: key)
+    public static func write(key :String, value :Any) throws -> Void {
+        DatabaseManager().userDefaults.set(value, forKey: key)
     }
     
-    public func read(key: String, completion : @escaping (String) -> ()) throws -> Void {
+    public static func read(key: String, completion : @escaping (String) -> ()) throws -> Void {
         DispatchQueue.main.async {
-            completion(String(describing: self.userDefaults.object(forKey: key)))
+            completion(String(describing: DatabaseManager().userDefaults.object(forKey: key)))
         }
     }
 }

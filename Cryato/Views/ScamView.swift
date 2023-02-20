@@ -68,7 +68,7 @@ struct ScamView: View {
                 NavigationLink {
                     AddScamList()
                 } label: {
-                    Image(systemName: "person.fill.badge.plus").foregroundColor(
+                    Image(systemName: "person.badge.plus").foregroundColor(
                         colorScheme.self == .dark ? .white : .black
                     )
                 }
