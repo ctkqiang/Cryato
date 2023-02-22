@@ -12,7 +12,6 @@ struct ContentView: View {
     
     @State private var selectedId :Int = 0x0
     @State private var isConnected :Bool = true
-    @State private var options :[String] = ["Sell", "Buy"]
     @State private var isGeckoAvailable :Bool = false
     
     private var navigationTitle :String = "Cryato"
@@ -23,8 +22,8 @@ struct ContentView: View {
                 TabView {
                     VStack {
                         Picker(selection: $selectedId, label: Text("")) {
-                            Text(options[0]).tag(0x0).font(Font.system(size: 12))
-                            Text(options[1]).tag(0x1).font(Font.system(size: 12))
+                            Text(LocalizedStringKey("Sell")).tag(0x0).font(Font.system(size: 12))
+                            Text(LocalizedStringKey("Buy")).tag(0x1).font(Font.system(size: 12))
                         }.pickerStyle(.segmented).listRowSeparator(
                             .hidden, edges: [.top]
                         ).padding()
@@ -47,7 +46,7 @@ struct ContentView: View {
                     
                     RecordsView().tabItem {
                         Image(systemName: "note.text.badge.plus")
-                        Text("Record")
+                        Text("Records")
                     }
                     
                     ScamView().tabItem {

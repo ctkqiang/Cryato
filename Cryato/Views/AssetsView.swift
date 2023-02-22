@@ -14,7 +14,7 @@ struct AssetsView: View {
         NavigationView {
             Form {
                 VStack {
-                    Text("All the assets are listed here")
+                    Text("Coming Soon")
                 }
             }
             .navigationBarTitle("Assets")

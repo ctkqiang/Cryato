@@ -27,6 +27,7 @@ struct BuyView: View {
     @State private var isProfit :Bool = false
     @State private var showAlert :Bool = false
     @State private var isGeckoAvailable :Bool = false
+    @State private var showCSMsg :Bool = false
     
     private var sectionOneOriginalPrice :String = "What's the original price?"
     private var sectionTwoBuyingPrice :String = "What's the price you bought?"
@@ -60,7 +61,12 @@ struct BuyView: View {
         NavigationView {
             VStack {
                 if self.isGeckoAvailable {
-                    CryptoPriceView().frame(height: 80)
+                    CryptoPriceView()
+                        .frame(height: 80)
+                        .onTapGesture {
+                        // @TODO change this
+                            self.showCSMsg = true
+                    }
                 }
                 
                 Form {
@@ -191,6 +197,13 @@ struct BuyView: View {
                         type: .error(.red),
                         title: "Warning",
                         subTitle: "Please fill in all the required field!"
+                    )
+                })
+                .toast(isPresenting: self.$showCSMsg, alert: {
+                    AlertToast(
+                        type: .complete(.blue),
+                        title: "Info",
+                        subTitle: "This feature is under development"
                     )
                 })
                 .onAppear {

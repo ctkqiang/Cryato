@@ -28,6 +28,7 @@ struct SellView: View {
     @State private var isProfit :Bool = false
     @State private var showAlert :Bool = false
     @State private var isGeckoAvailable :Bool = false
+    @State private var showCSMsg :Bool = false
     
     private var sectionOneOriginalPrice :String = "What's the original price?"
     private var sectionTwoSellingPrice :String = "What's the price you selling?"
@@ -63,7 +64,12 @@ struct SellView: View {
         NavigationView {
             VStack {
                 if self.isGeckoAvailable {
-                    CryptoPriceView().frame(height: 80)
+                    CryptoPriceView()
+                        .frame(height: 80)
+                        .onTapGesture {
+                        // @TODO change this
+                            self.showCSMsg = true
+                    }
                 }
                 
                 Form {
@@ -191,6 +197,13 @@ struct SellView: View {
                     )
                 })
             }
+            .toast(isPresenting: self.$showCSMsg, alert: {
+                AlertToast(
+                    type: .complete(.blue),
+                    title: "Info",
+                    subTitle: "This feature is under development"
+                )
+            })
             .scrollDismissesKeyboard(.interactively)
             .background(Color(UIColor.systemGroupedBackground))
             .refreshable {

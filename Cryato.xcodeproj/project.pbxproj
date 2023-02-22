@@ -14,7 +14,6 @@
 		1A0242CF299B832F005C40BE /* ScamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242CE299B832F005C40BE /* ScamView.swift */; };
 		1A0242D1299B84F8005C40BE /* ScamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242D0299B84F8005C40BE /* ScamList.swift */; };
 		1A0242D3299B8880005C40BE /* PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242D2299B8880005C40BE /* PaymentMethods.swift */; };
-		1A0242D5299B8AF2005C40BE /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242D4299B8AF2005C40BE /* Documentation.docc */; };
 		1A0242D8299B8B4B005C40BE /* scam.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A0242D7299B8B4B005C40BE /* scam.json */; };
 		1A0242DA299BA278005C40BE /* InAppWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242D9299BA278005C40BE /* InAppWeb.swift */; };
 		1A0242DC299BC1DD005C40BE /* Scam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0242DB299BC1DD005C40BE /* Scam.swift */; };
@@ -29,6 +28,7 @@
 		1A1B55D8298A371200C2C773 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55D7298A371200C2C773 /* View.swift */; };
 		1A1B55DB298A467E00C2C773 /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B55DA298A467E00C2C773 /* FormValidator.swift */; };
 		1A1B55DF298A703800C2C773 /* PrivacyPolicies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A1B55DE298A703800C2C773 /* PrivacyPolicies.txt */; };
+		1A2DAB7C29A3C0EF00AEDD6C /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 1A2DAB7B29A3C0EE00AEDD6C /* Documentation */; };
 		1A30FA30298A80A9007301C1 /* binance.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA26298A80A9007301C1 /* binance.jpg */; };
 		1A30FA31298A80A9007301C1 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA27298A80A9007301C1 /* 3.png */; };
 		1A30FA32298A80A9007301C1 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A30FA28298A80A9007301C1 /* 2.png */; };
@@ -108,7 +108,6 @@
 		1A0242CE299B832F005C40BE /* ScamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamView.swift; sourceTree = "<group>"; };
 		1A0242D0299B84F8005C40BE /* ScamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamList.swift; sourceTree = "<group>"; };
 		1A0242D2299B8880005C40BE /* PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethods.swift; sourceTree = "<group>"; };
-		1A0242D4299B8AF2005C40BE /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		1A0242D7299B8B4B005C40BE /* scam.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scam.json; sourceTree = "<group>"; };
 		1A0242D9299BA278005C40BE /* InAppWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InAppWeb.swift; path = Cryato/Controllers/InAppWeb.swift; sourceTree = SOURCE_ROOT; };
 		1A0242DB299BC1DD005C40BE /* Scam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scam.swift; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		1A1B55D7298A371200C2C773 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		1A1B55DA298A467E00C2C773 /* FormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
 		1A1B55DE298A703800C2C773 /* PrivacyPolicies.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicies.txt; sourceTree = "<group>"; };
+		1A2DAB7B29A3C0EE00AEDD6C /* Documentation */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Documentation; sourceTree = SOURCE_ROOT; };
 		1A30FA26298A80A9007301C1 /* binance.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = binance.jpg; sourceTree = "<group>"; };
 		1A30FA27298A80A9007301C1 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		1A30FA28298A80A9007301C1 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -373,6 +373,7 @@
 		1AD48598298923630024F1AB /* Cryato */ = {
 			isa = PBXGroup;
 			children = (
+				1A2DAB7B29A3C0EE00AEDD6C /* Documentation */,
 				1A0242D6299B8B18005C40BE /* Data */,
 				1A510D292994F7B300F65B0D /* Info.plist */,
 				1A7BC4DD299786990046D622 /* Security */,
@@ -386,7 +387,6 @@
 				1AD485C529894C7C0024F1AB /* Views */,
 				1AD4859D298923660024F1AB /* Assets.xcassets */,
 				1AD4859F298923660024F1AB /* Preview Content */,
-				1A0242D4299B8AF2005C40BE /* Documentation.docc */,
 			);
 			path = Cryato;
 			sourceTree = "<group>";
@@ -573,6 +573,7 @@
 				1A30FA34298A80A9007301C1 /* 6.png in Resources */,
 				1A30FA30298A80A9007301C1 /* binance.jpg in Resources */,
 				1A30FA35298A80A9007301C1 /* appstore.png in Resources */,
+				1A2DAB7C29A3C0EF00AEDD6C /* Documentation in Resources */,
 				1A30FA31298A80A9007301C1 /* 3.png in Resources */,
 				1A30FA33298A80A9007301C1 /* 5.png in Resources */,
 				1AD4859E298923660024F1AB /* Assets.xcassets in Resources */,
@@ -620,7 +621,6 @@
 				1AD485C429894C330024F1AB /* BuyView.swift in Sources */,
 				1A0242DE299BC262005C40BE /* ScamListHandler.swift in Sources */,
 				1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */,
-				1A0242D5299B8AF2005C40BE /* Documentation.docc in Sources */,
 				1A736E3929A0109C001E6921 /* DatabaseManager.swift in Sources */,
 				1A510D282994C07000F65B0D /* SharedPreferenceType.swift in Sources */,
 				1AA61E4D29A223B0006D981E /* CoinGeckoStatus.swift in Sources */,
@@ -752,6 +752,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -807,6 +808,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};

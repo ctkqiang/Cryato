@@ -6,3 +6,24 @@
   
 */
 "Sell" = "出售";
+"Buy" = "购买";
+"Calculator" = "计算器";
+"Scanner" = "扫描器";
+"Records" = "记录";
+"Scams" = "Scams";
+"Assets" = "Assets";
+"Cryato" = "加密多";
+"who-created" = "Who created this app?";
+"version" = "version";
+"App Settings" = "Application Setting";
+"Currency" = "Currency";
+"api-integration" = "API Integrations";
+"about" = "This app is running on Version 1.0.0";
+"abouttitle" = "About";
+"okay" = "Okay";
+"written-about" = "This application is developed by \nJohn Melody Me";
+"supportthisapp" = "Support this application";
+"disclaimer" = "Disclaimer";
+"visit" = "Visit \n %@ for more.";
+"contact-dev" = "Contact Developer";
+"wechat" = "Wechat: @johnmelodyme";

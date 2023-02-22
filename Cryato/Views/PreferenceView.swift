@@ -64,7 +64,7 @@ struct PreferenceView: View {
                 self.tronSearchTextFieldIsDisabled = true
             }
         }
-        
+    
 #if DEBUG
         
         if let bybitApiKey = Bundle.main.infoDictionary?["BYBIT_API_KEY"] as? String {
@@ -105,10 +105,17 @@ struct PreferenceView: View {
                             
                             try! DatabaseManager.read(key: "currency") { selected in
                                 if selected.isEmpty {
-                                    try! DatabaseManager.write(key: "currency", value: currency)
+                                    try! DatabaseManager.write(
+                                        key: "currency",
+                                        value: currency
+                                    )
+                                    
+                                    self.selectedCurrency = currency
                                     
                                     NSLog("\(self.selectedCurrency) added to User Defaults")
                                 }
+                                
+                                self.selectedCurrency = currency
                             }
                         }
                     }
@@ -232,6 +239,13 @@ struct PreferenceView: View {
                         subTitle: "Wechat: @johnmelodyme"
                     )
                 })
+            }
+        }
+        .onAppear {
+            try! DatabaseManager.read(key: "currency") { curr in
+                if !curr.isEmpty {
+                    self.selectedCurrency = curr
+                }
             }
         }
         
