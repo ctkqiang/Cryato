@@ -53,6 +53,7 @@ struct PreferenceView: View {
     }
     
     public init() {
+#if DEBUG
         if let tronDefaultAPI = Bundle.main.infoDictionary?["TRON_SEARCH_API"] as? String {
             if SharedPreferences.getData(key: "tronapi") != "nil" {
                 self.tronScanApi = SharedPreferences.getData(key: "tronapi")
@@ -64,30 +65,19 @@ struct PreferenceView: View {
                 self.tronSearchTextFieldIsDisabled = true
             }
         }
-    
-#if DEBUG
-        
-        if let bybitApiKey = Bundle.main.infoDictionary?["BYBIT_API_KEY"] as? String {
-            self.bybitApi = bybitApiKey
-            self.bybitSearchTextFieldIsDisabled = true
-            self._bybitApi = State(wrappedValue: bybitApiKey)
-        }
-        
 #else
         
-        if SharedPreferences.getData(key: "bybitApiKey") as String == nil {
-            SharedPreferences.setData(key: "bybitApiKey", value: self.bybitApi)
-            self.bybitSearchTextFieldIsDisabled = true
-        }
-        
-        if let bybitApiKeyLocal = SharedPreferences.getData(key: "bybitApiKey") as String {
-            self.bybitApi = bybitApiKeyLocal
-            self.bybitSearchTextFieldIsDisabled = true
-            
-            self._bybitApi = State(wrappedValue: bybitApiKeyLocal)
-        }
+        self.tronScanApi = ""
         
 #endif
+        
+        
+        //        if let bybitApiKey = Bundle.main.infoDictionary?["BYBIT_API_KEY"] as? String {
+        //            self.bybitApi = ""
+        //            self.bybitSearchTextFieldIsDisabled = true
+        //            self._bybitApi = State(wrappedValue: "")
+        //        }
+        
     }
     
     public var body: some View {
