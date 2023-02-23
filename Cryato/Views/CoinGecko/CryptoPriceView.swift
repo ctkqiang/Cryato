@@ -16,32 +16,32 @@ struct CryptoPriceView: View {
     public var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
-                Button {
-                    
+               NavigationLink {
+                   TradingViewWebView(ticker: "BTCUSDT")
                 } label: {
-                    Text("BTCUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
-                    AsyncImage(
-                        url: URL(
-                            string: "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
-                        ),
-                        content: { image in
-                            image.resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 50, maxHeight: 50)
-                        },
-                        placeholder: {
-                            ProgressView()
-                        }
-                    )
+                    HStack {
+                        AsyncImage(
+                            url: URL(
+                                string: "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                            ),
+                            content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 100, maxHeight: 100)
+                            },
+                            placeholder: {
+                                ProgressView()
+                            }
+                        )
+                    }
                 }
                 .padding()
                 .background(self.colorScheme == .dark ? .gray : .white)
                 .cornerRadius(10)
                 
-                Button {
-                    
+                NavigationLink {
+                    TradingViewWebView(ticker: "ETHUSDT")
                 } label: {
-                    Text("ETHUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
                     AsyncImage(
                         url: URL(
                             string: "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png"
@@ -49,7 +49,7 @@ struct CryptoPriceView: View {
                         content: { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 50, maxHeight: 50)
+                                .frame(maxWidth: 100, maxHeight: 100)
                         },
                         placeholder: {
                             ProgressView()
@@ -60,10 +60,9 @@ struct CryptoPriceView: View {
                 .background(self.colorScheme == .dark ? .gray : .white)
                 .cornerRadius(10)
                 
-                Button {
-                    
+                NavigationLink {
+                    TradingViewWebView(ticker: "SHIBUSDT")
                 } label: {
-                    Text("SHIBUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
                     AsyncImage(
                         url: URL(
                             string: "https://s2.coinmarketcap.com/static/img/coins/64x64/23558.png"
@@ -71,7 +70,7 @@ struct CryptoPriceView: View {
                         content: { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 50, maxHeight: 50)
+                                .frame(maxWidth: 100, maxHeight: 100)
                         },
                         placeholder: {
                             ProgressView()
@@ -82,10 +81,9 @@ struct CryptoPriceView: View {
                 .background(self.colorScheme == .dark ? .gray : .white)
                 .cornerRadius(10)
                 
-                Button {
-                    
+                NavigationLink {
+                    TradingViewWebView(ticker: "XRPUSDT")
                 } label: {
-                    Text("XRPUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
                     AsyncImage(
                         url: URL(
                             string: "https://s2.coinmarketcap.com/static/img/coins/64x64/52.png"
@@ -93,7 +91,7 @@ struct CryptoPriceView: View {
                         content: { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 50, maxHeight: 50)
+                                .frame(maxWidth: 100, maxHeight: 100)
                         },
                         placeholder: {
                             ProgressView()
@@ -104,10 +102,9 @@ struct CryptoPriceView: View {
                 .background(self.colorScheme == .dark ? .gray : .white)
                 .cornerRadius(10)
                 
-                Button {
-                    
+                NavigationLink {
+                    TradingViewWebView(ticker: "MATICUSDT")
                 } label: {
-                    Text("MATICUSDT").foregroundColor(self.colorScheme == .dark ? .white : .black)
                     AsyncImage(
                         url: URL(
                             string: "https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png"
@@ -115,7 +112,7 @@ struct CryptoPriceView: View {
                         content: { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 50, maxHeight: 50)
+                                .frame(maxWidth: 100, maxHeight: 100)
                         },
                         placeholder: {
                             ProgressView()
@@ -125,7 +122,7 @@ struct CryptoPriceView: View {
                 .padding()
                 .background(self.colorScheme == .dark ? .gray : .white)
                 .cornerRadius(10)
-            }.padding()
+            }.padding(6)
         }
         .onAppear {
             try! CoinGecko.ping() { result in

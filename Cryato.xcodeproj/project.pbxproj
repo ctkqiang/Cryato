@@ -65,6 +65,11 @@
 		1AA61E4D29A223B0006D981E /* CoinGeckoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA61E4C29A223B0006D981E /* CoinGeckoStatus.swift */; };
 		1AA61E5029A2B595006D981E /* DefaultsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1AA61E4F29A2B595006D981E /* DefaultsKit */; };
 		1AADCC4F2996F43D009EF086 /* Bybit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADCC4E2996F43D009EF086 /* Bybit.swift */; };
+		1AB3971729A7D8D6007E6F09 /* TradingViewWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3971629A7D8D6007E6F09 /* TradingViewWebView.swift */; };
+		1AB3971929A7E4E8007E6F09 /* ETHUSDT.html in Resources */ = {isa = PBXBuildFile; fileRef = 1AB3971829A7E4E8007E6F09 /* ETHUSDT.html */; };
+		1AB3971B29A7E566007E6F09 /* SHIBUSDT.html in Resources */ = {isa = PBXBuildFile; fileRef = 1AB3971A29A7E566007E6F09 /* SHIBUSDT.html */; };
+		1AB3971D29A7E5BD007E6F09 /* XRPUSDT.html in Resources */ = {isa = PBXBuildFile; fileRef = 1AB3971C29A7E5BD007E6F09 /* XRPUSDT.html */; };
+		1AB3971F29A7E5E7007E6F09 /* MATICUSDT.html in Resources */ = {isa = PBXBuildFile; fileRef = 1AB3971E29A7E5E7007E6F09 /* MATICUSDT.html */; };
 		1AD4859A298923630024F1AB /* CryatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48599298923630024F1AB /* CryatoApp.swift */; };
 		1AD4859C298923630024F1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4859B298923630024F1AB /* ContentView.swift */; };
 		1AD4859E298923660024F1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4859D298923660024F1AB /* Assets.xcassets */; };
@@ -76,6 +81,7 @@
 		1AD485C729894D160024F1AB /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD485C629894D160024F1AB /* SellView.swift */; };
 		1AD485CB2989537D0024F1AB /* PreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD485CA2989537D0024F1AB /* PreferenceView.swift */; };
 		1AD485CE298980F60024F1AB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1AD485CD298980F60024F1AB /* LICENSE */; };
+		1ADB7CA629A7D6A0001584E5 /* BTCUSDT.html in Resources */ = {isa = PBXBuildFile; fileRef = 1ADB7CA529A7D6A0001584E5 /* BTCUSDT.html */; };
 		1AF58EB4299795D6003BD1DA /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF58EB3299795D6003BD1DA /* Toast */; };
 		1AF58EB629979F34003BD1DA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF58EB529979F34003BD1DA /* String.swift */; };
 		1AF58EB92997A5E7003BD1DA /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF58EB82997A5E7003BD1DA /* AlertToast */; };
@@ -159,6 +165,11 @@
 		1A9E74E9298C150E00BFB165 /* Donation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Donation.md; sourceTree = "<group>"; };
 		1AA61E4C29A223B0006D981E /* CoinGeckoStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGeckoStatus.swift; sourceTree = "<group>"; };
 		1AADCC4E2996F43D009EF086 /* Bybit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bybit.swift; sourceTree = "<group>"; };
+		1AB3971629A7D8D6007E6F09 /* TradingViewWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingViewWebView.swift; sourceTree = "<group>"; };
+		1AB3971829A7E4E8007E6F09 /* ETHUSDT.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ETHUSDT.html; sourceTree = "<group>"; };
+		1AB3971A29A7E566007E6F09 /* SHIBUSDT.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = SHIBUSDT.html; sourceTree = "<group>"; };
+		1AB3971C29A7E5BD007E6F09 /* XRPUSDT.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = XRPUSDT.html; sourceTree = "<group>"; };
+		1AB3971E29A7E5E7007E6F09 /* MATICUSDT.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = MATICUSDT.html; sourceTree = "<group>"; };
 		1AD48596298923630024F1AB /* Cryato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD48599298923630024F1AB /* CryatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryatoApp.swift; sourceTree = "<group>"; };
 		1AD4859B298923630024F1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -174,6 +185,7 @@
 		1AD485CA2989537D0024F1AB /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
 		1AD485CC2989562C0024F1AB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		1AD485CD298980F60024F1AB /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		1ADB7CA529A7D6A0001584E5 /* BTCUSDT.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = BTCUSDT.html; sourceTree = "<group>"; };
 		1AF58EB529979F34003BD1DA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		1AF58EBA2998FD6F003BD1DA /* CryptoSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSelector.swift; sourceTree = "<group>"; };
 		1AF58EBC2998FF04003BD1DA /* Cryptocurrencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptocurrencies.swift; sourceTree = "<group>"; };
@@ -255,6 +267,7 @@
 		1A30FA15298A7A19007301C1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1ADB7CA429A7D681001584E5 /* Tickers */,
 				1A9E74E7298C12A400BFB165 /* wise.png */,
 				1A9E74E5298C129000BFB165 /* binancelogo.png */,
 				1A30FA2E298A80A9007301C1 /* 1.png */,
@@ -419,6 +432,7 @@
 		1AD485C529894C7C0024F1AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1ADB7CA729A7D8AD001584E5 /* TradingView */,
 				1A736E4529A16CA9001E6921 /* CoinGecko */,
 				1AD485CA2989537D0024F1AB /* PreferenceView.swift */,
 				1AD4859B298923630024F1AB /* ContentView.swift */,
@@ -432,6 +446,26 @@
 				1A736E33299FB76F001E6921 /* AddRecordsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1ADB7CA429A7D681001584E5 /* Tickers */ = {
+			isa = PBXGroup;
+			children = (
+				1ADB7CA529A7D6A0001584E5 /* BTCUSDT.html */,
+				1AB3971829A7E4E8007E6F09 /* ETHUSDT.html */,
+				1AB3971A29A7E566007E6F09 /* SHIBUSDT.html */,
+				1AB3971C29A7E5BD007E6F09 /* XRPUSDT.html */,
+				1AB3971E29A7E5E7007E6F09 /* MATICUSDT.html */,
+			);
+			path = Tickers;
+			sourceTree = "<group>";
+		};
+		1ADB7CA729A7D8AD001584E5 /* TradingView */ = {
+			isa = PBXGroup;
+			children = (
+				1AB3971629A7D8D6007E6F09 /* TradingViewWebView.swift */,
+			);
+			name = TradingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,6 +590,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB3971929A7E4E8007E6F09 /* ETHUSDT.html in Resources */,
 				1A9E74E6298C129000BFB165 /* binancelogo.png in Resources */,
 				1A30FA37298A80A9007301C1 /* 4.png in Resources */,
 				1A30FA36298A80A9007301C1 /* 7.png in Resources */,
@@ -566,6 +601,7 @@
 				1A510D1C2993EF6700F65B0D /* Podfile in Resources */,
 				1AD485A1298923660024F1AB /* Preview Assets.xcassets in Resources */,
 				1A30FA32298A80A9007301C1 /* 2.png in Resources */,
+				1AB3971B29A7E566007E6F09 /* SHIBUSDT.html in Resources */,
 				1A0242E1299C06B7005C40BE /* Localizable.strings in Resources */,
 				1A30FA38298A80A9007301C1 /* 1.png in Resources */,
 				1A30FA39298A80A9007301C1 /* 8.png in Resources */,
@@ -575,9 +611,12 @@
 				1A30FA35298A80A9007301C1 /* appstore.png in Resources */,
 				1A2DAB7C29A3C0EF00AEDD6C /* Documentation in Resources */,
 				1A30FA31298A80A9007301C1 /* 3.png in Resources */,
+				1AB3971D29A7E5BD007E6F09 /* XRPUSDT.html in Resources */,
 				1A30FA33298A80A9007301C1 /* 5.png in Resources */,
+				1AB3971F29A7E5E7007E6F09 /* MATICUSDT.html in Resources */,
 				1AD4859E298923660024F1AB /* Assets.xcassets in Resources */,
 				1A1B55DF298A703800C2C773 /* PrivacyPolicies.txt in Resources */,
+				1ADB7CA629A7D6A0001584E5 /* BTCUSDT.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +665,7 @@
 				1AA61E4D29A223B0006D981E /* CoinGeckoStatus.swift in Sources */,
 				1A0242C329994837005C40BE /* PNL.swift in Sources */,
 				1A510D252994BBD500F65B0D /* SharedPreferences.swift in Sources */,
+				1AB3971729A7D8D6007E6F09 /* TradingViewWebView.swift in Sources */,
 				1A93904D299533F1004AB56D /* AssetsView.swift in Sources */,
 				1A1B55DB298A467E00C2C773 /* FormValidator.swift in Sources */,
 				1A0242C9299986C9005C40BE /* BinanceFundingAccount.swift in Sources */,
